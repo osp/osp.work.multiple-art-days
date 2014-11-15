@@ -14,10 +14,9 @@ var scrollorama = $.scrollorama({
 
 
 scrollorama
-.animate('#section-id-1 .section-content',{ duration:2000, property:'padding-top', start:200, pin: true} )
-.animate('#section-id-1 .section-content',{ duration:1000, property:'opacity', start:0, end:1} )
-.animate('#section-id-2 .section-content',{ duration:1000, property:'padding-top', start:400, pin: true} )
-.animate('#section-id-3 .section-content',{ duration:1000, property:'padding-top', start:400, pin: true} );
+.animate('#section-id-1 .section-content',{ duration:1000, property:'margin-top', start:200 , pin: true} )
+.animate('#section-id-2 .section-content',{ duration:1000, property:'opacity', start:0, pin: true })
+.animate('#section-id-3 .section-content',{ duration:1000, property:'padding-top', start:400, pin: true} )
 
 
 
