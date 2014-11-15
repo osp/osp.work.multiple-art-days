@@ -14,7 +14,6 @@
 // ------------------------------------------------------------
 
 // a-z viewports. Place where design should change, not always on device widths
-// Hat-tip to @hereinthehive for getting us thinking about naming suggestions
 
 $a-vp								: 300px;	// first viewport 
 $b-vp								: 420px;	// up one
@@ -36,50 +35,22 @@ $start-columns 						: $b-vp;
 
 
 // Define your main colour palette using whatever naming system you like
-$jack-black							: #333;
-$macy-grey							: #777;	
-$ron-burgundy 						: #e0006e;
-$al-green 							: #67b2b1;
-$beige-ruth 						: #f5f0e0;
-$agent-orange 						: #c64f24;
-$betty-blue 						: #a8d9f4;
+$grey : grey;
+$base-color: grey;
 
 
 // Assign colours to variable roles
 // Be descriptive without being specific. 
 // This allows for consistency project to project, and easy changing
 
-$body-color 						: #fff;
-$base-color							: $macy-grey;
-$heading-color						: $jack-black;
-$hightlight-color 					: $betty-blue;
-
-$action								: $agent-orange;
-$action-respond						: $al-green;
+$body-color 						: grey;
 
 
 // ------------------------------------------------------------
 // :: Typesizes/scale
 // ------------------------------------------------------------
 
-// Greek alphabet naming system. Obscure, yet hierarchical.
-// Allows us to avoid naming based on html object. 
-// Eg. A h1 can be smaller visually, than a h4.
-$alpha   	: 42px;
-$beta		: 32px;
-$gamma		: 28px;
-$delta		: 26px;
-$epsilon	: 24px;
-$zeta		: 20px;
-$eta		: 18px;
-$theta		: 15px;
-$iota 		: 14px;
-$kappa 		: 12px;
-
-
-$para		: $theta; 	// Paragraph size
-$quote		: $beta;	// Quote size
-
+$para		: 16px;	// Paragraph size
 
 
 // ------------------------------------------------------------
