@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+			// http://www.html5canvastutorials.com/advanced/html5-canvas-animation-stage/
+			window.requestAnimFrame = (function(callback) {
+				return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+				function(callback) {
+					window.setTimeout(callback, 1000 / 60
+					);
+				};
+			})();
+		
+			function lineWidth(t, offset) {
+				return Math.abs(Math.sin(t + offset *1.75)) * 15;
+			}
+			
+			function point(x, y) {
+				return {x: x, y: y};
+			}
+
+			function calcPoint(from, to, t) {
+				return (1 - t) * from + t * to 
+			}
+
+			function line(from, to, resolution, offset) {
+				var increment = resolution || 0.1;
+				var segments = [];
+				for(var t=0; t < 1; t+=increment) {
+					segments.push({
+						point: {
+							x: calcPoint(from.x,to.x,t),
+							y: calcPoint(from.y,to.y,t)
+						},
+						lineWidth: lineWidth(t, offset),
+					});
+				}
+				
+				return segments;
+			}
+
+			function drawFrame (offset) {
+				var canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				
+				var segments = line(point(50,50), point(150,200), .01, offset);
+				for(var i=1; i < segments.length; i++) {
+					ctx.beginPath();
+					ctx.moveTo(segments[i-1].point.x, segments[i-1].point.y);
+					ctx.lineTo(segments[i].point.x, segments[i].point.y);
+					ctx.strokeStyle = "black";
+					ctx.lineWidth = segments[i].lineWidth;
+					ctx.stroke();
+				}
+				
+				var segments = line(point(50,200), point(300,10), .01, offset);
+				for(var i=1; i < segments.length; i++) {
+					ctx.beginPath();
+					ctx.moveTo(segments[i-1].point.x, segments[i-1].point.y);
+					ctx.lineTo(segments[i].point.x, segments[i].point.y);
+					ctx.strokeStyle = "red";
+					ctx.lineWidth = segments[i].lineWidth;
+					ctx.stroke();
+				}
+				
+				offset += .25;
+				
+				requestAnimFrame(function() {
+					drawFrame(offset);
+				});
+			}
+			
+			$(document).ready(function () {
+				drawFrame(0); 
+			});
+		</script>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+	</body>
+</html>
