@@ -14,9 +14,11 @@ var scrollorama = $.scrollorama({
 
 
 scrollorama
-.animate('#section-id-1 .section-content',{ duration:1000, property:'margin-top', start:200 , pin: true} )
-.animate('#section-id-2 .section-content',{ duration:1000, property:'opacity', start:0, pin: true })
-.animate('#section-id-3 .section-content',{ duration:1000, property:'padding-top', start:400, pin: true} )
+.animate('#section-id-1 .section-content-1',{ duration:1000, property:'left', start:100, end:-200 , pin: true})
+.animate('#section-id-1 .section-content-1',{ delay:1000, duration:4000, property:'margin-top', start:400 , pin: true})
+.animate('#section-id-1 .section-content-1',{ duration:4000, property:'opacity', end:0 , pin: true})
+.animate('#section-id-2 .section-content-2',{ duration:2500, property:'margin-top', start:0 , end:-300 , pin: true})
+.animate('#section-id-3 .section-content-3',{ duration:2300, property:'margin-top', start:0 , end:-500 , pin: true})
 
 
 
