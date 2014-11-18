@@ -1,9 +1,11 @@
 <html>
 	<head>
-		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
 		<script type="text/javascript">
 		
-			var fps = 2;
+			var fps = 30;
 			var now;
 			var then = Date.now();
 			var interval = 1000/fps;
@@ -35,7 +37,7 @@
 			}
 			
 			function calcBeta(inclination) {
-				return deg2rad(90) - inclination;
+				return Math.abs(deg2rad(90) - inclination);
 			}
 		
 			/**
@@ -44,16 +46,27 @@
 			* right array, with right contour
 			*/
 			function calcFat(linePoint, width, beta, left, right) {
-				var offsetX = Math.sin(beta) * width
-				var offsetY = Math.cos(beta) * width
+				if (beta == 0 || beta == Math.PI) {
+					// vertical
+					var offsetX = width;
+					var offsetY = 0;				
+				} else if (beta == .5 * Math.PI || beta == 1.5 * Math.PI) {
+					// horizontal
+					var offsetX = 0;
+					var offsetY = width;
+				} else {
+					// Angled
+					var offsetX = Math.sin(beta) * width;
+					var offsetY = Math.cos(beta) * width;
+				}
 
-				left.push(point(linePoint.x - offsetX, linePoint.y - offsetX));
-				right.push(point(linePoint.x + offsetX, linePoint.y + offsetX));
+				left.push(point(linePoint.x + (offsetX), linePoint.y - (offsetY)));
+				right.push(point(linePoint.x - (offsetX), linePoint.y + (offsetY)));
 			}
 		
 			function lineWidth(t, offset) {
-				//return 5 + Math.abs(Math.sin((t + offset) * Math.PI)) * 20;
-				return Math.random() * 20
+				return -30 + Math.abs(Math.sin((t + offset) * Math.PI * 3)) * 40;
+// 				return Math.random() * 20
 			}
 			
 			function point(x, y) {
@@ -81,9 +94,10 @@
 			}
 
 			function drawLine(ctx, from, to, offset, fillcolor) {
-				var segments = line(from, to, .05, offset);
+				var segments = line(from, to, .1, offset);
 				var inclination = calcInclination(from, to);
 				var beta = calcBeta(inclination);
+				console.log(beta, rad2deg(beta), inclination, rad2deg(beta));
 				var left = [];
 				var right = [];
 				
@@ -102,8 +116,9 @@
 					ctx.lineTo(right[i].x, right[i].y);
 				}
 				
-				ctx.fillStyle = fillcolor
-				ctx.fill();
+// 				ctx.fillStyle = fillcolor
+				ctx.strokeStyle = fillcolor;
+				ctx.stroke();
 			}
 			
 			function drawFrame (offset) {
@@ -115,12 +130,35 @@
 					var ctx = canvas.getContext("2d");
 					ctx.clearRect(0, 0, canvas.width, canvas.height);
 					
-					drawLine(ctx, point(500, 0), point(0, 500), offset, 'blue');
-					drawLine(ctx, point(500, 0), point(0, 500), offset, 'gold');
-					drawLine(ctx, point(500, 0), point(0, 500), offset, 'red');
-					drawLine(ctx, point(500, 0), point(0, 500), offset, 'black');
+					var from = point(100,100);
+					var to = point(100,400)
+					drawLine(ctx, from, to, offset, 'blue');
+					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
+					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
+					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
 					
-					offset += .01;
+					var from = point(100,100);
+					var to = point(250,250)
+					drawLine(ctx, from, to, offset, 'blue');
+					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
+					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
+					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
+					
+					var from = point(250,250);
+					var to = point(400,100)
+					drawLine(ctx, from, to, offset, 'blue');
+					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
+					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
+					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
+					
+					var from = point(400,400);
+					var to = point(400,100)
+					drawLine(ctx, from, to, offset, 'blue');
+					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
+					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
+					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
+					
+					offset += .003;
 					then = now - (delta % interval);
 				}
 				
@@ -129,12 +167,7 @@
 				});
 			}
 			
-			$(document).ready(function () {
-				drawFrame(0); 
-			});
+			drawFrame(0);
 		</script>
-	</head>
-	<body>
-		<canvas id="canvas" width="500" height="500"></canvas>
 	</body>
 </html>
