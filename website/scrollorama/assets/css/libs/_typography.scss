@@ -24,7 +24,6 @@ em, i, q 											{ font-style: italic; }
 
 h1.title{
 	@include adjust-font-size-to(34px);
-	@include leader(8);
 }
 
 h2.subtitle{
