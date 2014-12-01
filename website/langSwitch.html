@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<style>
+			body {
+				overflow-x: hidden;
+			}
+
+			#french, #english {
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: left .75s;
+				height: 100%;
+				width: 100%;
+			}
+
+			#english {
+				background-color: black;
+				color: white;
+			}
+			
+			.french #english {
+				left: 100%;
+				transition: left .75s;
+			}
+
+			.french #french {
+				left: 0;
+				transition: left .75s;
+			}
+
+			.english #english {
+				left: 0%;
+				transition: left .75s;
+			}
+
+			.english #french {
+				left: -100%;
+				transition: left .75s;
+			}
+			
+			#language {
+				z-index: 999;
+				position: fixed;
+				top: 20px;
+				right: 20px;
+			}
+			
+			#language ul {
+				list-style-type: none;
+			}
+			
+			#language ul li {
+				display: inline-block;
+			}
+		</style>
+		<script type="text/javascript">
+			"use strict";
+			
+			window.addEventListener('load', function () {
+				var fr = document.getElementById('languageSwitchFr');
+				fr.addEventListener('click', function () {
+					document.body.className = "french"
+				}, false);
+				
+				var en = document.getElementById('languageSwitchEn');
+				en.addEventListener('click', function () {
+					document.body.className = "english"
+				}, false);
+			});
+		</script>
+	</head>
+	<body class="french">
+		<nav id="language">
+			<ul>
+				<li>
+					<a href="#fr" id="languageSwitchFr">FR</a>
+				</li>
+				<li>
+					<a href="#en" id="languageSwitchEn">EN</a>
+				</li>
+			</ul>
+		</nav>
+		<div id="french" class="active">
+			<a name="fr" />
+			Francais
+		</div>
+		<div id="english">
+			<a name="en" />
+			English
+		</div>
+	</body>
+</html>
