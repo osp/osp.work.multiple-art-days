@@ -1,173 +1,106 @@
 <html>
 	<head>
+		<script type="text/javascript" src="underscore-min.js"></script>
+		<script type="text/javascript" src="geom.js"></script>
 	</head>
 	<body>
 		<canvas id="canvas" width="500" height="500"></canvas>
 		<script type="text/javascript">
-		
-			var fps = 30;
-			var now;
-			var then = Date.now();
-			var interval = 1000/fps;
-			var delta;
-		
-			// http://www.html5canvastutorials.com/advanced/html5-canvas-animation-stage/
-			window.requestAnimFrame = (function(callback) {
-				return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-				function(callback) {
-					window.setTimeout(callback, 1000 / 60
-					);
-				};
-			})();
-		
-		
-			function rad2deg(rad)
-			{
-				return rad * (180 / Math.PI);
-			}
-
-			function deg2rad(deg)
-			{
-				return deg * (Math.PI / 180);
-			}
-		
-			function calcInclination (from, to)
-			{
-				return Math.atan((to.y - from.y) / (to.x - from.x));;
-			}
+			window.addEventListener('load', function () {
 			
-			function calcBeta(inclination) {
-				return Math.abs(deg2rad(90) - inclination);
-			}
-		
-			/**
-			* Inclination in rad
-			* left array, with left contour
-			* right array, with right contour
-			*/
-			function calcFat(linePoint, width, beta, left, right) {
-				if (beta == 0 || beta == Math.PI) {
-					// vertical
-					var offsetX = width;
-					var offsetY = 0;				
-				} else if (beta == .5 * Math.PI || beta == 1.5 * Math.PI) {
-					// horizontal
-					var offsetX = 0;
-					var offsetY = width;
-				} else {
-					// Angled
-					var offsetX = Math.sin(beta) * width;
-					var offsetY = Math.cos(beta) * width;
+				var fps = 20;
+				var now;
+				var then = Date.now();
+				var interval = 1000/fps;
+				var delta;
+			
+				// http://www.html5canvastutorials.com/advanced/html5-canvas-animation-stage/
+				window.requestAnimFrame = (function(callback) {
+					return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+					function(callback) {
+						window.setTimeout(callback, 1000 / 60
+						);
+					};
+				})();
+			
+				function calcBeta(inclination) {
+					return Math.abs(Math.deg2rad(90) - inclination);
+				}
+			
+				/**
+				* Inclination in rad
+				* left array, with left contour
+				* right array, with right contour
+				*/
+				function calcFat(linePoint, width, beta, left, right) {
+					if (beta == 0 || beta == Math.PI) {
+						// vertical
+						var offsetX = width;
+						var offsetY = 0;				
+					} else if (beta == .5 * Math.PI || beta == 1.5 * Math.PI) {
+						// horizontal
+						var offsetX = 0;
+						var offsetY = width;
+					} else {
+						// Angled
+						var offsetX = Math.sin(beta) * width;
+						var offsetY = Math.cos(beta) * width;
+					}
+
+					left.push(point(linePoint.x + (offsetX), linePoint.y - (offsetY)));
+					right.push(point(linePoint.x - (offsetX), linePoint.y + (offsetY)));
+				}
+			
+				function lineWidth(t, offset) {
+					return 30 - Math.abs(Math.sin((t + offset) * Math.PI * 3)) * 40;
 				}
 
-				left.push(point(linePoint.x + (offsetX), linePoint.y - (offsetY)));
-				right.push(point(linePoint.x - (offsetX), linePoint.y + (offsetY)));
-			}
-		
-			function lineWidth(t, offset) {
-				return -30 + Math.abs(Math.sin((t + offset) * Math.PI * 3)) * 40;
-// 				return Math.random() * 20
-			}
-			
-			function point(x, y) {
-				return {x: x, y: y};
-			}
-
-			function calcPoint(from, to, t) {
-				return (1 - t) * from + t * to 
-			}
-
-			function line(from, to, resolution, offset) {
-				var increment = resolution || 0.1;
-				var segments = [];
-				for(var t=0; t < 1; t+=increment) {
-					segments.push({
-						point: {
-							x: calcPoint(from.x,to.x,t),
-							y: calcPoint(from.y,to.y,t)
-						},
-						lineWidth: lineWidth(t, offset),
+				function drawPath(ctx, path) {
+					var left = [];
+					var right = [];
+					
+					for(var t=0;t<=1;t+=.001) {
+						calcFat(path.at(t), lineWidth(t, 0), calcBeta(path.angle(t)), left, right);
+					}
+				
+					ctx.beginPath();
+					ctx.moveTo(left[0].x, left[0].y);
+					
+					for(var i=1;i < left.length; i++) {
+						ctx.lineTo(left[i].x, left[i].y);
+					}
+					
+	// 				ctx.fillStyle = fillcolor
+					ctx.strokeStyle = "black";
+					ctx.stroke();
+				}
+				
+				var path = new Path([
+					point(100,400),
+					point(100,100),
+					point(250,250),
+					point(400,100),
+					point(400,400)
+				]);
+				
+				function drawFrame (offset) {
+					now = Date.now();
+					delta = now - then;
+					
+					if (delta > interval) {
+						var canvas = document.getElementById("canvas");
+						var ctx = canvas.getContext("2d");
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						drawPath(ctx, path);
+					}
+					
+					requestAnimFrame(function() {
+						drawFrame(offset);
 					});
 				}
 				
-				return segments;
-			}
-
-			function drawLine(ctx, from, to, offset, fillcolor) {
-				var segments = line(from, to, .1, offset);
-				var inclination = calcInclination(from, to);
-				var beta = calcBeta(inclination);
-				console.log(beta, rad2deg(beta), inclination, rad2deg(beta));
-				var left = [];
-				var right = [];
-				
-				for(var i=1; i < segments.length; i++) {
-					calcFat(segments[i].point, segments[i].lineWidth, beta, left, right);
-				}
-				
-				ctx.beginPath();
-				ctx.moveTo(left[0].x, left[0].y);
-				
-				for(var i=1;i < left.length; i++) {
-					ctx.lineTo(left[i].x, left[i].y);
-				}
-				
-				for(var i=right.length-1;i > -1; i--) {
-					ctx.lineTo(right[i].x, right[i].y);
-				}
-				
-// 				ctx.fillStyle = fillcolor
-				ctx.strokeStyle = fillcolor;
-				ctx.stroke();
-			}
-			
-			function drawFrame (offset) {
-				now = Date.now();
-				delta = now - then;
-				
-				if (delta > interval) {
-					var canvas = document.getElementById("canvas");
-					var ctx = canvas.getContext("2d");
-					ctx.clearRect(0, 0, canvas.width, canvas.height);
-					
-					var from = point(100,100);
-					var to = point(100,400)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					var from = point(100,100);
-					var to = point(250,250)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					var from = point(250,250);
-					var to = point(400,100)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					var from = point(400,400);
-					var to = point(400,100)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					offset += .003;
-					then = now - (delta % interval);
-				}
-				
-				requestAnimFrame(function() {
-					drawFrame(offset);
-				});
-			}
-			
-			drawFrame(0);
+				drawFrame(0);
+			});
 		</script>
 	</body>
 </html>
