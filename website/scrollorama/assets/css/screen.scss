@@ -25,7 +25,7 @@ html {
 
 
 body, html { margin:0; padding:0; }
-body { height:10000px;
+body { height:15000px;
 	@extend .font-body;
 	color: $base-color;
  }
@@ -41,10 +41,35 @@ a {
 	font-weight: bold;
 }
 
-div.title-section{
-
+div.section-content-1{
+width:45%;
+margin: 0 auto;
 }
 
+div.section-image{
+width:45%;
+margin:0 auto;
+}
+
+div.section-content-2{
+width:45%;
+float: right;
+}
+
+div.intro-text-1{
+	width:45%;
+	margin-left:15%;
+}
+
+div.intro-text-2{
+	width:45%;
+	margin-left:30%;
+}
+
+div.intro-text-3{
+	width:45%;
+	margin-left:45%;
+}
 
 /* ::scrollorama styles */
 /* ------------------------------------------------------------ */

@@ -14,11 +14,15 @@ var scrollorama = $.scrollorama({
 
 
 scrollorama
-.animate('#section-id-1 .section-content-1',{ duration:1000, property:'left', start:100, end:-200 , pin: true})
-.animate('#section-id-1 .section-content-1',{ delay:1000, duration:4000, property:'margin-top', start:400 , pin: true})
-.animate('#section-id-1 .section-content-1',{ duration:4000, property:'opacity', end:0 , pin: true})
-.animate('#section-id-2 .section-content-2',{ duration:2500, property:'margin-top', start:0 , end:-300 , pin: true})
-.animate('#section-id-3 .section-content-3',{ duration:2300, property:'margin-top', start:0 , end:-500 , pin: true})
+.animate('#section-id-1 .section-content-1',{ duration:4000, property:'margin-top', start:400 , end:0 , pin: true})
+
+.animate('#section-id-2 .intro-text-1',{ duration:2000, property:'margin-top', start:40 , end:20 , pin: true})
+.animate('#section-id-2 .intro-text-1',{ duration:2000, property:'font-size', start:16 , end:40 , pin: true})
+.animate('#section-id-3 .intro-text-2',{ duration:2000, property:'margin-top', start:40 , end:20 , pin: true})
+.animate('#section-id-3 .intro-text-2',{ duration:2000, property:'font-size', start:16 , end:40 , pin: true})
+.animate('#section-id-4 .intro-text-3',{ duration:2000, property:'margin-top', start:40 , end:20 , pin: true})
+.animate('#section-id-4 .intro-text-3',{ duration:2000, property:'font-size', start:16 , end:40 , pin: true})
+.animate('#section-id-5 .section-content-5',{ duration:4000, property:'margin-top', start:400 , end:0 , pin: true})
 
 
 
