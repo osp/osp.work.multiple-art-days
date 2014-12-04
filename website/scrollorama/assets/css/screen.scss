@@ -28,6 +28,8 @@ body, html { margin:0; padding:0; }
 body { height:15000px;
 	@extend .font-body;
 	color: $base-color;
+	overflow-x: hidden;
+
  }
 *, *:before, *:after {
   -moz-box-sizing: border-box;
@@ -69,6 +71,59 @@ div.intro-text-2{
 div.intro-text-3{
 	width:45%;
 	margin-left:45%;
+}
+
+/* ::language switcher styles */
+/* ------------------------------------------------------------ */
+
+
+#french, #english {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: left .75s;
+	height: 100%;
+	width: 100%;
+}
+
+#english {
+	background-color: black;
+	color: white;
+}
+
+.french #english {
+	left: 100%;
+	transition: left .75s;
+}
+
+.french #french {
+	left: 0;
+	transition: left .75s;
+}
+
+.english #english {
+	left: 0%;
+	transition: left .75s;
+}
+
+.english #french {
+	left: -100%;
+	transition: left .75s;
+}
+
+#language {
+	z-index: 999;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+
+#language ul {
+	list-style-type: none;
+}
+
+#language ul li {
+	display: inline-block;
 }
 
 /* ::scrollorama styles */
