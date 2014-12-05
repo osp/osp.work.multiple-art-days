@@ -1,0 +1,20 @@
+h2.subtitle{
+	text-align:center;
+	@include leader(2);
+}
+
+h3.baseline{
+	text-align:center;
+	@include leader(2);
+	@include trailer(2);
+}
+
+div.left-side{
+	display: inline-block;
+}
+
+img.side-img{
+	width: 70%;
+	height: auto;
+	margin-left:15%;
+}

@@ -80,21 +80,49 @@ textarea {
 h1.main {
   font-weight: bold;
   text-align: center;
-  color: rgba(0, 168, 255, 0.5);
+  color: rgba(168, 168, 168, 0.3);
   margin-top: 1.1em;
   font-size: 4.375em;
   line-height: 1.0685714em;
-  text-shadow: 3px 3px 0 rgba(255, 0, 180, 0.3);
+  text-shadow: 3px 3px 0 rgba(120, 120, 120, 0.3), 16px 16px 0 rgba(180, 180, 180, 0.3), -16px -16px 0 rgba(200, 200, 200, 0.3);
 }
 
 h1.main:hover {
-  text-shadow: -3px -3px 0 rgba(255, 0, 180, 0.3), 2px 2px 0 rgba(255, 0, 180, 0.4), 4px 4px 0 rgba(255, 0, 180, 0.4), -6px 6px 0 rgba(255, 0, 180, 0.4), -8px -8px 0 rgba(255, 0, 180, 0.4);
+  text-shadow: -3px -12px 0 rgba(5, 5, 5, 0.3), 40px 40px 0 rgba(249, 249, 249, 0.4), 100px 100px 0 rgba(200, 200, 200, 0.4), -60px 60px 0 rgba(255, 0, 180, 0.4), -8px -8px 0 rgba(255, 0, 180, 0.4);
 }
 
-.M {
+.logo {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.logo:hover .M {
+  stroke-width: 15;
+}
+.logo:hover .A {
+  stroke-width: 0.3;
+}
+.logo:hover .D {
+  stroke-width: 0.7;
+}
+
+path.M {
   fill: none;
-  stroke: blue;
-  stroke-width: 4;
+  stroke: grey;
+  stroke-width: 2;
+}
+
+path.A {
+  fill: none;
+  stroke: grey;
+  stroke-width: 2;
+}
+
+path.D {
+  fill: none;
+  stroke: grey;
+  stroke-width: 2;
 }
 
 body {
@@ -140,6 +168,7 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
+  text-align: right;
 }
 
 #language ul {
@@ -148,6 +177,27 @@ body {
 
 #language ul li {
   display: inline-block;
+}
+
+h2.subtitle {
+  text-align: center;
+  margin-top: 0.55em;
+}
+
+h3.baseline {
+  text-align: center;
+  margin-top: 0.55em;
+  margin-bottom: 0.55em;
+}
+
+div.left-side {
+  display: inline-block;
+}
+
+img.side-img {
+  width: 70%;
+  height: auto;
+  margin-left: 15%;
 }
 
 /* ::Base styles */
@@ -176,13 +226,8 @@ a:hover, a:focus, a:active {
 
 /* ::Import styles */
 /* ------------------------------------------------------------ */
-h1 {
-  font-size: 2.5em;
-  line-height: 1.1em;
-}
-
 .font-body, body {
-  font-family: "UmePlumePMincho-200", 'Interval' , sans-serif, sans-serif;
+  font-family: serif;
 }
 
 .font-var {
@@ -212,6 +257,21 @@ strong, b {
 
 em, i, q {
   font-style: italic;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1em;
+}
+
+h2 {
+  font-size: 1.75em;
+  line-height: 1.2571429em;
+}
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1.32em;
 }
 
 label, legend, select {
@@ -941,6 +1001,7 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
+  text-align: right;
 }
 
 #language ul {
@@ -954,21 +1015,70 @@ body {
 h1.main {
   font-weight: bold;
   text-align: center;
-  color: rgba(0, 168, 255, 0.5);
+  color: rgba(168, 168, 168, 0.3);
   margin-top: 1.1em;
   font-size: 4.375em;
   line-height: 1.0685714em;
-  text-shadow: 3px 3px 0 rgba(255, 0, 180, 0.3);
+  text-shadow: 3px 3px 0 rgba(120, 120, 120, 0.3), 16px 16px 0 rgba(180, 180, 180, 0.3), -16px -16px 0 rgba(200, 200, 200, 0.3);
 }
 
 h1.main:hover {
-  text-shadow: -3px -3px 0 rgba(255, 0, 180, 0.3), 2px 2px 0 rgba(255, 0, 180, 0.4), 4px 4px 0 rgba(255, 0, 180, 0.4), -6px 6px 0 rgba(255, 0, 180, 0.4), -8px -8px 0 rgba(255, 0, 180, 0.4);
+  text-shadow: -3px -12px 0 rgba(5, 5, 5, 0.3), 40px 40px 0 rgba(249, 249, 249, 0.4), 100px 100px 0 rgba(200, 200, 200, 0.4), -60px 60px 0 rgba(255, 0, 180, 0.4), -8px -8px 0 rgba(255, 0, 180, 0.4);
 }
 
-.M {
+.logo {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.logo:hover .M {
+  stroke-width: 15;
+}
+.logo:hover .A {
+  stroke-width: 0.3;
+}
+.logo:hover .D {
+  stroke-width: 0.7;
+}
+
+path.M {
   fill: none;
-  stroke: blue;
-  stroke-width: 4;
+  stroke: grey;
+  stroke-width: 2;
+}
+
+path.A {
+  fill: none;
+  stroke: grey;
+  stroke-width: 2;
+}
+
+path.D {
+  fill: none;
+  stroke: grey;
+  stroke-width: 2;
+}
+
+h2.subtitle {
+  text-align: center;
+  margin-top: 0.55em;
+}
+
+h3.baseline {
+  text-align: center;
+  margin-top: 0.55em;
+  margin-bottom: 0.55em;
+}
+
+div.left-side {
+  display: inline-block;
+}
+
+img.side-img {
+  width: 70%;
+  height: auto;
+  margin-left: 15%;
 }
 
 /* ::Print */

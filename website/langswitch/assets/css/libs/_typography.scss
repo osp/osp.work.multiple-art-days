@@ -1,15 +1,8 @@
 // ------------------------------------------------------------
-// Global typography
-// ------------------------------------------------------------
-h1{
-	@include adjust-font-size-to(40px);
-}
-
-// ------------------------------------------------------------
 // Fonts
 // ------------------------------------------------------------
 
-.font-body 					{  font-family:  "UmePlumePMincho-200", 'Interval' , sans-serif, sans-serif; }
+.font-body 					{  font-family: serif; }
 .font-var 					{  font-family: Georgia, serif; }
 
 
@@ -23,3 +16,19 @@ ol 													{ @include nobullet; }
 li 													{ line-height: inherit; }					
 strong, b 											{ font-weight: 700; }
 em, i, q 											{ font-style: italic; }
+
+// ------------------------------------------------------------
+// Global typography
+// ------------------------------------------------------------
+h1{
+	@include adjust-font-size-to(40px);
+}
+
+h2{
+	@include adjust-font-size-to(28px);
+}
+
+h3{
+	@include adjust-font-size-to(20px);
+}
+
