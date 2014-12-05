@@ -99,6 +99,7 @@ h1.main:hover {
 
 .logo:hover .M {
   stroke-width: 15;
+  stroke: blue;
 }
 .logo:hover .A {
   stroke-width: 0.3;
@@ -179,25 +180,53 @@ body {
   display: inline-block;
 }
 
-h2.subtitle {
-  text-align: center;
-  margin-top: 0.55em;
-}
-
-h3.baseline {
-  text-align: center;
-  margin-top: 0.55em;
-  margin-bottom: 0.55em;
-}
-
 div.left-side {
   display: inline-block;
 }
 
-img.side-img {
+div.title-level {
+  margin-top: 1.1em;
+}
+div.title-level h2.subtitle {
+  text-align: center;
+  margin-top: 0.55em;
+}
+div.title-level h3.baseline {
+  text-align: center;
+  margin-top: 0.55em;
+  margin-bottom: 0.55em;
+}
+div.title-level p.date {
+  text-align: center;
+}
+div.title-level p.heures {
+  text-align: center;
+}
+
+div.body-level {
+  margin-top: 1.1em;
+}
+div.body-level img.side-img {
   width: 70%;
   height: auto;
   margin-left: 15%;
+}
+div.body-level p.body {
+  margin-bottom: 1.1em;
+}
+
+div.footer-level {
+  margin-top: 2.2em;
+  margin-bottom: 3.3em;
+}
+div.footer-level p.partenaires {
+  text-align: center;
+}
+div.footer-level p.credits {
+  text-align: center;
+}
+div.footer-level p.mailinglist {
+  text-align: center;
 }
 
 /* ::Base styles */
@@ -226,8 +255,15 @@ a:hover, a:focus, a:active {
 
 /* ::Import styles */
 /* ------------------------------------------------------------ */
+@font-face {
+  font-family: 'linux_libertine_displayRg';
+  src: url("../font/linlibertine_drah-webfont.eot");
+  src: url("../font/linlibertine_drah-webfont.eot?#iefix") format("embedded-opentype"), url("../font/linlibertine_drah-webfont.woff2") format("woff2"), url("../font/linlibertine_drah-webfont.woff") format("woff"), url("../font/linlibertine_drah-webfont.ttf") format("truetype"), url("../font/linlibertine_drah-webfont.svg#linux_libertine_displayRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 .font-body, body {
-  font-family: serif;
+  font-family: 'linux_libertine_displayRg' , serif;
 }
 
 .font-var {
@@ -1034,6 +1070,7 @@ h1.main:hover {
 
 .logo:hover .M {
   stroke-width: 15;
+  stroke: blue;
 }
 .logo:hover .A {
   stroke-width: 0.3;
@@ -1060,25 +1097,53 @@ path.D {
   stroke-width: 2;
 }
 
-h2.subtitle {
-  text-align: center;
-  margin-top: 0.55em;
-}
-
-h3.baseline {
-  text-align: center;
-  margin-top: 0.55em;
-  margin-bottom: 0.55em;
-}
-
 div.left-side {
   display: inline-block;
 }
 
-img.side-img {
+div.title-level {
+  margin-top: 1.1em;
+}
+div.title-level h2.subtitle {
+  text-align: center;
+  margin-top: 0.55em;
+}
+div.title-level h3.baseline {
+  text-align: center;
+  margin-top: 0.55em;
+  margin-bottom: 0.55em;
+}
+div.title-level p.date {
+  text-align: center;
+}
+div.title-level p.heures {
+  text-align: center;
+}
+
+div.body-level {
+  margin-top: 1.1em;
+}
+div.body-level img.side-img {
   width: 70%;
   height: auto;
   margin-left: 15%;
+}
+div.body-level p.body {
+  margin-bottom: 1.1em;
+}
+
+div.footer-level {
+  margin-top: 2.2em;
+  margin-bottom: 3.3em;
+}
+div.footer-level p.partenaires {
+  text-align: center;
+}
+div.footer-level p.credits {
+  text-align: center;
+}
+div.footer-level p.mailinglist {
+  text-align: center;
 }
 
 /* ::Print */

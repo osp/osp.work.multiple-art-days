@@ -2,7 +2,20 @@
 // Fonts
 // ------------------------------------------------------------
 
-.font-body 					{  font-family: serif; }
+@font-face {
+    font-family: 'linux_libertine_displayRg';
+    src: url('../font/linlibertine_drah-webfont.eot');
+    src: url('../font/linlibertine_drah-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/linlibertine_drah-webfont.woff2') format('woff2'),
+         url('../font/linlibertine_drah-webfont.woff') format('woff'),
+         url('../font/linlibertine_drah-webfont.ttf') format('truetype'),
+         url('../font/linlibertine_drah-webfont.svg#linux_libertine_displayRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.font-body 					{  font-family: 'linux_libertine_displayRg' , serif; }
 .font-var 					{  font-family: Georgia, serif; }
 
 

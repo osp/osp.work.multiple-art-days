@@ -1,20 +1,52 @@
-h2.subtitle{
-	text-align:center;
-	@include leader(2);
-}
 
-h3.baseline{
-	text-align:center;
-	@include leader(2);
-	@include trailer(2);
-}
 
 div.left-side{
 	display: inline-block;
 }
 
-img.side-img{
-	width: 70%;
-	height: auto;
-	margin-left:15%;
+
+
+div.title-level{
+	@include leader(4);
+	h2.subtitle{
+		text-align:center;
+		@include leader(2);
+	}
+	h3.baseline{
+		text-align:center;
+		@include leader(2);
+		@include trailer(2);
+	}
+	p.date{
+		text-align:center;
+	}
+	p.heures{
+		text-align:center;
+	}
+}
+
+div.body-level{
+	@include leader(4);
+	img.side-img{
+		width: 70%;
+		height: auto;
+		margin-left:15%;
+	}
+	p.body{
+	@include trailer(4);
+	}
+}
+
+div.footer-level{
+	@include leader(8);
+	@include trailer(12);
+	p.partenaires{
+	text-align:center;
+	}
+	p.credits{
+	text-align:center;
+	}
+	p.mailinglist{
+	text-align:center;
+	}
 }
