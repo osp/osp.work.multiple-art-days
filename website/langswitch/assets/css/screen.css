@@ -184,20 +184,27 @@ div.left-side {
   display: inline-block;
 }
 
+.logo {
+  width: 80%;
+  margin-top: 2.75em;
+}
+
 div.title-level {
-  margin-top: 1.1em;
+  margin-top: 0.55em;
   /*p.heures{
   	text-align:center;
   }*/
 }
 div.title-level h2.subtitle {
-  text-align: center;
-  margin-top: 0.55em;
+  text-align: left;
+  /*@include leader(1);*/
+  text-transform: lowercase;
 }
 div.title-level h3.baseline {
-  text-align: center;
-  margin-top: 0.55em;
+  text-align: left;
+  margin-top: 0.275em;
   margin-bottom: 0.55em;
+  text-transform: lowercase;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
@@ -209,9 +216,9 @@ div.body-level {
   margin-top: 1.1em;
 }
 div.body-level img.side-img {
-  width: 70%;
+  width: 100%;
   height: auto;
-  margin-left: 15%;
+  /*margin-left:15%;*/
 }
 div.body-level p.body {
   margin-bottom: 1.1em;
@@ -1100,20 +1107,27 @@ div.left-side {
   display: inline-block;
 }
 
+.logo {
+  width: 80%;
+  margin-top: 2.75em;
+}
+
 div.title-level {
-  margin-top: 1.1em;
+  margin-top: 0.55em;
   /*p.heures{
   	text-align:center;
   }*/
 }
 div.title-level h2.subtitle {
-  text-align: center;
-  margin-top: 0.55em;
+  text-align: left;
+  /*@include leader(1);*/
+  text-transform: lowercase;
 }
 div.title-level h3.baseline {
-  text-align: center;
-  margin-top: 0.55em;
+  text-align: left;
+  margin-top: 0.275em;
   margin-bottom: 0.55em;
+  text-transform: lowercase;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
@@ -1125,9 +1139,9 @@ div.body-level {
   margin-top: 1.1em;
 }
 div.body-level img.side-img {
-  width: 70%;
+  width: 100%;
   height: auto;
-  margin-left: 15%;
+  /*margin-left:15%;*/
 }
 div.body-level p.body {
   margin-bottom: 1.1em;
