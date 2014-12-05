@@ -1,13 +1,15 @@
 // ------------------------------------------------------------
 // Global typography
 // ------------------------------------------------------------
-
+h1{
+	@include adjust-font-size-to(40px);
+}
 
 // ------------------------------------------------------------
 // Fonts
 // ------------------------------------------------------------
 
-.font-body 					{  font-family: 'Open Sans', sans-serif, sans-serif; }
+.font-body 					{  font-family:  "UmePlumePMincho-200", 'Interval' , sans-serif, sans-serif; }
 .font-var 					{  font-family: Georgia, serif; }
 
 

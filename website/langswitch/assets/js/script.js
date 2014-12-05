@@ -67,6 +67,19 @@ jQuery(document).ready(function($)
 		$('body').each(function (){
 			console.log(this);
 		})
-	}	
+	}
+	
+	window.addEventListener('load', function () {
+		var fr = document.getElementById('languageSwitchFr');
+		fr.addEventListener('click', function () {
+			document.body.className = "french"
+		}, false);
+		
+		var en = document.getElementById('languageSwitchEn');
+		en.addEventListener('click', function () {
+			document.body.className = "english"
+		}, false);
+	});
+
 		
 });

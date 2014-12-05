@@ -1,6 +1,6 @@
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -77,6 +77,79 @@ textarea {
   clear: both;
 }
 
+h1.main {
+  font-weight: bold;
+  text-align: center;
+  color: rgba(0, 168, 255, 0.5);
+  margin-top: 1.1em;
+  font-size: 4.375em;
+  line-height: 1.0685714em;
+  text-shadow: 3px 3px 0 rgba(255, 0, 180, 0.3);
+}
+
+h1.main:hover {
+  text-shadow: -3px -3px 0 rgba(255, 0, 180, 0.3), 2px 2px 0 rgba(255, 0, 180, 0.4), 4px 4px 0 rgba(255, 0, 180, 0.4), -6px 6px 0 rgba(255, 0, 180, 0.4), -8px -8px 0 rgba(255, 0, 180, 0.4);
+}
+
+.M {
+  fill: none;
+  stroke: blue;
+  stroke-width: 4;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#french, #english {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left .75s;
+  height: 100%;
+  width: 100%;
+}
+
+#english {
+  background-color: black;
+  color: white;
+}
+
+.french #english {
+  left: 100%;
+  transition: left .75s;
+}
+
+.french #french {
+  left: 0;
+  transition: left .75s;
+}
+
+.english #english {
+  left: 0%;
+  transition: left .75s;
+}
+
+.english #french {
+  left: -100%;
+  transition: left .75s;
+}
+
+#language {
+  z-index: 999;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#language ul {
+  list-style-type: none;
+}
+
+#language ul li {
+  display: inline-block;
+}
+
 /* ::Base styles */
 /* ------------------------------------------------------------ */
 html {
@@ -89,8 +162,8 @@ html {
 }
 
 body {
-  background: white;
-  color: #777777;
+  background: #fff;
+  color: #777;
 }
 
 a {
@@ -100,21 +173,16 @@ a {
 a:hover, a:focus, a:active {
   color: #67b2b1;
 }
-a:not(> img) {
-  white-space: pre;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -hp-pre-wrap;
-  word-wrap: break-word;
-}
 
 /* ::Import styles */
 /* ------------------------------------------------------------ */
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1em;
+}
+
 .font-body, body {
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "UmePlumePMincho-200", 'Interval' , sans-serif, sans-serif;
 }
 
 .font-var {
@@ -828,6 +896,79 @@ input[type="checkbox"]:focus {
   max-width: 100%;
   min-width: auto;
   left: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#french, #english {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left .75s;
+  height: 100%;
+  width: 100%;
+}
+
+#english {
+  background-color: black;
+  color: white;
+}
+
+.french #english {
+  left: 100%;
+  transition: left .75s;
+}
+
+.french #french {
+  left: 0;
+  transition: left .75s;
+}
+
+.english #english {
+  left: 0%;
+  transition: left .75s;
+}
+
+.english #french {
+  left: -100%;
+  transition: left .75s;
+}
+
+#language {
+  z-index: 999;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#language ul {
+  list-style-type: none;
+}
+
+#language ul li {
+  display: inline-block;
+}
+
+h1.main {
+  font-weight: bold;
+  text-align: center;
+  color: rgba(0, 168, 255, 0.5);
+  margin-top: 1.1em;
+  font-size: 4.375em;
+  line-height: 1.0685714em;
+  text-shadow: 3px 3px 0 rgba(255, 0, 180, 0.3);
+}
+
+h1.main:hover {
+  text-shadow: -3px -3px 0 rgba(255, 0, 180, 0.3), 2px 2px 0 rgba(255, 0, 180, 0.4), 4px 4px 0 rgba(255, 0, 180, 0.4), -6px 6px 0 rgba(255, 0, 180, 0.4), -8px -8px 0 rgba(255, 0, 180, 0.4);
+}
+
+.M {
+  fill: none;
+  stroke: blue;
+  stroke-width: 4;
 }
 
 /* ::Print */
