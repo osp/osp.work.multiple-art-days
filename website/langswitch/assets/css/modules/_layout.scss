@@ -17,12 +17,15 @@ div.title-level{
 		@include leader(2);
 		@include trailer(2);
 	}
-	p.date{
+	p.date, p.heures, p.adresse{
 		text-align:center;
+		@include leader(5);
+		vertical-align:bottom;
 	}
-	p.heures{
+	
+	/*p.heures{
 		text-align:center;
-	}
+	}*/
 }
 
 div.body-level{
@@ -40,13 +43,11 @@ div.body-level{
 div.footer-level{
 	@include leader(8);
 	@include trailer(12);
-	p.partenaires{
+	p.partenaires-texte, p.partenaires, p.credits, p.mailinglist{
 	text-align:center;
 	}
-	p.credits{
-	text-align:center;
-	}
-	p.mailinglist{
-	text-align:center;
+
+	img{
+	width:50px;
 	}
 }

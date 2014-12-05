@@ -186,6 +186,9 @@ div.left-side {
 
 div.title-level {
   margin-top: 1.1em;
+  /*p.heures{
+  	text-align:center;
+  }*/
 }
 div.title-level h2.subtitle {
   text-align: center;
@@ -196,11 +199,10 @@ div.title-level h3.baseline {
   margin-top: 0.55em;
   margin-bottom: 0.55em;
 }
-div.title-level p.date {
+div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-}
-div.title-level p.heures {
-  text-align: center;
+  margin-top: 1.375em;
+  vertical-align: bottom;
 }
 
 div.body-level {
@@ -219,14 +221,11 @@ div.footer-level {
   margin-top: 2.2em;
   margin-bottom: 3.3em;
 }
-div.footer-level p.partenaires {
+div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer-level p.credits, div.footer-level p.mailinglist {
   text-align: center;
 }
-div.footer-level p.credits {
-  text-align: center;
-}
-div.footer-level p.mailinglist {
-  text-align: center;
+div.footer-level img {
+  width: 50px;
 }
 
 /* ::Base styles */
@@ -1103,6 +1102,9 @@ div.left-side {
 
 div.title-level {
   margin-top: 1.1em;
+  /*p.heures{
+  	text-align:center;
+  }*/
 }
 div.title-level h2.subtitle {
   text-align: center;
@@ -1113,11 +1115,10 @@ div.title-level h3.baseline {
   margin-top: 0.55em;
   margin-bottom: 0.55em;
 }
-div.title-level p.date {
+div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-}
-div.title-level p.heures {
-  text-align: center;
+  margin-top: 1.375em;
+  vertical-align: bottom;
 }
 
 div.body-level {
@@ -1136,14 +1137,11 @@ div.footer-level {
   margin-top: 2.2em;
   margin-bottom: 3.3em;
 }
-div.footer-level p.partenaires {
+div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer-level p.credits, div.footer-level p.mailinglist {
   text-align: center;
 }
-div.footer-level p.credits {
-  text-align: center;
-}
-div.footer-level p.mailinglist {
-  text-align: center;
+div.footer-level img {
+  width: 50px;
 }
 
 /* ::Print */
