@@ -5,23 +5,29 @@ div.left-side{
 }
 
 
-
+.logo{
+	width:80%;
+	@include leader(10);
+}
 div.title-level{
-	@include leader(4);
+	@include leader(2);
 	h2.subtitle{
-		text-align:center;
-		@include leader(2);
+		text-align:left;
+		/*@include leader(1);*/
+		text-transform:lowercase;
 	}
 	h3.baseline{
-		text-align:center;
-		@include leader(2);
+		text-align:left;
+		@include leader(1);
 		@include trailer(2);
+		text-transform:lowercase;
 	}
 	p.date, p.heures, p.adresse{
 		text-align:center;
 		@include leader(5);
 		vertical-align:bottom;
 	}
+
 	
 	/*p.heures{
 		text-align:center;
@@ -31,13 +37,14 @@ div.title-level{
 div.body-level{
 	@include leader(4);
 	img.side-img{
-		width: 70%;
+		width: 100%;
 		height: auto;
-		margin-left:15%;
+		/*margin-left:15%;*/
 	}
 	p.body{
 	@include trailer(4);
 	}
+
 }
 
 div.footer-level{
