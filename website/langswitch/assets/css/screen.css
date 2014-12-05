@@ -180,10 +180,6 @@ body {
   display: inline-block;
 }
 
-div.left-side {
-  display: inline-block;
-}
-
 .logo {
   width: 80%;
   margin-top: 2.75em;
@@ -198,40 +194,70 @@ div.title-level {
 div.title-level h2.subtitle {
   text-align: left;
   /*@include leader(1);*/
-  text-transform: lowercase;
 }
 div.title-level h3.baseline {
   text-align: left;
   margin-top: 0.275em;
   margin-bottom: 0.55em;
-  text-transform: lowercase;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-  margin-top: 1.375em;
+  margin-bottom: 3.3em;
+}
+div.title-level img.date, div.title-level img.heures, div.title-level img.adresse {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   vertical-align: bottom;
+  margin-bottom: 3.3em;
 }
 
-div.body-level {
-  margin-top: 1.1em;
-}
 div.body-level img.side-img {
   width: 100%;
   height: auto;
   /*margin-left:15%;*/
 }
 div.body-level p.body {
-  margin-bottom: 1.1em;
+  margin-left: 20px;
+  font-size: 20px;
+  /*@include trailer(4);*/
 }
 
 div.footer-level {
-  margin-top: 2.2em;
-  margin-bottom: 3.3em;
+  margin-top: 0.55em;
+  /*@include trailer(12);*/
 }
 div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer-level p.credits, div.footer-level p.mailinglist {
   text-align: center;
 }
-div.footer-level img {
+div.footer-level p.partenaires-texte {
+  margin-bottom: 1.1em;
+}
+div.footer-level img.partenaires {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+div.footer-level img.credits {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 24%;
+}
+div.footer-level img.mailinglist {
+  width: 42%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+div.footer-level img.partenaires-maison {
+  height: 50px;
+}
+div.footer-level partenaires-cneai {
+  height: 50px;
+}
+div.footer-level img.partenaires-cneai {
   width: 50px;
 }
 
@@ -277,8 +303,8 @@ a:hover, a:focus, a:active {
 }
 
 p, span, cite, ol, ul, pre, label, input, textarea {
-  font-size: 0.9375em;
-  line-height: 1.4666667em;
+  font-size: 0.625em;
+  line-height: 1.76em;
 }
 
 ul {
@@ -301,19 +327,44 @@ em, i, q {
   font-style: italic;
 }
 
+body {
+  color: black;
+}
+
 h1 {
   font-size: 2.5em;
   line-height: 1.1em;
 }
 
 h2 {
-  font-size: 1.75em;
-  line-height: 1.2571429em;
+  font-size: 1.875em;
+  line-height: 1.1733333em;
 }
 
 h3 {
-  font-size: 1.25em;
-  line-height: 1.32em;
+  font-size: 1.125em;
+  line-height: 1.2222222em;
+}
+
+p {
+  font-size: 1.125em;
+  line-height: 1.2222222em;
+}
+
+p.adresse {
+  font-size: 1.125em;
+  line-height: 1.2222222em;
+  line-height: 1em;
+}
+
+p.partenaires1-site {
+  line-height: 1.5em;
+}
+
+p.partenaires1-sigle {
+  font-size: 0.9375em;
+  line-height: 1.4666667em;
+  line-height: 1em;
 }
 
 label, legend, select {
@@ -419,8 +470,8 @@ input[type="checkbox"]:focus {
 }
 
 .as-para {
-  font-size: 0.9375em;
-  line-height: 1.4666667em;
+  font-size: 0.625em;
+  line-height: 1.76em;
 }
 
 .as-heading__headline--typeset, .is-typeset .headline {
@@ -452,11 +503,11 @@ input[type="checkbox"]:focus {
 }
 
 .as-para--typeset, .is-typeset p {
-  margin: 0 0 0.5866667em 0;
+  margin: 0 0 0.88em 0;
 }
 
 .as-list--typeset, .as-unordered-list--typeset, .as-ordered-list--typeset, .is-typeset ol, .is-typeset ul, .is-typeset li {
-  margin: 0 0 0.5866667em 0;
+  margin: 0 0 0.88em 0;
 }
 
 .as-unordered-list--typeset, .as-ordered-list--typeset, .is-typeset ol, .is-typeset ul {
@@ -495,11 +546,11 @@ input[type="checkbox"]:focus {
 }
 
 .lt-ie9 *[class*="with-gutter"] {
-  padding-left: 3%;
+  padding-left: 1%;
 }
 @media screen and (min-width: 420px) {
   *[class*="with-gutter"] {
-    padding-left: 3%;
+    padding-left: 1%;
   }
 }
 
@@ -985,13 +1036,13 @@ input[type="checkbox"]:focus {
   position: relative;
 }
 .lt-ie9 .row__colspaced {
-  min-width: 103%;
-  left: -3%;
+  min-width: 101%;
+  left: -1%;
 }
 @media screen and (min-width: 420px) {
   .row__colspaced {
-    min-width: 103%;
-    left: -3%;
+    min-width: 101%;
+    left: -1%;
   }
 }
 .lt-ie9 .row__colspaced {
@@ -1103,10 +1154,6 @@ path.D {
   stroke-width: 2;
 }
 
-div.left-side {
-  display: inline-block;
-}
-
 .logo {
   width: 80%;
   margin-top: 2.75em;
@@ -1121,40 +1168,70 @@ div.title-level {
 div.title-level h2.subtitle {
   text-align: left;
   /*@include leader(1);*/
-  text-transform: lowercase;
 }
 div.title-level h3.baseline {
   text-align: left;
   margin-top: 0.275em;
   margin-bottom: 0.55em;
-  text-transform: lowercase;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-  margin-top: 1.375em;
+  margin-bottom: 3.3em;
+}
+div.title-level img.date, div.title-level img.heures, div.title-level img.adresse {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   vertical-align: bottom;
+  margin-bottom: 3.3em;
 }
 
-div.body-level {
-  margin-top: 1.1em;
-}
 div.body-level img.side-img {
   width: 100%;
   height: auto;
   /*margin-left:15%;*/
 }
 div.body-level p.body {
-  margin-bottom: 1.1em;
+  margin-left: 20px;
+  font-size: 20px;
+  /*@include trailer(4);*/
 }
 
 div.footer-level {
-  margin-top: 2.2em;
-  margin-bottom: 3.3em;
+  margin-top: 0.55em;
+  /*@include trailer(12);*/
 }
 div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer-level p.credits, div.footer-level p.mailinglist {
   text-align: center;
 }
-div.footer-level img {
+div.footer-level p.partenaires-texte {
+  margin-bottom: 1.1em;
+}
+div.footer-level img.partenaires {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+div.footer-level img.credits {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 24%;
+}
+div.footer-level img.mailinglist {
+  width: 42%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+div.footer-level img.partenaires-maison {
+  height: 50px;
+}
+div.footer-level partenaires-cneai {
+  height: 50px;
+}
+div.footer-level img.partenaires-cneai {
   width: 50px;
 }
 

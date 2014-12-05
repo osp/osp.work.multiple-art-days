@@ -33,15 +33,31 @@ em, i, q 											{ font-style: italic; }
 // ------------------------------------------------------------
 // Global typography
 // ------------------------------------------------------------
+body{
+	color:black;
+}
 h1{
 	@include adjust-font-size-to(40px);
 }
 
 h2{
-	@include adjust-font-size-to(28px);
+	@include adjust-font-size-to(30px);
 }
 
 h3{
-	@include adjust-font-size-to(20px);
+	@include adjust-font-size-to(18px);
 }
-
+p{
+	@include adjust-font-size-to(18px);
+}
+p.adresse{
+	@include adjust-font-size-to(18px);
+		line-height:1em;
+}
+p.partenaires1-site{
+    line-height: 1.5em;
+}
+p.partenaires1-sigle{
+	@include adjust-font-size-to(15px);
+	line-height:1em;
+}
