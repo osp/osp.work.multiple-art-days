@@ -80,6 +80,5 @@ jQuery(document).ready(function($)
 			document.body.className = "english"
 		}, false);
 	});
-
 		
 });

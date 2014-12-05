@@ -180,10 +180,6 @@ body {
   display: inline-block;
 }
 
-div.left-side {
-  display: inline-block;
-}
-
 div.title-level {
   margin-top: 1.1em;
   /*p.heures{
@@ -1094,10 +1090,6 @@ path.D {
   fill: none;
   stroke: grey;
   stroke-width: 2;
-}
-
-div.left-side {
-  display: inline-block;
 }
 
 div.title-level {
