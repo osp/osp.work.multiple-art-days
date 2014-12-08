@@ -10,7 +10,7 @@ var scrollorama = $.scrollorama({
 });
 
 scrollorama.animate('#section-id-1 .hr-left', { 
-  delay:0,duration:300,property:'left', start:'0%', end:'0%'
+  delay:0,duration:300,property:'left', start:'50%', end:'0%'
 })
 .animate('#section-id-1 .hr-right', { 
   delay:0,duration:300,property:'right', start:'0%',end:'0%'

@@ -1,0 +1,55 @@
+h1.main{
+	font-weight:bold;
+	text-align:center;
+	color: rgba(168,168,168,0.3);
+	@include leader(4);
+	@include adjust-font-size-to(70px);
+	text-shadow: 3px 3px 0 rgba(120,120,120,0.3), 16px 16px 0 rgba(180,180,180,0.3), -16px -16px 0 rgba(200,200,200,0.3);
+}
+
+h1.main:hover{
+	text-shadow: 
+	-3px -12px 0 rgba(5,5,5,0.3), 
+	40px 40px 0 rgba(249,249,249,0.4),
+	100px 100px 0 rgba(200,200,200,0.4),
+	-60px 60px 0 rgba(255,0,180,0.4),
+	-8px -8px 0 rgba(255,0,180,0.4);
+	
+}
+
+.logo{
+	width:100%;
+	height:auto;
+	margin: 0 auto;
+}
+
+.logo:hover{
+	.M{
+	stroke-width:15;
+	stroke: blue;
+	}
+	.A{
+	stroke-width:0.3;
+	}
+	.D{
+	stroke-width:0.7;
+	}
+}
+
+path.M{
+	fill:none;
+	stroke: grey;
+	stroke-width:2;
+}
+
+path.A{
+	fill:none;
+	stroke: grey;
+	stroke-width:2;
+}
+
+path.D{
+	fill:none;
+	stroke: grey;
+	stroke-width:2;
+}

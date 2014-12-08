@@ -1,0 +1,54 @@
+body {
+	overflow-x: hidden;
+}
+
+#french, #english {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: left .75s;
+	height: 100%;
+	width: 100%;
+}
+
+#english {
+	background-color: black;
+	color: white;
+	height: auto;
+}
+
+.french #english {
+	left: 100%;
+	transition: left .75s;
+}
+
+.french #french {
+	left: 0;
+	transition: left .75s;
+}
+
+.english #english {
+	left: 0%;
+	transition: left .75s;
+}
+
+.english #french {
+	left: -100%;
+	transition: left .75s;
+}
+
+#language {
+	z-index: 999;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	text-align:right;
+}
+
+#language ul {
+	list-style-type: none;
+}
+
+#language ul li {
+	display: inline-block;
+}

@@ -1,0 +1,63 @@
+// ------------------------------------------------------------
+// Fonts
+// ------------------------------------------------------------
+
+@font-face {
+    font-family: 'linux_libertine_displayRg';
+    src: url('../font/linlibertine_drah-webfont.eot');
+    src: url('../font/linlibertine_drah-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/linlibertine_drah-webfont.woff2') format('woff2'),
+         url('../font/linlibertine_drah-webfont.woff') format('woff'),
+         url('../font/linlibertine_drah-webfont.ttf') format('truetype'),
+         url('../font/linlibertine_drah-webfont.svg#linux_libertine_displayRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.font-body 					{  font-family: 'linux_libertine_displayRg' , serif; }
+.font-var 					{  font-family: Georgia, serif; }
+
+
+// ------------------------------------------------------------
+// Core typography
+// ------------------------------------------------------------
+
+p, span, cite, ol, ul, pre, label, input, textarea 	{ @include adjust-font-size-to($para); }
+ul 													{ @include nobullet; } 						
+ol 													{ @include nobullet; }	
+li 													{ line-height: inherit; }					
+strong, b 											{ font-weight: 700; }
+em, i, q 											{ font-style: italic; }
+
+// ------------------------------------------------------------
+// Global typography
+// ------------------------------------------------------------
+body{
+	color:black;
+}
+h1{
+	@include adjust-font-size-to(40px);
+}
+
+h2{
+	@include adjust-font-size-to(30px);
+}
+
+h3{
+	@include adjust-font-size-to(18px);
+}
+p{
+	@include adjust-font-size-to($para);
+}
+p.adresse{
+	@include adjust-font-size-to(18px);
+		line-height:1em;
+}
+p.partenaires1-site{
+    line-height: 1.5em;
+}
+p.partenaires1-sigle{
+	@include adjust-font-size-to(16px);
+	//line-height:1em;
+}
