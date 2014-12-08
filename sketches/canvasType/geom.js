@@ -31,7 +31,7 @@ Geom = {
 };
 
 Point = function (x,y) {
-	if (x && y) {
+	if (arguments.length == 2) {
 		this.x = x;
 		this.y = y;
 	} else if (x && 'x' in x) {

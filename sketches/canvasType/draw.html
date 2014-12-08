@@ -2,17 +2,25 @@
 	<head>
 		<script type="text/javascript" src="underscore-min.js"></script>
 		<script type="text/javascript" src="geom.js"></script>
+		<style type="text/css">
+			canvas {
+				height: 400px;
+				width: 600px;
+			}
+		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="500" height="500"></canvas>
+		<canvas id="canvas" width="600" height="400"></canvas>
 		<script type="text/javascript">
 			window.addEventListener('load', function () {
-			
-				var fps = 20;
+				var fps = 25;
 				var now;
 				var then = Date.now();
 				var interval = 1000/fps;
 				var delta;
+				var hpgl = '';
+				var red_offset = 0;
+				var black_offset = 0;
 			
 				// http://www.html5canvastutorials.com/advanced/html5-canvas-animation-stage/
 				window.requestAnimFrame = (function(callback) {
@@ -50,57 +58,253 @@
 					left.push(point(linePoint.x + (offsetX), linePoint.y - (offsetY)));
 					right.push(point(linePoint.x - (offsetX), linePoint.y + (offsetY)));
 				}
-			
-				function lineWidth(t, offset) {
-					return Math.sin((t + offset) * Math.PI * 3) * 10;
-				}
 
-				function drawPath(ctx, path) {
+				function drawPath(ctx, path, style, lineWidth) {
 					var left = [];
 					var right = [];
+					var plotterPoints = [];
 					
-					for(var t=0;t<=1;t+=.001) {
-						calcFat(path.at(t), lineWidth(t, 0), calcBeta(path.angle(t)), left, right);
+					for(var t=0;t<=1;t+=.005) {
+						calcFat(path.at(t), lineWidth(t), calcBeta(path.angle(t)), left, right);
+// 						console.log(t, lineWidth(t));
 					}
 				
 					ctx.beginPath();
 					ctx.moveTo(left[0].x, left[0].y);
+					plotterPoints.push([left[0].x,left[0].y]);
 					
 					for(var i=1;i < left.length; i++) {
 						ctx.lineTo(left[i].x, left[i].y);
+						plotterPoints.push([left[i].x,left[i].y]);
 					}
 					
-					for(var i=(right.length - 1);i > 0; i--) {
+// 					ctx.moveTo(right[0].x, right[0].y);
+// 					
+					for(var i=right.length-1;i > -1; i--) {
 						ctx.lineTo(right[i].x, right[i].y);
+						plotterPoints.push([right[i].x,right[i].y]);
 					}
 					
-	// 				ctx.fillStyle = fillcolor
-					ctx.strokeStyle = "black";
-					ctx.stroke();
+					ctx.lineTo(left[0].x, left[0].y);
+					
+					if (style.fill) {
+						ctx.fillStyle = style.fill;
+						ctx.fill();
+					}
+					
+					if (style.stroke) {
+						ctx.strokeStyle = style.stroke;
+						ctx.lineWidth = (style.lineWidth !== undefined) ? style.lineWidth : 1;
+						ctx.stroke();
+					}					
 				}
 				
-				var path = new Path([
-					point(100,400),
-					point(100,100),
-					point(250,250),
-					point(400,100),
-					point(400,400),
-				]);
 				
-				function drawFrame (offset) {
-					now = Date.now();
-					delta = now - then;
+				// M
+// 				var paths = [
+// 					new Path([
+// 						point(100,400),
+// 						point(100,100),
+// 						point(250,250),
+// 						point(400,100),
+// 						point(400,400),
+// 					]),
+// 				];
+// 				
+// 				// J
+// 				paths = [
+// 					new Path([
+// 						point(300 - 180,100),
+// 						point(300 - 180,400),
+// 						point(250 - 180,450),
+// 					]),
+// 					new Path([
+// 						point(250 + 50,100),
+// 						point(350 + 50,250),
+// 						point(250 + 50,400),
+// 						point(150 + 50,250),
+// 						point(250 + 50,100),
+// 					]),
+// 					new Path([
+// 						point(300 + 300,100),
+// 						point(150 + 300,200),
+// 						point(300 + 300,300),
+// 						point(150 + 300,400),
+// 					]),
+// 				]
+
+				var paths = [
+					new Path([
+						point(0,0),
+						point(10,1),
+						point(15,5),
+						point(17,15),
+						point(12,20),
+						point(12,100),
+					]),
+					new Path([
+						point(12,20),
+						point(17,15),
+						point(20,17),
+						point(50,90),
+						point(50,100),
+					]),
+					new Path([
+						point(50,100),
+						point(50,90),
+						point(88,15),
+						point(95,12),
+					]),
+					new Path([
+						point(105,0),
+						point(100,1),
+						point(95,5),
+						point(95,100),
+					]),
+				];
+				
+// 				// O
+// 				paths = [
+// 					new Path([
+// 						point(250,100),
+// 						point(350,250),
+// 						point(250,400),
+// 						point(150,250),
+// 						point(250,100),
+// 					]),
+// 				]
+// 				
+// 				// S
+// 				paths = [
+// 					new Path([
+// 						point(300,100),
+// 						point(150,200),
+// 						point(300,300),
+// 						point(150,400),
+// 					]),
+// 				]
+				
+				var sinoide = function (sini, amplitude, offset) {
+					sini || (sini = 1);
+					amplitude || (amplitude = 1);
+					offset || (offset = 0);
+					var period = Math.PI * 2 * sini;
+					return function (t) {
+						return Math.sin((t + offset) * period) * amplitude;
+					}
+				};
+				
+				var flat = function () {
+					return function () {
+						return 0;
+					}
+				}
+				
+				var fixed = function(width) {
+					return function () {
+						return width;
+					}
+				}
+				
+				var spikes = function (spikes, amplitude, offset) {
+					spikes || (spikes = 1);
+					amplitude || (amplitude = 1);
+					offset || (offset = 0);
+					var period = 1 / spikes;
 					
-					if (delta > interval) {
-						var canvas = document.getElementById("canvas");
-						var ctx = canvas.getContext("2d");
-						ctx.clearRect(0, 0, canvas.width, canvas.height);
-						drawPath(ctx, path);
+					return function (t) {
+						var pt = ((t+offset) % period) / period;
+						if (pt > .5) {
+							return (1-pt) * amplitude;
+						} else {
+							return pt * amplitude;
+						}
+					}
+				}
+				
+				var black = {
+					lineWidth: .25,
+					fill: 'black',
+					stroke: null,
+				};
+				
+				var white = {
+					lineWidth: .5,
+					fill: 'white',
+					stroke: null,
+				};
+				
+				var red = {
+					lineWidth: .33,
+					fill: null,
+					stroke: 'red',
+				};
+				
+				var yellow = {
+					lineWidth: .2,
+					fill: 'yellow',
+					stroke: null,
+				};
+				
+				function drawFrame () {
+					var canvas = document.getElementById("canvas");
+					var ctx = canvas.getContext("2d");
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					ctx.scale(3,3);
+					
+					for (var p=0;p<paths.length;p++) {
+						var path = paths[p];
+						
+						var shapes = .2;
+						var a = [2,4,8];
+						var steps = 2;
+						var o = 10;
+						
+						for (var i=0; i < steps; i++) {
+							for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+								drawPath(ctx, path, yellow, fixed(10));
+// 								drawPath(ctx, path, black, sinoide(.5, 10, 0));
+// 								drawPath(ctx, path, white, fixed(.5));
+							}
+						}
 					}
 					
-					requestAnimFrame(function() {
-						drawFrame(offset);
-					});
+					for (var p=0;p<paths.length;p++) {
+						var path = paths[p];
+						
+						var shapes = .2;
+						var a = [2,4,8];
+						var steps = 2;
+						var o = 10;
+						
+						for (var i=0; i < steps; i++) {
+							for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+// 								drawPath(ctx, path, yellow, fixed(10));
+								drawPath(ctx, path, black, sinoide(.25, 10, .5));
+// 								drawPath(ctx, path, white, fixed(.5));
+							}
+						}
+					}
+					
+					for (var p=0;p<paths.length;p++) {
+						var path = paths[p];
+						
+						var shapes = .2;
+						var a = [2,4,8];
+						var steps = 2;
+						var o = 10;
+						
+						for (var i=0; i < steps; i++) {
+							for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+// 								drawPath(ctx, path, yellow, fixed(10));
+// 								drawPath(ctx, path, black, sinoide(.5, 10, 0));
+								drawPath(ctx, path, white, fixed(.5));
+							}
+						}
+					}
 				}
 				
 				drawFrame(0);
