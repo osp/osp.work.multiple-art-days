@@ -1,10 +1,3 @@
-
-
-div.left-side{
-	//display: inline-block;
-}
-
-
 .logo{
 	width:80%;
 	@include leader(10);
@@ -15,7 +8,7 @@ div.title-level{
 	
 	h2.subtitle{
 		text-align:left;
-		/*@include leader(1);*/
+		//@include leader(1);
 
 	}
 	h3.baseline{
@@ -38,9 +31,9 @@ div.title-level{
 	    vertical-align:bottom;
 
 		}
-	/*p.heures{
-		text-align:center;
-	}*/
+	//p.heures{
+	//	text-align:center;
+	//}
 }
 
 div.body-level{
@@ -49,19 +42,19 @@ div.body-level{
 	img.side-img{
 		width: 100%;
 		height: auto;
-		/*margin-left:15%;*/
+		//margin-left:15%;
 	}
 	p.body{
 		margin-left:20px;
-		font-size: 20px;
-	/*@include trailer(4);*/
+		@include adjust-font-size-to($para);
+	//@include trailer(4);
 	}
 
 }
 
 div.footer-level{
 	@include leader(2);
-	/*@include trailer(12);*/
+	//@include trailer(12);
 	p.partenaires-texte, p.partenaires, p.credits, p.mailinglist{
 	text-align:center;
 	}
@@ -91,14 +84,25 @@ div.footer-level{
 
 	}
 	img.partenaires-maison{
+<<<<<<< HEAD
 	height:43px;
+=======
+	width: 50px;
+	margin: 0 auto;
+	@include trailer(7);
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 	}
 	partenaires-cneai, partenaires-maison{
 	height:50px;
 	}
 	
 	img.partenaires-cneai{
+<<<<<<< HEAD
 	width:94px;
+=======
+	width:100px;
+	margin:0 auto;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 	}
 	
 }

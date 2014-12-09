@@ -48,7 +48,7 @@ h3{
 	@include adjust-font-size-to(18px);
 }
 p{
-	@include adjust-font-size-to(18px);
+	@include adjust-font-size-to($para);
 }
 p.adresse{
 	@include adjust-font-size-to(18px);
@@ -58,6 +58,6 @@ p.partenaires1-site{
     line-height: 1.5em;
 }
 p.partenaires1-sigle{
-	@include adjust-font-size-to(15px);
-	line-height:1em;
+	@include adjust-font-size-to(16px);
+	//line-height:1em;
 }

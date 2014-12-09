@@ -1,173 +1,390 @@
 <html>
 	<head>
+		<script type="text/javascript" src="underscore-min.js"></script>
+		<script type="text/javascript" src="geom.js"></script>
+		<style type="text/css">
+			canvas {
+				height: 400px;
+				width: 600px;
+			}
+		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="500" height="500"></canvas>
+		<canvas id="canvas" width="600" height="400"></canvas>
 		<script type="text/javascript">
-		
-			var fps = 30;
-			var now;
-			var then = Date.now();
-			var interval = 1000/fps;
-			var delta;
-		
-			// http://www.html5canvastutorials.com/advanced/html5-canvas-animation-stage/
-			window.requestAnimFrame = (function(callback) {
-				return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-				function(callback) {
-					window.setTimeout(callback, 1000 / 60
-					);
+			window.addEventListener('load', function () {
+				var fps = 25;
+				var now;
+				var then = Date.now();
+				var interval = 1000/fps;
+				var delta;
+				var hpgl = '';
+				var red_offset = 0;
+				var black_offset = 0;
+			
+				// http://www.html5canvastutorials.com/advanced/html5-canvas-animation-stage/
+				window.requestAnimFrame = (function(callback) {
+					return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+					function(callback) {
+						window.setTimeout(callback, 1000 / 60
+						);
+					};
+				})();
+						
+				/**
+				* Inclination in rad
+				* left array, with left contour
+				* right array, with right contour
+				*/
+				function calcFat(linePoint, width, angle, left, right) {
+					penAngle = angle - (.5 * Math.PI);
+					if (angle == 0 
+						&& (1/0) > (1/angle))
+					{
+						// penAngle = -0
+						console.log('negative 0');
+						var offsetX = Math.cos(penAngle) * width;
+						var offsetY = Math.sin(penAngle) * width;
+					} else {
+						var offsetX = Math.cos(penAngle) * width;
+						var offsetY = -Math.sin(penAngle) * width;
+					}
+// 					if (beta === -0 || beta == Math.PI) {
+// 						console.log('-0');
+// 						var offsetX = width;
+// 						var offsetY = 0;
+// 					} else if (beta == 0) {
+// 						// vertical
+// 						var offsetX = width;
+// 						var offsetY = 0;
+// 					} else if (beta == .5 * Math.PI) {
+// 						// horizontal
+// 						var offsetX = 0;
+// 						var offsetY = width;
+// 					} else if (beta == 1.5 * Math.PI) {
+// 						var offsetX = 0;
+// 						var offsetY = -width;
+// 					} else if (beta > .5 * Math.PI) {
+// 						// Angled
+// 						var offsetX = -Math.sin(beta) * width;
+// 						var offsetY = -Math.cos(beta) * width;
+// 					} else {
+// 						var offsetX = Math.sin(beta) * width;
+// 						var offsetY = Math.cos(beta) * width;
+// 					}
+
+					left.push(point(linePoint.x + (offsetX), linePoint.y - (offsetY)));
+					right.push(point(linePoint.x - (offsetX), linePoint.y + (offsetY)));
+				}
+
+				function drawPath(ctx, path, style, lineWidth) {
+					var left = [];
+					var right = [];
+					var plotterPoints = [];
+					
+					for(var t=0;t<=1;t+=.001) {
+						calcFat(path.at(t), lineWidth(t), path.angle(t), left, right);
+// 						console.log(t, lineWidth(t));
+					}
+				
+					ctx.beginPath();
+					ctx.moveTo(left[0].x, left[0].y);
+					
+					for(var i=1;i < left.length; i++) {
+						ctx.lineTo(left[i].x, left[i].y);
+					}
+					
+// 					ctx.moveTo(right[0].x, right[0].y);
+// 					
+					for(var i=right.length-1;i > -1; i--) {
+						ctx.lineTo(right[i].x, right[i].y);
+					}
+					
+					ctx.lineTo(left[0].x, left[0].y);
+					
+					if (style.fill) {
+						ctx.fillStyle = style.fill;
+						ctx.fill();
+					}
+					
+					if (style.stroke) {
+						ctx.strokeStyle = style.stroke;
+						ctx.lineWidth = (style.lineWidth !== undefined) ? style.lineWidth : 1;
+						ctx.stroke();
+					}					
+				}
+				
+				
+				// M
+// 				var paths = [
+// 					new Path([
+// 						point(100,400),
+// 						point(100,100),
+// 						point(250,250),
+// 						point(400,100),
+// 						point(400,400),
+// 					]),
+// 				];
+// 				
+// 				// J
+// 				paths = [
+// 					new Path([
+// 						point(300 - 180,100),
+// 						point(300 - 180,400),
+// 						point(250 - 180,450),
+// 					]),
+// 					new Path([
+// 						point(250 + 50,100),
+// 						point(350 + 50,250),
+// 						point(250 + 50,400),
+// 						point(150 + 50,250),
+// 						point(250 + 50,100),
+// 					]),
+// 					new Path([
+// 						point(300 + 300,100),
+// 						point(150 + 300,200),
+// 						point(300 + 300,300),
+// 						point(150 + 300,400),
+// 					]),
+// 				]
+
+				var paths = [
+					new Path([
+						point(10,100),
+						point(10,10),
+						point(20,10),
+						point(55,90),
+						point(65,90),
+						point(90,10),
+						point(100,10),
+						point(100,100),
+						point(50,120),
+						point(10,100),
+						point(10,50),
+					]),
+				];
+				
+// 				paths = [
+// 					new Path([
+// 						point(20,20),
+// 						point(20,80),
+// 						point(80,80),
+// 						point(80,20),
+// 						point(20,20),
+// 					]),
+// 				];
+				
+				var paths = [
+					new Path([
+						point(2,110),
+						point(7,110),
+						point(12,107),
+						point(17,110),
+						point(22,110),
+						point(17,110),
+						point(12,107),
+						point(12,30),
+						point(17,25),
+						point(15,15),
+						point(10,11),
+						point(0,10),
+						point(10,11),
+						point(15,15),
+						point(17,25),
+						point(20,27),
+						point(50,100),
+						point(50,110),
+						point(50,100),
+						point(55,95),
+						point(88,25),
+						point(95,22),
+						point(95,15),
+						point(100,11),
+						point(105,10),
+						point(100,11),
+						point(95,15),
+						point(95,107),
+						point(100,110),
+						point(105,110),
+						point(100,110),
+						point(95,107),
+						point(90,110),
+						point(85,110),
+					]),
+				];
+// 				
+// 				// O
+// 				paths = [
+// 					new Path([
+// 						point(250,100),
+// 						point(350,250),
+// 						point(250,400),
+// 						point(150,250),
+// 						point(250,100),
+// 					]),
+// 				]
+// 				
+// 				// S
+// 				paths = [
+// 					new Path([
+// 						point(300,100),
+// 						point(150,200),
+// 						point(300,300),
+// 						point(150,400),
+// 					]),
+// 				]
+				
+				var sinoide = function (sini, amplitude, offset) {
+					sini || (sini = 1);
+					amplitude || (amplitude = 1);
+					offset || (offset = 0);
+					var period = Math.PI * 2 * sini;
+					return function (t) {
+						return Math.abs(Math.sin((t + offset) * period) * amplitude);
+					}
 				};
-			})();
-		
-		
-			function rad2deg(rad)
-			{
-				return rad * (180 / Math.PI);
-			}
-
-			function deg2rad(deg)
-			{
-				return deg * (Math.PI / 180);
-			}
-		
-			function calcInclination (from, to)
-			{
-				return Math.atan((to.y - from.y) / (to.x - from.x));;
-			}
-			
-			function calcBeta(inclination) {
-				return Math.abs(deg2rad(90) - inclination);
-			}
-		
-			/**
-			* Inclination in rad
-			* left array, with left contour
-			* right array, with right contour
-			*/
-			function calcFat(linePoint, width, beta, left, right) {
-				if (beta == 0 || beta == Math.PI) {
-					// vertical
-					var offsetX = width;
-					var offsetY = 0;				
-				} else if (beta == .5 * Math.PI || beta == 1.5 * Math.PI) {
-					// horizontal
-					var offsetX = 0;
-					var offsetY = width;
-				} else {
-					// Angled
-					var offsetX = Math.sin(beta) * width;
-					var offsetY = Math.cos(beta) * width;
-				}
-
-				left.push(point(linePoint.x + (offsetX), linePoint.y - (offsetY)));
-				right.push(point(linePoint.x - (offsetX), linePoint.y + (offsetY)));
-			}
-		
-			function lineWidth(t, offset) {
-				return -30 + Math.abs(Math.sin((t + offset) * Math.PI * 3)) * 40;
-// 				return Math.random() * 20
-			}
-			
-			function point(x, y) {
-				return {x: x, y: y};
-			}
-
-			function calcPoint(from, to, t) {
-				return (1 - t) * from + t * to 
-			}
-
-			function line(from, to, resolution, offset) {
-				var increment = resolution || 0.1;
-				var segments = [];
-				for(var t=0; t < 1; t+=increment) {
-					segments.push({
-						point: {
-							x: calcPoint(from.x,to.x,t),
-							y: calcPoint(from.y,to.y,t)
-						},
-						lineWidth: lineWidth(t, offset),
-					});
+				
+				var flat = function () {
+					return function () {
+						return 0;
+					}
 				}
 				
-				return segments;
-			}
-
-			function drawLine(ctx, from, to, offset, fillcolor) {
-				var segments = line(from, to, .1, offset);
-				var inclination = calcInclination(from, to);
-				var beta = calcBeta(inclination);
-				console.log(beta, rad2deg(beta), inclination, rad2deg(beta));
-				var left = [];
-				var right = [];
-				
-				for(var i=1; i < segments.length; i++) {
-					calcFat(segments[i].point, segments[i].lineWidth, beta, left, right);
+				var fixed = function(width) {
+					return function () {
+						return width;
+					}
 				}
 				
-				ctx.beginPath();
-				ctx.moveTo(left[0].x, left[0].y);
-				
-				for(var i=1;i < left.length; i++) {
-					ctx.lineTo(left[i].x, left[i].y);
-				}
-				
-				for(var i=right.length-1;i > -1; i--) {
-					ctx.lineTo(right[i].x, right[i].y);
-				}
-				
-// 				ctx.fillStyle = fillcolor
-				ctx.strokeStyle = fillcolor;
-				ctx.stroke();
-			}
-			
-			function drawFrame (offset) {
-				now = Date.now();
-				delta = now - then;
-				
-				if (delta > interval) {
-					var canvas = document.getElementById("canvas");
-					var ctx = canvas.getContext("2d");
-					ctx.clearRect(0, 0, canvas.width, canvas.height);
+				var spikes = function (spikes, amplitude, offset) {
+					spikes || (spikes = 1);
+					amplitude || (amplitude = 1);
+					offset || (offset = 0);
+					var period = 1 / spikes;
 					
-					var from = point(100,100);
-					var to = point(100,400)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					var from = point(100,100);
-					var to = point(250,250)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					var from = point(250,250);
-					var to = point(400,100)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					var from = point(400,400);
-					var to = point(400,100)
-					drawLine(ctx, from, to, offset, 'blue');
-					drawLine(ctx, from, to, offset + Math.PI * .6, 'gold');
-					drawLine(ctx, from, to, offset + Math.PI * 1.3, 'red');
-					drawLine(ctx, from, to, offset + Math.PI * 2, 'white');
-					
-					offset += .003;
-					then = now - (delta % interval);
+					return function (t) {
+						var pt = ((t+offset) % period) / period;
+						if (pt > .5) {
+							return (1-pt) * amplitude;
+						} else {
+							return pt * amplitude;
+						}
+					}
 				}
 				
-				requestAnimFrame(function() {
-					drawFrame(offset);
-				});
-			}
-			
-			drawFrame(0);
+				var black = {
+					lineWidth: .25,
+					fill: 'black',
+					stroke: 'black',
+				};
+				
+				
+				blackStroke = {
+					lineWidth: .25,
+					fill: null,
+					stroke: 'black',
+				};
+				
+				var blackFill= {
+					lineWidth: .5,
+					fill: 'black',
+					stroke: null,
+				};
+				
+				var white = {
+					lineWidth: .5,
+					fill: 'white',
+					stroke: null,
+				};
+				
+				var red = {
+					lineWidth: .33,
+					fill: null,
+					stroke: 'red',
+				};
+				
+				var yellow = {
+					lineWidth: .2,
+					fill: 'yellow',
+					stroke: null,
+				};
+				
+				function drawFrame (offset) {
+					var now = Date.now();
+					
+					if (now - then > interval) {
+						then = now;
+						var canvas = document.getElementById("canvas");
+						var ctx = canvas.getContext("2d");
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						
+						for (var p=0;p<paths.length;p++) {
+							var path = paths[p];
+							
+							var shapes = .2;
+							var a = [2,4,8];
+							var steps = 2;
+							var o = 10;
+							
+							for (var i=0; i < steps; i++) {
+								for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+						
+	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+									drawPath(ctx, path, black, fixed(5));
+									drawPath(ctx, path, blackStroke, fixed(.1));
+									drawPath(ctx, path, black, sinoide(1.5, 10, offset));
+									drawPath(ctx, path, white, fixed(.5));
+								}
+							}
+						}
+						
+						for (var p=0;p<paths.length;p++) {
+							var path = paths[p];
+							
+							var shapes = .2;
+							var a = [2,4,8];
+							var steps = 2;
+							var o = 10;
+							
+							for (var i=0; i < steps; i++) {
+								for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+	// 								drawPath(ctx, path, yellow, fixed(10));
+	// 								drawPath(ctx, path, black, sinoide(.25, 10, .5));
+	// 								drawPath(ctx, path, white, fixed(.5));
+								}
+							}
+						}
+						
+						for (var p=0;p<paths.length;p++) {
+							var path = paths[p];
+							
+							var shapes = .2;
+							var a = [2,4,8];
+							var steps = 2;
+							var o = 10;
+							
+							for (var i=0; i < steps; i++) {
+								for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+	// 								drawPath(ctx, path, yellow, fixed(10));
+	// 								drawPath(ctx, path, black, sinoide(.5, 10, 0));
+	// 								drawPath(ctx, path, white, fixed(.5));
+								}
+							}
+						}
+					}
+					
+					window.requestAnimFrame(function () { drawFrame(offset+.0005); });
+				}
+				
+				var canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.scale(3,3);
+				
+				drawFrame(0);
+			});
 		</script>
 	</body>
 </html>

@@ -142,6 +142,7 @@ body {
 #english {
   background-color: black;
   color: white;
+  height: auto;
 }
 
 .french #english {
@@ -187,13 +188,9 @@ body {
 
 div.title-level {
   margin-top: 0.55em;
-  /*p.heures{
-  	text-align:center;
-  }*/
 }
 div.title-level h2.subtitle {
   text-align: left;
-  /*@include leader(1);*/
 }
 div.title-level h3.baseline {
   text-align: left;
@@ -214,17 +211,15 @@ div.title-level img.date, div.title-level img.heures, div.title-level img.adress
 div.body-level img.side-img {
   width: 100%;
   height: auto;
-  /*margin-left:15%;*/
 }
 div.body-level p.body {
   margin-left: 20px;
-  font-size: 20px;
-  /*@include trailer(4);*/
+  font-size: 1.25em;
+  line-height: 1.32em;
 }
 
 div.footer-level {
   margin-top: 0.55em;
-  /*@include trailer(12);*/
 }
 div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer-level p.credits, div.footer-level p.mailinglist {
   text-align: center;
@@ -254,13 +249,24 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
+<<<<<<< HEAD
   height: 43px;
+=======
+  width: 50px;
+  margin: 0 auto;
+  margin-bottom: 1.925em;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
+<<<<<<< HEAD
   width: 94px;
+=======
+  width: 100px;
+  margin: 0 auto;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 
 /* ::Base styles */
@@ -305,8 +311,8 @@ a:hover, a:focus, a:active {
 }
 
 p, span, cite, ol, ul, pre, label, input, textarea {
-  font-size: 0.625em;
-  line-height: 1.76em;
+  font-size: 1.25em;
+  line-height: 1.32em;
 }
 
 ul {
@@ -349,8 +355,8 @@ h3 {
 }
 
 p {
-  font-size: 1.125em;
-  line-height: 1.2222222em;
+  font-size: 1.25em;
+  line-height: 1.32em;
 }
 
 p.adresse {
@@ -364,9 +370,8 @@ p.partenaires1-site {
 }
 
 p.partenaires1-sigle {
-  font-size: 0.9375em;
-  line-height: 1.4666667em;
-  line-height: 1em;
+  font-size: 1em;
+  line-height: 1.375em;
 }
 
 label, legend, select {
@@ -472,8 +477,8 @@ input[type="checkbox"]:focus {
 }
 
 .as-para {
-  font-size: 0.625em;
-  line-height: 1.76em;
+  font-size: 1.25em;
+  line-height: 1.32em;
 }
 
 .as-heading__headline--typeset, .is-typeset .headline {
@@ -505,11 +510,11 @@ input[type="checkbox"]:focus {
 }
 
 .as-para--typeset, .is-typeset p {
-  margin: 0 0 0.88em 0;
+  margin: 0 0 0.44em 0;
 }
 
 .as-list--typeset, .as-unordered-list--typeset, .as-ordered-list--typeset, .is-typeset ol, .is-typeset ul, .is-typeset li {
-  margin: 0 0 0.88em 0;
+  margin: 0 0 0.44em 0;
 }
 
 .as-unordered-list--typeset, .as-ordered-list--typeset, .is-typeset ol, .is-typeset ul {
@@ -1069,6 +1074,7 @@ body {
 #english {
   background-color: black;
   color: white;
+  height: auto;
 }
 
 .french #english {
@@ -1163,13 +1169,9 @@ path.D {
 
 div.title-level {
   margin-top: 0.55em;
-  /*p.heures{
-  	text-align:center;
-  }*/
 }
 div.title-level h2.subtitle {
   text-align: left;
-  /*@include leader(1);*/
 }
 div.title-level h3.baseline {
   text-align: left;
@@ -1190,17 +1192,15 @@ div.title-level img.date, div.title-level img.heures, div.title-level img.adress
 div.body-level img.side-img {
   width: 100%;
   height: auto;
-  /*margin-left:15%;*/
 }
 div.body-level p.body {
   margin-left: 20px;
-  font-size: 20px;
-  /*@include trailer(4);*/
+  font-size: 1.25em;
+  line-height: 1.32em;
 }
 
 div.footer-level {
   margin-top: 0.55em;
-  /*@include trailer(12);*/
 }
 div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer-level p.credits, div.footer-level p.mailinglist {
   text-align: center;
@@ -1230,13 +1230,24 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
+<<<<<<< HEAD
   height: 43px;
+=======
+  width: 50px;
+  margin: 0 auto;
+  margin-bottom: 1.925em;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
+<<<<<<< HEAD
   width: 94px;
+=======
+  width: 100px;
+  margin: 0 auto;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 
 /* ::Print */
