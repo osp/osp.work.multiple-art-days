@@ -227,7 +227,7 @@
 					offset || (offset = 0);
 					var period = Math.PI * 2 * sini;
 					return function (t) {
-						return Math.sin((t + offset) * period) * amplitude;
+						return Math.abs(Math.sin((t + offset) * period) * amplitude);
 					}
 				};
 				
@@ -296,14 +296,14 @@
 					stroke: null,
 				};
 				
-				function drawFrame () {
+				function drawFrame (offset) {
 					var now = Date.now();
 					
 					if (now - then > interval) {
+						then = now;
 						var canvas = document.getElementById("canvas");
 						var ctx = canvas.getContext("2d");
 						ctx.clearRect(0, 0, canvas.width, canvas.height);
-						ctx.scale(3,3);
 						
 						for (var p=0;p<paths.length;p++) {
 							var path = paths[p];
@@ -323,7 +323,7 @@
 	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
 									drawPath(ctx, path, black, fixed(5));
 									drawPath(ctx, path, blackStroke, fixed(.1));
-									drawPath(ctx, path, black, sinoide(1, 10, 0));
+									drawPath(ctx, path, black, sinoide(1, 10, offset));
 									drawPath(ctx, path, white, fixed(.5));
 								}
 							}
@@ -366,8 +366,13 @@
 						}
 					}
 					
-					window.requestAnimFrame(drawFrame);
+					window.requestAnimFrame(function () { drawFrame(offset+.001); });
 				}
+				
+				var canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.scale(3,3);
 				
 				drawFrame(0);
 			});
