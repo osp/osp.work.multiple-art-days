@@ -12,6 +12,7 @@ div.left-side{
 
 div.title-level{
 	@include leader(2);
+	
 	h2.subtitle{
 		text-align:left;
 		/*@include leader(1);*/
@@ -20,13 +21,13 @@ div.title-level{
 	h3.baseline{
 		text-align:left;
 		@include leader(1);
-		@include trailer(2);
+		@include trailer(4);
 
 	}
 	p.date, p.heures, p.adresse{
 		text-align:center;
+		@include trailer(4);
 
-		@include trailer(12);
 
 	}
 
@@ -35,7 +36,7 @@ div.title-level{
 		margin-right: auto;
 	    display: block;
 	    vertical-align:bottom;
-	    		@include trailer(12);
+
 		}
 	/*p.heures{
 		text-align:center;
@@ -67,6 +68,9 @@ div.footer-level{
 	p.partenaires-texte{
 	@include trailer(4);
 	}
+		p.partenaires-sigle-maison{
+	@include trailer(4);
+	}
 	img.partenaires{
 		width:40%;
 		margin-left: auto;
@@ -87,13 +91,14 @@ div.footer-level{
 
 	}
 	img.partenaires-maison{
-	height:50px;
+	height:43px;
 	}
-	partenaires-cneai{
+	partenaires-cneai, partenaires-maison{
 	height:50px;
 	}
 	
 	img.partenaires-cneai{
-	width:50px;
+	width:94px;
 	}
+	
 }

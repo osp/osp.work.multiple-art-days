@@ -198,18 +198,17 @@ div.title-level h2.subtitle {
 div.title-level h3.baseline {
   text-align: left;
   margin-top: 0.275em;
-  margin-bottom: 0.55em;
+  margin-bottom: 1.1em;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-  margin-bottom: 3.3em;
+  margin-bottom: 1.1em;
 }
 div.title-level img.date, div.title-level img.heures, div.title-level img.adresse {
   margin-left: auto;
   margin-right: auto;
   display: block;
   vertical-align: bottom;
-  margin-bottom: 3.3em;
 }
 
 div.body-level img.side-img {
@@ -233,6 +232,9 @@ div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer
 div.footer-level p.partenaires-texte {
   margin-bottom: 1.1em;
 }
+div.footer-level p.partenaires-sigle-maison {
+  margin-bottom: 1.1em;
+}
 div.footer-level img.partenaires {
   width: 40%;
   margin-left: auto;
@@ -252,13 +254,13 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
-  height: 50px;
+  height: 43px;
 }
-div.footer-level partenaires-cneai {
+div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
-  width: 50px;
+  width: 94px;
 }
 
 /* ::Base styles */
@@ -1172,18 +1174,17 @@ div.title-level h2.subtitle {
 div.title-level h3.baseline {
   text-align: left;
   margin-top: 0.275em;
-  margin-bottom: 0.55em;
+  margin-bottom: 1.1em;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-  margin-bottom: 3.3em;
+  margin-bottom: 1.1em;
 }
 div.title-level img.date, div.title-level img.heures, div.title-level img.adresse {
   margin-left: auto;
   margin-right: auto;
   display: block;
   vertical-align: bottom;
-  margin-bottom: 3.3em;
 }
 
 div.body-level img.side-img {
@@ -1207,6 +1208,9 @@ div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer
 div.footer-level p.partenaires-texte {
   margin-bottom: 1.1em;
 }
+div.footer-level p.partenaires-sigle-maison {
+  margin-bottom: 1.1em;
+}
 div.footer-level img.partenaires {
   width: 40%;
   margin-left: auto;
@@ -1226,13 +1230,13 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
-  height: 50px;
+  height: 43px;
 }
-div.footer-level partenaires-cneai {
+div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
-  width: 50px;
+  width: 94px;
 }
 
 /* ::Print */
