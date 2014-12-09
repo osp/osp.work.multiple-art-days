@@ -30,30 +30,48 @@
 						);
 					};
 				})();
-			
-				function calcBeta(inclination) {
-					return Math.abs(Math.deg2rad(90) - inclination);
-				}
-			
+						
 				/**
 				* Inclination in rad
 				* left array, with left contour
 				* right array, with right contour
 				*/
-				function calcFat(linePoint, width, beta, left, right) {
-					if (beta == 0 || beta == Math.PI) {
-						// vertical
-						var offsetX = width;
-						var offsetY = 0;				
-					} else if (beta == .5 * Math.PI || beta == 1.5 * Math.PI) {
-						// horizontal
-						var offsetX = 0;
-						var offsetY = width;
+				function calcFat(linePoint, width, angle, left, right) {
+					penAngle = angle - (.5 * Math.PI);
+					if (angle == 0 
+						&& (1/0) > (1/angle))
+					{
+						// penAngle = -0
+						console.log('negative 0');
+						var offsetX = Math.cos(penAngle) * width;
+						var offsetY = Math.sin(penAngle) * width;
 					} else {
-						// Angled
-						var offsetX = Math.sin(beta) * width;
-						var offsetY = Math.cos(beta) * width;
+						var offsetX = Math.cos(penAngle) * width;
+						var offsetY = -Math.sin(penAngle) * width;
 					}
+// 					if (beta === -0 || beta == Math.PI) {
+// 						console.log('-0');
+// 						var offsetX = width;
+// 						var offsetY = 0;
+// 					} else if (beta == 0) {
+// 						// vertical
+// 						var offsetX = width;
+// 						var offsetY = 0;
+// 					} else if (beta == .5 * Math.PI) {
+// 						// horizontal
+// 						var offsetX = 0;
+// 						var offsetY = width;
+// 					} else if (beta == 1.5 * Math.PI) {
+// 						var offsetX = 0;
+// 						var offsetY = -width;
+// 					} else if (beta > .5 * Math.PI) {
+// 						// Angled
+// 						var offsetX = -Math.sin(beta) * width;
+// 						var offsetY = -Math.cos(beta) * width;
+// 					} else {
+// 						var offsetX = Math.sin(beta) * width;
+// 						var offsetY = Math.cos(beta) * width;
+// 					}
 
 					left.push(point(linePoint.x + (offsetX), linePoint.y - (offsetY)));
 					right.push(point(linePoint.x - (offsetX), linePoint.y + (offsetY)));
@@ -64,25 +82,22 @@
 					var right = [];
 					var plotterPoints = [];
 					
-					for(var t=0;t<=1;t+=.005) {
-						calcFat(path.at(t), lineWidth(t), calcBeta(path.angle(t)), left, right);
+					for(var t=0;t<=1;t+=.001) {
+						calcFat(path.at(t), lineWidth(t), path.angle(t), left, right);
 // 						console.log(t, lineWidth(t));
 					}
 				
 					ctx.beginPath();
 					ctx.moveTo(left[0].x, left[0].y);
-					plotterPoints.push([left[0].x,left[0].y]);
 					
 					for(var i=1;i < left.length; i++) {
 						ctx.lineTo(left[i].x, left[i].y);
-						plotterPoints.push([left[i].x,left[i].y]);
 					}
 					
 // 					ctx.moveTo(right[0].x, right[0].y);
 // 					
 					for(var i=right.length-1;i > -1; i--) {
 						ctx.lineTo(right[i].x, right[i].y);
-						plotterPoints.push([right[i].x,right[i].y]);
 					}
 					
 					ctx.lineTo(left[0].x, left[0].y);
@@ -135,34 +150,56 @@
 
 				var paths = [
 					new Path([
-						point(0,0),
-						point(10,1),
-						point(15,5),
-						point(17,15),
-						point(12,20),
-						point(12,100),
-					]),
-					new Path([
-						point(12,20),
-						point(17,15),
-						point(20,17),
-						point(50,90),
-						point(50,100),
-					]),
-					new Path([
-						point(50,100),
-						point(50,90),
-						point(88,15),
-						point(95,12),
-					]),
-					new Path([
-						point(105,0),
-						point(100,1),
-						point(95,5),
-						point(95,100),
+						point(10,100),
+						point(10,10),
+						point(20,10),
+						point(55,90),
+						point(65,90),
+						point(90,10),
+						point(100,10),
+						point(100,100),
+						point(50,120),
+						point(10,100),
+						point(10,50),
 					]),
 				];
 				
+// 				paths = [
+// 					new Path([
+// 						point(20,20),
+// 						point(20,80),
+// 						point(80,80),
+// 						point(80,20),
+// 						point(20,20),
+// 					]),
+// 				];
+				
+				var paths = [
+					new Path([
+						point(0,10),
+						point(10,11),
+						point(15,15),
+						point(17,25),
+						point(12,30),
+						point(12,110),
+						point(12,30),
+						point(17,25),
+						point(20,27),
+						point(50,100),
+						point(50,110),
+						point(50,110),
+						point(50,100),
+						point(88,25),
+						point(95,22),
+						point(95,15),
+						point(100,11),
+						point(105,10),
+						point(100,11),
+						point(95,15),
+						point(95,110),
+					]),
+				];
+// 				
 // 				// O
 // 				paths = [
 // 					new Path([
@@ -225,6 +262,19 @@
 				var black = {
 					lineWidth: .25,
 					fill: 'black',
+					stroke: 'black',
+				};
+				
+				
+				blackStroke = {
+					lineWidth: .25,
+					fill: null,
+					stroke: 'black',
+				};
+				
+				var blackFill= {
+					lineWidth: .5,
+					fill: 'black',
 					stroke: null,
 				};
 				
@@ -247,64 +297,76 @@
 				};
 				
 				function drawFrame () {
-					var canvas = document.getElementById("canvas");
-					var ctx = canvas.getContext("2d");
-					ctx.clearRect(0, 0, canvas.width, canvas.height);
-					ctx.scale(3,3);
+					var now = Date.now();
 					
-					for (var p=0;p<paths.length;p++) {
-						var path = paths[p];
+					if (now - then > interval) {
+						var canvas = document.getElementById("canvas");
+						var ctx = canvas.getContext("2d");
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						ctx.scale(3,3);
 						
-						var shapes = .2;
-						var a = [2,4,8];
-						var steps = 2;
-						var o = 10;
+						for (var p=0;p<paths.length;p++) {
+							var path = paths[p];
+							
+							var shapes = .2;
+							var a = [2,4,8];
+							var steps = 2;
+							var o = 10;
+							
+							for(var t=0;t<=1;t+=.05) {
+								console.log(t, path.angle(t), Math.rad2deg(path.angle(t)));
+							}
+							
+							for (var i=0; i < steps; i++) {
+								for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
 						
-						for (var i=0; i < steps; i++) {
-							for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
-// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
-								drawPath(ctx, path, yellow, fixed(10));
-// 								drawPath(ctx, path, black, sinoide(.5, 10, 0));
-// 								drawPath(ctx, path, white, fixed(.5));
+	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+									drawPath(ctx, path, black, fixed(5));
+									drawPath(ctx, path, blackStroke, fixed(.1));
+									drawPath(ctx, path, black, sinoide(1, 10, 0));
+									drawPath(ctx, path, white, fixed(.5));
+								}
+							}
+						}
+						
+						for (var p=0;p<paths.length;p++) {
+							var path = paths[p];
+							
+							var shapes = .2;
+							var a = [2,4,8];
+							var steps = 2;
+							var o = 10;
+							
+							for (var i=0; i < steps; i++) {
+								for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+	// 								drawPath(ctx, path, yellow, fixed(10));
+	// 								drawPath(ctx, path, black, sinoide(.25, 10, .5));
+	// 								drawPath(ctx, path, white, fixed(.5));
+								}
+							}
+						}
+						
+						for (var p=0;p<paths.length;p++) {
+							var path = paths[p];
+							
+							var shapes = .2;
+							var a = [2,4,8];
+							var steps = 2;
+							var o = 10;
+							
+							for (var i=0; i < steps; i++) {
+								for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
+	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
+	// 								drawPath(ctx, path, yellow, fixed(10));
+	// 								drawPath(ctx, path, black, sinoide(.5, 10, 0));
+	// 								drawPath(ctx, path, white, fixed(.5));
+								}
 							}
 						}
 					}
 					
-					for (var p=0;p<paths.length;p++) {
-						var path = paths[p];
-						
-						var shapes = .2;
-						var a = [2,4,8];
-						var steps = 2;
-						var o = 10;
-						
-						for (var i=0; i < steps; i++) {
-							for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
-// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
-// 								drawPath(ctx, path, yellow, fixed(10));
-								drawPath(ctx, path, black, sinoide(.25, 10, .5));
-// 								drawPath(ctx, path, white, fixed(.5));
-							}
-						}
-					}
-					
-					for (var p=0;p<paths.length;p++) {
-						var path = paths[p];
-						
-						var shapes = .2;
-						var a = [2,4,8];
-						var steps = 2;
-						var o = 10;
-						
-						for (var i=0; i < steps; i++) {
-							for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
-// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
-// 								drawPath(ctx, path, yellow, fixed(10));
-// 								drawPath(ctx, path, black, sinoide(.5, 10, 0));
-								drawPath(ctx, path, white, fixed(.5));
-							}
-						}
-					}
+					window.requestAnimFrame(drawFrame);
 				}
 				
 				drawFrame(0);

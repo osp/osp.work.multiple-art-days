@@ -155,7 +155,11 @@ _.extend(Segment.prototype, {
 	},
 	
 	angle: function () {
-		return Math.atan((this.p2.y - this.p1.y) / (this.p2.x - this.p1.x));
+		if (this.p2.x < this.p1.x) {
+			return Math.PI + Math.atan((this.p2.y - this.p1.y) / (this.p2.x - this.p1.x));
+		} else {
+			return Math.atan((this.p2.y - this.p1.y) / (this.p2.x - this.p1.x));
+		}
 	},
 });
 
