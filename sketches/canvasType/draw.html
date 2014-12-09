@@ -176,19 +176,26 @@
 				
 				var paths = [
 					new Path([
+						point(2,110),
+						point(7,110),
+						point(12,107),
+						point(17,110),
+						point(22,110),
+						point(17,110),
+						point(12,107),
+						point(12,30),
+						point(17,25),
+						point(15,15),
+						point(10,11),
 						point(0,10),
 						point(10,11),
 						point(15,15),
 						point(17,25),
-						point(12,30),
-						point(12,110),
-						point(12,30),
-						point(17,25),
 						point(20,27),
 						point(50,100),
 						point(50,110),
-						point(50,110),
 						point(50,100),
+						point(55,95),
 						point(88,25),
 						point(95,22),
 						point(95,15),
@@ -196,7 +203,13 @@
 						point(105,10),
 						point(100,11),
 						point(95,15),
-						point(95,110),
+						point(95,107),
+						point(100,110),
+						point(105,110),
+						point(100,110),
+						point(95,107),
+						point(90,110),
+						point(85,110),
 					]),
 				];
 // 				
@@ -313,17 +326,13 @@
 							var steps = 2;
 							var o = 10;
 							
-							for(var t=0;t<=1;t+=.05) {
-								console.log(t, path.angle(t), Math.rad2deg(path.angle(t)));
-							}
-							
 							for (var i=0; i < steps; i++) {
 								for (var amplitude = a[0]; amplitude < a[1]; amplitude += a[2]) {
 						
 	// 								drawPath(ctx, path, black, sinoide(shapes, amplitude, black_offset));
 									drawPath(ctx, path, black, fixed(5));
 									drawPath(ctx, path, blackStroke, fixed(.1));
-									drawPath(ctx, path, black, sinoide(1, 10, offset));
+									drawPath(ctx, path, black, sinoide(1.5, 10, offset));
 									drawPath(ctx, path, white, fixed(.5));
 								}
 							}
