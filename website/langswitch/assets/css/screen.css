@@ -195,18 +195,17 @@ div.title-level h2.subtitle {
 div.title-level h3.baseline {
   text-align: left;
   margin-top: 0.275em;
-  margin-bottom: 0.55em;
+  margin-bottom: 1.1em;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-  margin-bottom: 3.3em;
+  margin-bottom: 1.1em;
 }
 div.title-level img.date, div.title-level img.heures, div.title-level img.adresse {
   margin-left: auto;
   margin-right: auto;
   display: block;
   vertical-align: bottom;
-  margin-bottom: 3.3em;
 }
 
 div.body-level img.side-img {
@@ -228,6 +227,9 @@ div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer
 div.footer-level p.partenaires-texte {
   margin-bottom: 1.1em;
 }
+div.footer-level p.partenaires-sigle-maison {
+  margin-bottom: 1.1em;
+}
 div.footer-level img.partenaires {
   width: 40%;
   margin-left: auto;
@@ -247,16 +249,24 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
+<<<<<<< HEAD
+  height: 43px;
+=======
   width: 50px;
   margin: 0 auto;
   margin-bottom: 1.925em;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
-div.footer-level partenaires-cneai {
+div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
+<<<<<<< HEAD
+  width: 94px;
+=======
   width: 100px;
   margin: 0 auto;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 
 /* ::Base styles */
@@ -1166,18 +1176,17 @@ div.title-level h2.subtitle {
 div.title-level h3.baseline {
   text-align: left;
   margin-top: 0.275em;
-  margin-bottom: 0.55em;
+  margin-bottom: 1.1em;
 }
 div.title-level p.date, div.title-level p.heures, div.title-level p.adresse {
   text-align: center;
-  margin-bottom: 3.3em;
+  margin-bottom: 1.1em;
 }
 div.title-level img.date, div.title-level img.heures, div.title-level img.adresse {
   margin-left: auto;
   margin-right: auto;
   display: block;
   vertical-align: bottom;
-  margin-bottom: 3.3em;
 }
 
 div.body-level img.side-img {
@@ -1199,6 +1208,9 @@ div.footer-level p.partenaires-texte, div.footer-level p.partenaires, div.footer
 div.footer-level p.partenaires-texte {
   margin-bottom: 1.1em;
 }
+div.footer-level p.partenaires-sigle-maison {
+  margin-bottom: 1.1em;
+}
 div.footer-level img.partenaires {
   width: 40%;
   margin-left: auto;
@@ -1218,16 +1230,24 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
+<<<<<<< HEAD
+  height: 43px;
+=======
   width: 50px;
   margin: 0 auto;
   margin-bottom: 1.925em;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
-div.footer-level partenaires-cneai {
+div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
+<<<<<<< HEAD
+  width: 94px;
+=======
   width: 100px;
   margin: 0 auto;
+>>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 
 /* ::Print */
