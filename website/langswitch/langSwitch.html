@@ -18,14 +18,14 @@
 		<div id="language">
 			<ul>
 				<li>
-					<a href="#fr" id="languageSwitchFr">fr</a>
+					<a href="#fr" id="languageSwitchFr" class="font-var">fr</a>
 				</li>
 				<li>
-					<a href="#en" id="languageSwitchEn">en</a>
+					<a href="#en" id="languageSwitchEn" class="font-var">en</a>
 				</li>
 			</ul>
-			<a href="#">twitter</a><br>
-			<a href="#">facebook</a>
+			<a href="#" class="font-var">twitter</a><br>
+			<a href="#" class="font-var">facebook</a>
 		</div>
 
 		<div id="french" class="active">
@@ -46,20 +46,20 @@
     			<div class="row">
         			<div class="row__colspaced">
         				<div id="title" class="colspan12-4 as-grid with-gutter" style="visibility: hidden">
-							<h2 class="subtitle">Multiple Art Days</h2>
-							<h3 class="baseline"> 
+							<h1 class="subtitle font-var">Multiple Art Days</h1>
+							<h2 class="baseline"> 
 										Le salon des pratiques éditoriales 
-										dans l'art contemporain aujourd'hui</h3>
+										dans l'art contemporain aujourd'hui</h2>
 						</div>
 
-						<div id="date" class="colspan12-2 as-grid with-gutter" style="visibility: hidden">
-    						<img class="date" src="assets/img/date.svg">
+						<div id="date" class="colspan12-2 as-grid with-gutter">
+    						<h2 class="font-var">22, 23 et 24 <br> mai 2015</h2>
 						</div>
-						<div id="time" class="colspan12-2 as-grid with-gutter" style="visibility: hidden">
-    						<img class="heures" src="assets/img/heure.svg">
+						<div id="time" class="colspan12-2 as-grid with-gutter">
+    						<h2 class="font-var">11:00 - 19:00 <br> vendredi en nocture</h2>
 						</div>
-						<div id="lieu" class="colspan12-2 as-grid with-gutter" style="visibility: hidden">
-							<p class="adresse"> La Maison Rouge, <br/>
+						<div id="lieu" class="colspan12-2 as-grid with-gutter">
+							<p class="adresse font-var"> La Maison Rouge, <br/>
 												10 Boulevard de la Bastille, <br/>
 												75012 Paris<br/> </p>
 						</div>
@@ -76,10 +76,12 @@
 						</div>
 
 						<div class="colspan12-7 as-grid with-gutter">
-						<p class="body">MAD est le nouveau salon dédié à toute forme d'objets d'art multipliés. Ce grand rendez-vous annuel fait acte et offre pendant 3 jours un panorama des pratiques éditoriales d'aujourd'hui, de l’édition fanzine aux œuvres rares: prints, multiples, livres, films et disques d’artistes...</p>
-						<p class="body">Investissant l’ensemble des espaces d’un des lieux emblématiques parisien de la création contemporaine, la Maison Rouge / fondation Antoine de Galbert, qui explore la diversité des champs de la recherche artistiques actuelle par le biais de grandes collections privées internationales,  MAD réunira plus de 100 éditeurs internationaux (galeries, éditeurs, artistes, institutions) au sein d’un vaste espace.</p>
-						<p class="body"> Bien plus qu’un salon, MAD est une exposition des projets de chacun des participants. Rompant avec l’esthétique du « stand » et des foires, l’espace sera ouvert à la circulation fluide des visiteurs et mettra en valeur les displays. Encourageant les présentations « curatoriales » des exposants et le dialogue avec le public, l’espace de la Maison Rouge est scénographié pour l’occasion par l’artiste Stéphane Magnin d’après sa bibliothèque Do It Yourself. Les exposants pourront choisir parmi une ligne de meubles « open source » réalisés par l’artiste en cartons et en bois (tables, chaises, canapés, bibliothèques, … ). </p>
-						<p class="body">Ces journées seront accompagnées d’une série de rencontres, performances artistiques et débats sur la pratique éditoriale dans l’art contemporain avec les artistes, graphistes, responsables de collections publiques, éditeurs, collectionneurs, chercheurs et libraires venus du monde entier.</p>
+						<p class="body">Nouveau rendez-vous annuel dédié à toute forme d’objets d’art multipliés, le MAD fait acte et offre pendant trois jours un panorama des pratiques éditoriales d’aujourd’hui : de l’édition fanzine aux œuvres rares: prints, multiples, livres, films et disques d’artistes...</p>
+						<p class="body">Investissant l’ensemble des espaces d’un des lieux emblématiques des collectionneurs et amateur d'art contemporain, MAD réunira une centaine de producteurs internationaux qui ont pour point commun la qualité curatoriale de leurs propositions.</p>
+						<p class="body">Bien plus qu’un salon, MAD est une exposition des projets de chacun des participants.</p>
+						<p class="body">Ces journées seront accompagnées d’une série de rencontres, performances artistiques et débats sur la pratique éditoriale dans l’art contemporain avec les artistes, graphistes, responsables de collections publiques, éditeurs, collectionneurs, chercheurs et libraires venus du monde entier.</p>
+						<p class="body">Au plaisir de vous recevoir au MAD !</p>
+						<p class="body">L’équipe</p>
 						</div>
 					</div>
 				</div>
@@ -232,20 +234,6 @@ function showIt() {
 }
 setTimeout("showIt()", 1000);
 
-function showIt2() {
-  document.getElementById("date").style.visibility = "visible";
-}
-setTimeout("showIt2()", 3000);
-
-function showIt3() {
-  document.getElementById("time").style.visibility = "visible";
-}
-setTimeout("showIt3()", 4000);
-
-function showIt4() {
-  document.getElementById("lieu").style.visibility = "visible";
-}
-setTimeout("showIt4()", 5000);
 </script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

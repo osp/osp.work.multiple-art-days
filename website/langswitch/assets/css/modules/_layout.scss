@@ -39,11 +39,12 @@ div.title-level{
 div.body-level{
 
 
-	img.side-img{
+	img.side-img {
 		width: 100%;
 		height: auto;
 		//margin-left:15%;
-	}
+		}
+	
 	p.body{
 		margin-left:20px;
 		@include adjust-font-size-to($para);
@@ -84,25 +85,20 @@ div.footer-level{
 
 	}
 	img.partenaires-maison{
-<<<<<<< HEAD
 	height:43px;
-=======
 	width: 50px;
 	margin: 0 auto;
 	@include trailer(7);
->>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 	}
+
 	partenaires-cneai, partenaires-maison{
 	height:50px;
 	}
 	
 	img.partenaires-cneai{
-<<<<<<< HEAD
 	width:94px;
-=======
 	width:100px;
 	margin:0 auto;
->>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 	}
 	
 }
