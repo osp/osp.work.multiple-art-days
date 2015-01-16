@@ -249,24 +249,18 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
-<<<<<<< HEAD
   height: 43px;
-=======
   width: 50px;
   margin: 0 auto;
   margin-bottom: 1.925em;
->>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
-<<<<<<< HEAD
   width: 94px;
-=======
   width: 100px;
   margin: 0 auto;
->>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 
 /* ::Base styles */
@@ -302,12 +296,26 @@ a:hover, a:focus, a:active {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'libertin100';
+  src: url("libertin-100-webfont.eot");
+  src: url("../font/libertin-100-webfont.eot?#iefix") format("embedded-opentype"), url("../font/libertin-100-webfont.woff2") format("woff2"), url("../font/libertin-100-webfont.woff") format("woff"), url("../font/libertin-100-webfont.ttf") format("truetype"), url("../font/libertin-100-webfont.svg#libertin100") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'libertin30';
+  src: url("../font/libertin-30-webfont.eot");
+  src: url("../font/libertin-30-webfont.eot?#iefix") format("embedded-opentype"), url("../font/libertin-30-webfont.woff2") format("woff2"), url("../font/libertin-30-webfont.woff") format("woff"), url("../font/libertin-30-webfont.ttf") format("truetype"), url("../font/libertin-30-webfont.svg#libertin30") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 .font-body, body {
   font-family: 'linux_libertine_displayRg' , serif;
 }
 
 .font-var {
-  font-family: Georgia, serif;
+  font-family: 'libertin100', serif;
 }
 
 p, span, cite, ol, ul, pre, label, input, textarea {
@@ -1230,24 +1238,18 @@ div.footer-level img.mailinglist {
   display: block;
 }
 div.footer-level img.partenaires-maison {
-<<<<<<< HEAD
   height: 43px;
-=======
   width: 50px;
   margin: 0 auto;
   margin-bottom: 1.925em;
->>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 div.footer-level partenaires-cneai, div.footer-level partenaires-maison {
   height: 50px;
 }
 div.footer-level img.partenaires-cneai {
-<<<<<<< HEAD
   width: 94px;
-=======
   width: 100px;
   margin: 0 auto;
->>>>>>> 202b9f651a85b5887354c1dfb4f05cbe81f9d1e8
 }
 
 /* ::Print */
