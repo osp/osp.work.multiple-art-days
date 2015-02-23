@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="68.868607"
-   height="15.49991"
+   width="165.42154"
+   height="37.230595"
    id="svg5833"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 14">
+   sodipodi:docname="cneai.svg">
   <defs
      id="defs5835">
     <clipPath
@@ -33,9 +33,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.8362182"
-     inkscape:cx="43.448276"
-     inkscape:cy="28.094374"
+     inkscape:zoom="1.993725"
+     inkscape:cx="138.45158"
+     inkscape:cy="-29.533472"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -43,10 +43,10 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1280"
-     inkscape:window-height="745"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="22"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5838">
@@ -64,11 +64,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-340.5657,-524.61222)">
+     transform="translate(-340.5657,-502.88154)">
     <g
-       transform="matrix(0.1251724,0,0,-0.1251724,339.55856,553.59702)"
+       transform="matrix(0.30066256,0,0,-0.30066256,338.14657,572.50266)"
        id="g12-4-0-9-4-5-0-6-4"
-       style="fill:#000000">
+       style="fill:#000000"
+       inkscape:export-filename="/home/colm/git/osp.work.multiple-art-days/tmp_website_2/assets/logos/cneai.png"
+       inkscape:export-xdpi="406.42502"
+       inkscape:export-ydpi="406.42502">
       <g
          id="g14-5-87-1-1-9-9-0-8"
          clip-path="url(#clipPath16-0-1-5-5-0-5-3-4-4)"
