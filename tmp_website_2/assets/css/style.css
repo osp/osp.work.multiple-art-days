@@ -30,9 +30,9 @@ html, body {
 .container {
     margin: auto;
     position: relative;
-    top: 40%;
+    top: 35%;
     margin-top: -110px;
-    margin-bottom: 40%;
+    margin-bottom: 30%;
     width: 600px;
 }
 
@@ -62,7 +62,7 @@ h1 {
 h2 {
     margin: 0px auto 15px auto;
     font-family: "libertin100";
-    font-size: 36px;
+    font-size: 40px;
     letter-spacing: 2px;
 }
 
@@ -101,7 +101,8 @@ p a:hover {
     font-family: "libertin100";
     font-size: 30px;
     letter-spacing: 2px;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .dates, .address {
@@ -117,7 +118,13 @@ p a:hover {
     bottom: 20px;
 }
 
+#partners div {
+    text-align: left;
+    width: 120px;
+}
+
 #partners a {
+    color: black;
     font-family: "Linux Libertin Display";
     font-size: 12px;
     text-decoration: none;
@@ -129,10 +136,13 @@ p a:hover {
 
 #partners div {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 #partners img {
+    display: block;
+    clear: right;
     max-width: 110px;
     max-height: 30px;
+    margin-bottom: 5px; 
 }
