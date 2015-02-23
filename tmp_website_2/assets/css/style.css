@@ -33,7 +33,7 @@ html, body {
     top: 40%;
     margin-top: -110px;
     margin-bottom: 40%;
-    width: 620px;
+    width: 600px;
 }
 
 .logo {
@@ -115,4 +115,24 @@ p a:hover {
     position: fixed;
     right: 20px;
     bottom: 20px;
+}
+
+#partners a {
+    font-family: "Linux Libertin Display";
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#partners a:hover {
+    text-decoration: underline;
+}
+
+#partners div {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#partners img {
+    max-width: 110px;
+    max-height: 30px;
 }
