@@ -42,8 +42,12 @@
             
             var panelClasses = ['one', 'two', 'three', 'four'];
             
-            var onScroll = function () {
+            var onScroll = function (e) {
                 'use strict';
+                
+                if (e) {
+                    e.preventDefault();
+                }
                 
                 var body = window.document.body;
                 var totalHeight = body.scrollHeight;

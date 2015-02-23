@@ -56,7 +56,7 @@
 		</div>
 		<script type="text/javascript">
 			window.addEventListener('load', function () {
-				var fps = 25;
+				var fps = 20;
 				var now;
 				var then = Date.now();
 				var interval = 1000/fps;
@@ -240,13 +240,14 @@
 					]),
 				];
 				
-				var sinoide = function (sini, amplitude, offset) {
+				var sinoide = function (sini, amplitude, offset, baseOffset) {
 					sini || (sini = 1);
 					amplitude || (amplitude = 1);
 					offset || (offset = 0);
+					baseOffset || (baseOffset = 0);
 					var period = Math.PI * 2 * sini;
 					return function (t) {
-						return Math.abs(Math.sin((t + offset) * period) * amplitude);
+						return Math.abs(Math.sin((t + offset) * period) * amplitude + baseOffset);
 					}
 				};
 				
@@ -279,9 +280,9 @@
 				}
 				
 				var black = {
-					lineWidth: .25,
-					fill: 'black',
+					lineWidth: .5,
 					stroke: 'black',
+					fill: null,
 				};
 				
 				var white = {
@@ -302,9 +303,8 @@
 						for (var p=0;p<paths.length;p++) {
 							var path = paths[p];
 							
-							drawPath(ctx, path, black, fixed(4));
-							drawPath(ctx, path, black, sinoide(1.5, 9, offset));
-							drawPath(ctx, path, white, fixed(.5));
+							drawPath(ctx, path, black, sinoide(1.5, 10, offset, 0));
+							drawPath(ctx, path, white, fixed(.6));
 						}
 					}
 					
