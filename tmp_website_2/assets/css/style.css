@@ -161,3 +161,33 @@ p a:hover {
     .container {
         margin: -110px 0px 0px 100px;
     }
+}
+
+@media (max-width: 850px) {
+    .container {
+        margin: -110px 0px 0px 50px;
+    }
+    
+    #partners {
+        position: relative;
+        bottom: inherit;    
+        right: inherit;
+    }
+    
+    #partners div {
+        display: inline-block;
+        width: 49%;
+        margin-right: 0;
+        margin-top: -15px;
+        margin-bottom: 25px;
+    }
+    
+    #partners img {
+        max-width: 200px;
+        max-height: 40px;
+    }
+    
+    #partners a {
+        font-size: 18px;
+    }
+}
