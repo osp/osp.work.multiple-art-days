@@ -73,13 +73,13 @@ h3 {
 
 h4 {
     font-family: "libertin100";
-    font-size: 36px;
+    font-size: 34px;
 }
 
 p {
     font-family: "Linux Libertin Display";
-    font-size: 28px;
-    line-height: 35px;
+    font-size: 27px;
+    line-height: 30px;
     margin-bottom: 35px;
 }
 
@@ -97,9 +97,13 @@ p a:hover {
     vertical-align: top;
 }
 
+.introduction {
+    padding-right: 40px;
+}
+
 .practical p {
     font-family: "libertin100";
-    font-size: 30px;
+    font-size: 31px;
     letter-spacing: 2px;
     margin-top: 0;
     margin-bottom: 20px;
