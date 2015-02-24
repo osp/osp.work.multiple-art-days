@@ -32,7 +32,7 @@ html, body {
     position: relative;
     top: 35%;
     margin-top: -110px;
-    margin-bottom: 30%;
+    padding-bottom: 250px;
     width: 600px;
 }
 
@@ -125,6 +125,8 @@ p a:hover {
 #partners div {
     text-align: left;
     width: 120px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 #partners a {
@@ -138,11 +140,6 @@ p a:hover {
     text-decoration: underline;
 }
 
-#partners div {
-    display: inline-block;
-    margin-right: 10px;
-}
-
 #partners img {
     display: block;
     clear: right;
@@ -150,3 +147,17 @@ p a:hover {
     max-height: 30px;
     margin-bottom: 5px; 
 }
+
+
+@media (max-width: 1200px) {
+    #partners div {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .container {
+        margin: -110px 0px 0px 100px;
+    }
