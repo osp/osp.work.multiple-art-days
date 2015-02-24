@@ -165,7 +165,7 @@ p a:hover {
 
 @media (max-width: 850px) {
     .container {
-        margin: -110px 0px 0px 50px;
+        margin: -110px auto;
     }
     
     #partners {
