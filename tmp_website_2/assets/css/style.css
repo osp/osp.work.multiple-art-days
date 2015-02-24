@@ -156,14 +156,7 @@ p a:hover {
     }
 }
 
-
-@media (max-width: 900px) {
-    .container {
-        margin: -110px 0px 0px 100px;
-    }
-}
-
-@media (max-width: 850px) {
+@media (max-width: 950px) {
     .container {
         margin: -110px auto;
     }
