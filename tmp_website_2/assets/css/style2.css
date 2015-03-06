@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'Linux Libertin Display';
+  src: url("../fonts/linlibertine_drah-webfont.eot");
+  src: url("../fonts/linlibertine_drah-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/linlibertine_drah-webfont.woff2") format("woff2"), url("../fonts/linlibertine_drah-webfont.woff") format("woff"), url("../fonts/linlibertine_drah-webfont.ttf") format("truetype"), url("../fonts/linlibertine_drah-webfont.svg#linux_libertine_displayRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'libertinagefull';
+    src: url('../fonts/Libertinage-webfont.eot');
+    src: url('../fonts/Libertinage-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Libertinage-webfont.woff2') format('woff2'),
+         url('../fonts/Libertinage-webfont.woff') format('woff'),
+         url('../fonts/Libertinage-webfont.ttf') format('truetype'),
+         url('../fonts/Libertinage-webfont.svg#libertinagefull') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'libertin100';
+  src: url("../fontslibertin-100-webfont.eot");
+  src: url("../fonts/libertin-100-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/libertin-100-webfont.woff2") format("woff2"), url("../fonts/libertin-100-webfont.woff") format("woff"), url("../fonts/libertin-100-webfont.ttf") format("truetype"), url("../fonts/libertin-100-webfont.svg#libertin100") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'libertin30';
+  src: url("../fonts/libertin-30-webfont.eot");
+  src: url("../fonts/libertin-30-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/libertin-30-webfont.woff2") format("woff2"), url("../fonts/libertin-30-webfont.woff") format("woff"), url("../fonts/libertin-30-webfont.ttf") format("truetype"), url("../fonts/libertin-30-webfont.svg#libertin30") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    text-align: center;
+}
+
+.container {
+    margin: auto;
+    position: relative;
+    top: 35%;
+    margin-top: -110px;
+    padding-bottom: 250px;
+    width: 600px;
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo img {
+    width: 280px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, p {
+    text-align: left;
+    font-weight: normal;
+    margin: 0;
+}
+
+h1 {
+    margin: 5px auto 5px auto;
+    font-family: "Linux Libertin Display";
+    font-size: 60px;
+    font-style: normal;
+}
+
+h2 {
+    margin: 0px auto 15px auto;
+    font-family: "libertin100";
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-family: "libertin100";
+    font-size: 40px;
+}
+
+h4 {
+    font-family: "libertin100";
+    font-size: 34px;
+}
+
+p {
+    font-family: "Linux Libertin Display";
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+p a {
+    text-decoration: underline;
+    color: black;
+}
+
+p a:hover {
+    text-decoration: none;
+}
+
+#practical {
+    position: fixed;
+    left: 20px;
+}
+
+.introduction {
+    padding-right: 40px;
+}
+
+#practical h4 {
+    font-size: 26px;
+}
+
+#practical p {
+    font-family: "libertin100";
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.dates, .address {
+    width: 280px;
+}
+
+#partners {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+#partners div {
+    text-align: left;
+    width: 120px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#partners a {
+    color: black;
+    font-family: "Linux Libertin Display";
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#partners a:hover {
+    text-decoration: underline;
+}
+
+#partners img {
+    display: block;
+    clear: right;
+    max-width: 110px;
+    max-height: 30px;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 1200px) {
+    #partners div {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 950px) {
+    .container {
+        margin: -110px auto;
+    }
+
+    #partners {
+        position: relative;
+        bottom: inherit;
+        right: inherit;
+    }
+
+    #partners div {
+        display: inline-block;
+        width: 49%;
+        margin-right: 0;
+        margin-top: -15px;
+        margin-bottom: 25px;
+    }
+
+    #partners img {
+        max-width: 200px;
+        max-height: 40px;
+    }
+
+    #partners a {
+        font-size: 18px;
+    }
+}

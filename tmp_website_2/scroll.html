@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="assets/css/style2.css" type="text/css" media="all" />
+        <title>Multiple Art Days</title>
+        <style>
+            .content {
+                display: block;
+                height: 3000px;
+            }
+
+            .one h4 {
+                font-family: "Linux Libertin Display";
+            }
+
+            .two h4 {
+                font-family: "libertinagefull";
+            }
+
+            .three h4 {
+                font-family: "libertin30";
+            }
+
+            .four h4 {
+                font-family: "libertin100";
+            }
+
+            #text {
+                position: fixed;
+                top: 100px;
+                left: 100px;
+                font-size: 72px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content container">
+            <h1>Multiple Art Days</h1>
+            <h2>Le salon des pratiques éditoriales</h2>
+            <div id="practical">
+            <div class="logo">
+                <img src="assets/logos/mad.png">
+            </div>
+                <div class="dates">
+                    <h4>22, 23, 24 mai 2015</h4>
+                    <p>12h00 à 19h00</p>
+                </div>
+                <div class="address">
+                    <h4>La Maison Rouge</h4>
+                    <p>10 Boulevard de la Bastille, 75012&nbsp;Paris</p>
+                </div>
+            </div>
+            <div id="partners">
+                <div id="cneai">
+                    <a href="http://www.cneai.com">
+                        <img src="assets/logos/cneai.png"/>
+                        Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
+                    </a>
+                </div>
+                <div id="maisonrouge">
+                    <a href="http://www.lamaisonrouge.org/">
+                        <img src="assets/logos/maisonrouge.png"/>
+                        La&nbsp;Maison&nbsp;Rouge
+                        Fodation&nbsp;Antoine&nbsp;de&nbsp;Galbert
+                    </a>
+                </div>
+            </div>
+            <div class="introduction">
+                <p>Nouveau grand rendez-vous annuel centré sur la figure de l’éditeur, le MAD offre pendant 3 jours un panorama des pratiques éditoriales contemporaines, de l'édition fanzine aux œuvres rares : prints, multiples, livres, films et disques d'artistes...</p>
+                <p>Investissant l’ensemble des espaces d’un des lieux emblématiques des collectionneurs et amateur d'art contemporain, le MAD réunira une centaine de producteurs internationaux qui ont pour point commun la qualité curatoriale de leurs propositions.</p>
+                <p>Bien plus qu'un salon, MAD expose la figure de l’éditeur, l’acteur le plus indépendant mais aussi le plus polyvalent du monde de l’art.</p>
+                <p>Ces journées seront accompagnées d’une série de rencontres, performances artistiques et débats sur la pratique éditoriale dans l’art contemporain avec les artistes, graphistes, responsables de collections publiques, éditeurs, collectionneurs, chercheurs et libraires venus du monde entier. </p>
+                <p>Au plaisir de vous recevoir au MAD !</p>
+            </div>
+            <div class="credits">
+                <h4>Direction curatoriale :</h4>
+                <p>Sylvie Boulanger, directrice du <a href="http://www.cneai.com" title="(Centre National Edition Art Image)">CNEAI</a>
+                <br />Michael Woolworth, directeur de <a href="http://www.michealwoolworth.com">l’Atelier Woolworth</a></p>
+
+                <h4>Comité scientifique :</h4>
+                <p>Paula Aisemberg, Daniel Bosser, Jean Max Colard, Michèle Didier, Laurie Hurwitz
+                et Mathieu Mercier.</p>
+
+                <h4>Coordination :</h4>
+                <p>Barbara Quintin</p>
+
+                <h4>Mobilier :</h4>
+                <p>Stéphane Magnin</p>
+
+                <h4>Graphisme :</h4>
+                <p><a href="http://osp.kitchen">OSP</a></p>
+
+                <h4>Contact presse :</h4>
+                <p><a href="http://www.claudinecolin.com">Claudine Colin communication</a> – 28 rue de Sévigné – 75004 Paris</br>
+                <a href="mailto: penelope@claudinecolin.com">Pénélope Ponchelet</a></br>
+                <a href="mailto: marine@claudinecolin.com"> Marine le Bris</a></br></p>
+
+                <p>Pour toutes questions, contactez Barbara Quintin</br>
+                <a href="mailto:contact@multipleartdays.com"> contact@multipleartdays.com </a>–<a href="tel:(0)7 58 35 66 96">(0)7 58 35 66 96</a></p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            'use strict';
+
+            var panelClasses = ['one', 'two', 'three', 'four'];
+
+            var onScroll = function (e) {
+                'use strict';
+
+                if (e) {
+                    e.preventDefault();
+                }
+
+                var body = window.document.body;
+                var totalHeight = body.scrollHeight;
+                var panelHeight = totalHeight / panelClasses.length;
+                var offset = body.scrollTop;
+
+                var panel = Math.round(offset / panelHeight);
+                var className = panelClasses[panel]
+
+                if (body.className != className) {
+                    body.className = className;
+                }
+            };
+
+            window.addEventListener('scroll', onScroll);
+
+            onScroll();
+        </script>
+    </body>
+</html>
