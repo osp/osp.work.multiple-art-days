@@ -89,6 +89,7 @@ img.slide-img3{
 .logo-entry a {
     text-decoration: none;
     color: black;
+    background-color: white;
     font-family: "Linux Libertin Display";
     border: 2px solid black;
     padding: 10px;
@@ -97,11 +98,12 @@ img.slide-img3{
 .logo-entry a.left {
     float: left;
     margin-top: 270px;
+    margin-left: 2%;
 }
 
 .logo-entry a.right {
     float: right;
-    margin-right: 6%;
+    margin-right: 8%;
     margin-top: 270px;
 }
 
