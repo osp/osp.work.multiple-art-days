@@ -137,6 +137,7 @@ h4 {
 	margin-top: 40px;
 	margin-bottom: 10px;
 }
+
 h5 {
     font-family: "Linux Libertin Display";
 	font-size: 28px;
@@ -155,7 +156,7 @@ p {
       margin-bottom:0px;
 }
 
-p a {
+p a, li a {
     /*text-decoration: underline;*/
     color: inherit;
     text-decoration: none;
@@ -163,7 +164,7 @@ p a {
     line-height: 1.4em;
 }
 
-p a:hover {
+p a:hover, li a:hover {
     text-decoration: none;
 }
 
@@ -241,7 +242,237 @@ p a:hover {
     bottom: 120px;
 }
 
-@media (max-width: 1200px) {
+.exhibitors-list {
+    text-align: left;
+    list-style-type: none;
+    font-family: "Linux Libertin Display";
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 7px;
+    text-indent: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    color: inherit;
+}
+
+.exhibitors-list li {
+    text-align: left;
+    display: inline;
+}
+
+.exhibitors-list li a {
+    color: inherit;
+}
+body {
+    overflow-x: hidden;
+}
+
+#french {
+position: absolute;
+top: 0;
+left: -50%;
+width: 100%;
+min-height: 100%;
+}
+
+#english {
+position: absolute;
+top: 0;
+left: 50%;
+width: 100%;
+min-height: 100%;
+background-color: #000;
+color: #fff;
+}
+
+body #french > *, body #english > * {
+    opacity: 1;
+    transition: opacity .8s;
+}
+
+body.entry #french > *,  body.entry #english > * {
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+body.french #french {
+    left: 0%;
+    transition: left .8s;
+}
+
+body.french #english {
+    left: 100%;
+    transition: left .8s;
+}
+
+body.english #french {
+    left: -100%;
+    transition: left .8s;
+}
+
+body.english #english {
+    left: 0%;
+    transition: left .8s;
+}
+
+#english {
+    color: #fff;
+}
+
+.logo-entry {
+    position: absolute;
+    top: 35vh;
+    left: 50%;
+    width: 50%;
+    min-width: 425px;
+}
+
+.logo-entry img {
+    position: relative;
+    left: -45%;
+    width: 100%;
+}
+
+.left, .right {
+    position: absolute;
+    bottom: 25%;
+    color: black;
+    width: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Linux Libertin Display";
+    font-size: 25px;
+}
+
+.left:hover, .right:hover {
+    text-decoration: underline;
+}
+
+.left {
+    left: 25%;
+}
+
+.right {
+    left: 75%;
+    color: white;
+}
+
+.left a, .right a {
+    width: 100%;
+    left: -50%;
+}
+
+.entry-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.content {
+    display: block;
+    height: 1600px;
+}
+
+.one .practical h4  {
+    font-family: "Linux Libertin Display";
+    font-size: 54px;
+    line-height: 1.1em;
+}
+
+.one p a {
+    border-bottom: 5px solid #FFEFB9;
+}
+.one .menu h4 {
+    outline: 5px solid #FFEFB9;
+}
+
+.two h4 {
+    font-family: "libertinagefull";
+}
+
+.two p a {
+    border-bottom: 5px solid #DBFFB9;
+}
+
+.two .menu h4 {
+    outline: 5px solid #DBFFB9;
+}
+
+.three h4 {
+    font-family: "libertin30";
+    
+}
+.three .practical h4 {
+    font-family: "libertin30";
+    font-size: 65px;
+    line-height: 1em;
+}
+
+.three p a {
+    border-bottom: 5px solid #C7B9FF;
+}
+
+.three .menu h4 {
+    outline: 5px solid #C7B9FF;
+}
+
+.four h4 {
+    font-family: "libertin100";
+}
+
+.four p a {
+    border-bottom: 5px solid #FFB9B9;
+}
+
+.four .menu h4 {
+    outline: 5px solid #FFB9B9;
+}
+
+#text {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    font-size: 72px;
+}
+
+.languageSwitch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: inherit;
+}
+
+body.french #english .partners,
+body.french #english .menu,
+body.french #english #practical,
+body.french #english .languageSwitch {
+    display: none;
+}
+
+body.french #french .partners,
+body.french #french .menu,
+body.french #french #practical,
+body.french #french .languageSwitch {
+    display: block;
+}
+
+body.english #english .partners,
+body.english #english .menu,
+body.english #english #practical,
+body.english #english .languageSwitch {
+    display: block;
+}
+
+body.english #french .partners,
+body.english #french .menu,
+body.english #french #practical,
+body.english #french .languageSwitch {
+    display: none;
+}
+
+/*@media (max-width: 1200px) {
     #partners div {
         display: block;
         margin-top: 20px;
@@ -275,4 +506,4 @@ p a:hover {
     #partners a {
         font-size: 18px;
     }
-}
+}*/

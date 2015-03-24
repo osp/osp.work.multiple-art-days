@@ -4,227 +4,45 @@
         <title>Multiple Art Days</title>
         <link rel="stylesheet" href="assets/css/style2.css" type="text/css" media="all" />
         <style type="text/css">
-            body {
-                overflow-x: hidden;
-            }
-        
-            #french {
-                position: absolute;
-                top: 0;
-                left: -50%;
-                width: 100%;
-                min-height: 100%;
-            }
-            
-            #english {
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 100%;
-                min-height: 100%;
-                background-color: #000;
-                color: #fff;
-            }
-            
-            body #french > *, body #english > * {
-                opacity: 1;
-                transition: opacity .8s;
-            }
-            
-            body.entry #french > *,  body.entry #english > * {
-                opacity: 0;
-                transition: opacity .8s;
-            }
-            
-            body.french #french {
-                left: 0%;
-                transition: left .8s, opacity .8s;
-            }
-            
-            body.french #english {
-                left: 100%;
-                transition: left .8s, opacity .8s;
-            }
-            
-            body.english #french {
-                left: -100%;
-                transition: left .8s, opacity .8s;
-            }
-            
-            body.english #english {
-                left: 0;
-                transition: left .8s, opacity .8s;
-            }
-            
-            body.english {
-                color: #fff;
-            }
-            
-            .logo-entry {
-                position: absolute;
-                top: 35vh;
-                left: 50%;
-                width: 50%;
-                min-width: 425px;
-            }
-            
-            .logo-entry img {
-                position: relative;
-                left: -45%;
-                width: 100%;
-            }
-            
-            .left, .right {
-                position: absolute;
-                bottom: 25%;
-                color: black;
-                width: 100px;
-                text-transform: uppercase;
-                font-weight: bold;
-                text-decoration: none;
-            }
-            
-            .left:hover, .right:hover {
-                text-decoration: underline;
-            }
-            
-            .left {
-                left: 25%;
-            }
-            
-            .right {
-                left: 75%;
-                color: white;
-            }
-            
-            .left a, .right a {
-                width: 100%;
-                left: -50%;
-            }
-            
-            .entry-container {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-            }
-            
-            .content {
-                display: block;
-                height: 1600px;
-            }
-
-            .one .pratique h4  {
-                font-family: "Linux Libertin Display";
-                font-size: 54px;
-                line-height: 1.1em;
-            }
-            
-            .one p a {
-                border-bottom: 5px solid #FFEFB9;
-            }
-            
-            .one .menu h4 {
-                outline: 5px solid #FFEFB9;
-            }
-            
-            .two h4 {
-                font-family: "libertinagefull";
-            }
-            
-            .two p a {
-                border-bottom: 5px solid #DBFFB9;
-            }
-            
-            .two .menu h4 {
-                outline: 5px solid #DBFFB9;
-            }
-            
-            .three h4 {
-                font-family: "libertin30";
-
-            }
-            .three .pratique h4 {
-                font-family: "libertin30";
-                font-size: 65px;
-                line-height: 1em;
-            }
-            
-            .three p a {
-                border-bottom: 5px solid #C7B9FF;
-            }
-            
-            .three .menu h4 {
-                outline: 5px solid #C7B9FF;
-            }
-            
-            .four h4 {
-                font-family: "libertin100";
-            }
-            
-            .four p a {
-                border-bottom: 5px solid #FFB9B9;
-            }
-            
-            .four .menu h4 {
-                outline: 5px solid #FFB9B9;
-            }
-            
-            #text {
-                position: fixed;
-                top: 100px;
-                left: 100px;
-                font-size: 72px;
-            }
-            
-            body.french #english .partners,
-            body.french #english .menu {
-                display: none;
-            }
-            
-            body.french #french .partners,
-            body.french #french .menu {
-                display: block;
-            }
-            
-            body.english #english .partners,
-            body.english #english .menu {
-                display: block;
-            }
-            
-            body.english #french .partners,
-            body.english #french .menu {
-                display: none;
-            }
         </style>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="http://malsup.github.com/jquery.cycle2.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 'use strict';
-                
+
                 $("#selectFrench").click(function (e) {
                     e.preventDefault();
                     $("#entry").detach();
                     $('body').removeClass('entry');
                     selectFrench();
                 });
-                
+
                 $("#selectEnglish").click(function (e) {
                     e.preventDefault();
                     $("#entry").detach();
                     $('body').removeClass('entry');
                     selectEnglish();
                 });
+
+                $("#toEnglish").click(function(e) {
+                    e.preventDefault();
+                    selectEnglish();
+                });
+                
+                $("#toFrench").click(function(e) {
+                    e.preventDefault();
+                    selectFrench();
+                });
                 
                 var selectEnglish = function () {
                     $("body").removeClass('french').addClass('english');
                 }
-                
+
                 var selectFrench = function () {
                     $("body").removeClass('english').addClass('french');
                 }
-                
+
                 var panelClasses = ['one', 'two', 'three', 'four'];
 
                 $(window).scroll(function (e) {
@@ -247,8 +65,23 @@
         </script>
     </head>
     <body class="entry">
+        <a name="francais" />
         <div id="french">
-        
+            <a href="#english" id="toEnglish" class="languageSwitch">English</a>
+            <div id="practical">
+                <div class="logo">
+                    <img src="assets/logos/mad.png">
+                </div>
+                <h2>Multiple Art Days</h2>
+                <div class="dates">
+                    <h4>22, 23, 24 <br/>mai 2015</h4>
+                    <h5>12h00 à 19h00</h5>
+                </div>
+                <div class="address">
+                    <h4>La Maison Rouge</h4>
+                    <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
+                </div>
+            </div>
             <div class="container">
                 <div class="menu">
                     <h4>About</h4>
@@ -286,61 +119,76 @@
                 </div>
 
                 <div class="exposants">
-                    <h4> Exposants</h4>
-                    <!-- <h5> Éditeurs (en cours)</h5>-->
-                    <p>
-                        <a href="http://www.ahahah-editions.fr">Ah Ah Ah éditions</a>
-                        <a href="http://www.atelierboba.fr">Atelier Boba</a>
-                        <a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur</a>
-                        <a href="http://www.cneai.com">Cneai =</a>
-                        <a href="http://centpages.atheles.org">Editions Cent pages (mot éditions ? )</a>
-                        <a href="http://www.editions-dilecta.com">Editions Dilecta</a>
-                        <a href="http://www.editionsdudetail.com">Editions du détail</a>
-                        <a href="http://www.incertain-sens.org">Editions Incertain Sens</a>
-                        <a href="http://www.florenceloewy.com">Florence Loewy</a>
-                        <a href="http://www.friville-editions.org">Friville éditions</a>
-                        <a href="http://www.galerieallen.com">Galerie Allen</a>
-                        <a href="http://www.catherineputman.com">Galerie Catherine Putman</a>
-                        <a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff</a>
-                        <a href="http://www.loevenbruck.com">Galerie Loevenbruck</a>
-                        <a href="http://www.galeriemetropolis.com">Galerie Metropolis</a>
-                        <a href="http://www.gbacency.fr">Gb agency</a>
-                        <a href="http://www.galeriedemultiples.com">GDM (Galerie des Multiples) ?</a>
-                        <a href="http://www.greyarea.eu">Grey Area</a>
-                        <a href="http://www.handartpublisher.com">Hand Art Publisher</a>
-                        <a href="http://www.iconomoteur.fr">Iconomoteur</a>
-                        <a href="http://www.lendroit.org">Lendroit éditions</a>
-                        <a href="http://francois-righi.com">Les éditions les livres sont muets</a>
-                        <a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet</a>
-                        <a href="http://www.edition-ln.com">LN Editions</a>
-                        <a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions</a>
-                        <a href="http://www.mayrevue.com">May, Paris, France</a>
-                        <a href="http://www.micheledidier.com">MFC-Michele Didier</a>
-                        <a href="http://www.michaelwoolworth.com">Michael Woolworth Publications</a>
-                        <a href="http://www.onestarpress.com">Onestar Press</a>
-                        <a href="http://www.optical-sound.com">Optical Sound records & fine arts</a>
-                        <a href="http://www.printsthingsandbooks.com">Prints, things and books by artists</a>
-                        <a href="http://www.royalbooklodge.com">Royal Book Lodge</a>
-                        <a href="http://www.rvb-books.com">RVB Books</a>
-                        <a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie</a>
-                        <a href="http://www.wedonotworkalone.fr">We do not work alone</a>
-                        <a href="http://www.wysiwyh.fr">What you see is what you hear</a>
-                        <a href="http://www.winkedition.com">Wink</a>
-                        <a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a>
-                        <a href="http://www.bartlebybooks.eu">Bartleby & Co. (Belgique)</a>
-                        <a href="http://www.benveniste.com">Benveniste CP & P (Espagne)</a>
-                        <a href="http://www.bookworks.org.uk">Book Works (Royaume-Uni)</a>
-                        <a href="http://www.harpune.at">Harpune Wien (Autriche)</a>
-                        <a href="http://www.jap.be">JAP/ Jeunesse & Arts plastiques (Belgique)</a>
-                        <a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings & Prints (Allemagne)</a>
-                        <a href="http://www.julianpage.co.uk">Julian Page (Royaume-Uni)</a>
-                        <a href="http://www.keymouse.eu">Keymouse (Belgique)</a>
-                        <a href="http://www.morepublishers.be">Morepublishers (Belgique)</a>
-                        <a href="http://www.themultiplestore.org">The Multiple Store (Royaume-Uni)</a>
-                        <a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery & Editions (Danemark/Allemagne)</a>
-                        <a href="http://www.oei.nu">OEI editör (Suède)</a>
-                        <a href="http://www.gallery.simsreed.com">Sims Reed Gallery (Royaume-Uni)</a>
-                    </p>
+                <h4> Exposants</h4>
+                <!-- <h5> Éditeurs (en cours)</h5>-->
+                    <ul class="exhibitors-list">
+                        <li><a href="http://www.ahahah-editions.fr">Ah Ah Ah éditions</a></li>
+                        <li><a href="http://www.atelierboba.fr">Atelier Boba</a></li>
+                        <li><a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur</a></li>
+                        <li><a href="http://www.cneai.com">Cneai =</a></li>
+                        <li><a href="http://centpages.atheles.org">Cent pages</a></li>
+                        <li><a href="http://www.editions-dilecta.com">Editions Dilecta</a></li>
+                        <li><a href="http://www.editionsdudetail.com">Editions du détail</a></li>
+                        <li><a href="http://www.incertain-sens.org">Editions Incertain Sens</a></li>
+                        <li><a href="http://www.florenceloewy.com">Florence Loewy</a></li>
+                        <li><a href="http://www.friville-editions.org">Friville éditions</a></li>
+                        <li><a href="http://www.alaingutharc.com">Galerie Alain Gutharc</a></li>
+                        <li><a href="http://www.galerieallen.com">Galerie Allen</a></li>
+                        <li><a href="http://www.catherineputman.com">Galerie Catherine Putman</a></li>
+                        <li><a href="http://www.gabriellemaubrie.com">Galerie Gabrielle Maubrie</a></li>
+                        <li><a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff</a></li>
+                        <li><a href="http://www.loevenbruck.com">Galerie Loevenbruck</a></li>
+                        <li><a href="http://www.galeriemetropolis.com">Galerie Metropolis</a></li>
+                        <li><a href="http://www.perrotin.com">Galerie Perrotin</a></li>
+                        <li><a href="http://www.gbacency.fr">Gb agency</a></li>
+                        <li><a href="http://www.galeriedemultiples.com">Galerie des Multiples</a></li>
+                        <li><a href="http://www.greyarea.eu">Grey Area</a></li>
+                        <li><a href="http://www.handartpublisher.com">Hand Art Publisher</a></li>
+                        <li><a href="http://www.iconomoteur.fr">Iconomoteur</a></li>
+                        <li><a href="http://www.lendroit.org">Lendroit éditions</a></li>
+                        <li><a href="http://francois-righi.com">Les éditions les livres sont muets</a></li>
+                        <li><a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet</a></li>
+                        <li><a href="http://www.edition-ln.com">LN Editions</a></li>
+                        <li><a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions</a></li>
+                        <li><a href="http://www.mayrevue.com">May</a></li>
+                        <li><a href="http://www.micheledidier.com">MFC-Michèle Didier</a></li>
+                        <li><a href="http://www.michaelwoolworth.com">Michael Woolworth Publications</a></li>
+                        <li><a href="http://www.ateliermurr.com">m.u.r.r &amp; GOL records</a></li>
+                        <li><a href="http://www.onestarpress.com">Onestar Press</a></li>
+                        <li><a href="http://www.optical-sound.com">Optical Sound</a></li>
+                        <li><a href="http://www.printsthingsandbooks.com">Prints, things and books by artists</a></li>
+                        <li><a href="http://www.royalbooklodge.com">Royal Book Lodge</a></li>
+                        <li><a href="http://www.rvb-books.com">RVB Books</a></li>
+                        <li><a href="htt://www.threestarbooks.com">Three Star Books</a></li>
+                        <li><a href="http://www.tolucaeditions.com">Toluca</a></li>
+                        <li><a href="http://www.urdla.com">URDLA</a></li>
+                        <li><a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie</a></li>
+                        <li><a href="http://www.wedonotworkalone.fr">We do not work alone</a></li>
+                        <li><a href="http://www.wysiwyh.fr">What you see is what you hear</a></li>
+                        <li><a href="http://www.winkedition.com">Wink</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.bartlebybooks.eu">Bartleby & Co. (Belgique)</a></li>
+                        <li><a href="http://www.benveniste.com">Benveniste CP & P (Espagne)</a></li>
+                        <li><a href="htt://www.salon-fuer-kunstbuch.at">Bernhard Cella (Autriche)</a></li>
+                        <li><a href="http://www.bookworks.org.uk">Book Works (Royaume-Uni)</a></li>
+                        <li><a href="http://davidkrut.com">David Krut Projects (Afrique du Sud / États-Unis)</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.gagarin.be">Gagarin (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Galerie Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.harpune.at">Harpune Verlag (Autriche)</a></li>
+                        <li><a href="http://www.jacobfabricius.net">Jacob Fabricius (Danemark)</a></li>
+                        <li><a href="http://www.jap.be">JAP/ Jeunesse & Arts plastiques (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.julianpage.co.uk">Julian Page (Royaume-Uni)</a></li>
+                        <li><a href="http://www.keymouse.eu">Keymouse (Belgique)</a></li>
+                        <li><a href="http://www.morepublishers.be">Morepublishers (Belgique)</a></li>
+                        <li><a href="http://www.mottodistribution.com">Motto (Allemagne)</a></li>
+                        <li><a href="http://www.themultiplestore.org">The Multiple Store (Royaume-Uni)</a></li>
+                        <li><a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery & Editions (Danemark/Allemagne)</a></li>
+                        <li><a href="http://www.oei.nu">OEI editör (Suède)</a></li>
+                        <li><a href="http://www.gallery.simsreed.com">Sims Reed Gallery (Royaume-Uni)</a></li>
+                        <li><a href="http://www.spectorbooks.com">Spector Books (Allemagne)</a></li>
+                    </ul>
                 </div>
 
                 <div class="infos-visiteurs">
@@ -393,7 +241,23 @@
                 </div>
             </div>
         </div>
+        <a name="english" />
         <div id="english">
+            <a href="#francais" id="toFrench" class="languageSwitch">Fran&ccedil;ais</a>
+            <div id="practical">
+                <div class="logo">
+                    <img src="assets/logos/mad.png">
+                </div>
+                <h2>Multiple Art Days</h2>
+                <div class="dates">
+                    <h4>22, 23, 24 <br/>mai 2015</h4>
+                    <h5>12h00 à 19h00</h5>
+                </div>
+                <div class="address">
+                    <h4>La Maison Rouge</h4>
+                    <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
+                </div>
+            </div>
             <div class="container">
                 <div class="menu">
                     <h4>About</h4>
@@ -407,7 +271,7 @@
                     <div class="partners-logos">
                         <div id="cneai">
                             <a href="http://www.cneai.com">
-                                <img src="assets/logos/cneai.png"/>
+                                <img src="assets/logos/cneaiWhite.png"/>
                                 Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
                             </a>
                         </div>
@@ -433,59 +297,74 @@
                 <div class="exposants">
                     <h4>Exhibitors</h4>
                     <!-- <h5> Éditeurs (en cours)</h5>-->
-                    <p>
-                        <a href="http://www.ahahah-editions.fr">Ah Ah Ah éditions</a>
-                        <a href="http://www.atelierboba.fr">Atelier Boba</a>
-                        <a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur</a>
-                        <a href="http://www.cneai.com">Cneai =</a>
-                        <a href="http://centpages.atheles.org">Editions Cent pages (mot éditions ? )</a>
-                        <a href="http://www.editions-dilecta.com">Editions Dilecta</a>
-                        <a href="http://www.editionsdudetail.com">Editions du détail</a>
-                        <a href="http://www.incertain-sens.org">Editions Incertain Sens</a>
-                        <a href="http://www.florenceloewy.com">Florence Loewy</a>
-                        <a href="http://www.friville-editions.org">Friville éditions</a>
-                        <a href="http://www.galerieallen.com">Galerie Allen</a>
-                        <a href="http://www.catherineputman.com">Galerie Catherine Putman</a>
-                        <a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff</a>
-                        <a href="http://www.loevenbruck.com">Galerie Loevenbruck</a>
-                        <a href="http://www.galeriemetropolis.com">Galerie Metropolis</a>
-                        <a href="http://www.gbacency.fr">Gb agency</a>
-                        <a href="http://www.galeriedemultiples.com">GDM (Galerie des Multiples) ?</a>
-                        <a href="http://www.greyarea.eu">Grey Area</a>
-                        <a href="http://www.handartpublisher.com">Hand Art Publisher</a>
-                        <a href="http://www.iconomoteur.fr">Iconomoteur</a>
-                        <a href="http://www.lendroit.org">Lendroit éditions</a>
-                        <a href="http://francois-righi.com">Les éditions les livres sont muets</a>
-                        <a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet</a>
-                        <a href="http://www.edition-ln.com">LN Editions</a>
-                        <a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions</a>
-                        <a href="http://www.mayrevue.com">May, Paris, France</a>
-                        <a href="http://www.micheledidier.com">MFC-Michele Didier</a>
-                        <a href="http://www.michaelwoolworth.com">Michael Woolworth Publications</a>
-                        <a href="http://www.onestarpress.com">Onestar Press</a>
-                        <a href="http://www.optical-sound.com">Optical Sound records & fine arts</a>
-                        <a href="http://www.printsthingsandbooks.com">Prints, things and books by artists</a>
-                        <a href="http://www.royalbooklodge.com">Royal Book Lodge</a>
-                        <a href="http://www.rvb-books.com">RVB Books</a>
-                        <a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie</a>
-                        <a href="http://www.wedonotworkalone.fr">We do not work alone</a>
-                        <a href="http://www.wysiwyh.fr">What you see is what you hear</a>
-                        <a href="http://www.winkedition.com">Wink</a>
-                        <a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a>
-                        <a href="http://www.bartlebybooks.eu">Bartleby & Co. (Belgique)</a>
-                        <a href="http://www.benveniste.com">Benveniste CP & P (Espagne)</a>
-                        <a href="http://www.bookworks.org.uk">Book Works (Royaume-Uni)</a>
-                        <a href="http://www.harpune.at">Harpune Wien (Autriche)</a>
-                        <a href="http://www.jap.be">JAP/ Jeunesse & Arts plastiques (Belgique)</a>
-                        <a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings & Prints (Allemagne)</a>
-                        <a href="http://www.julianpage.co.uk">Julian Page (Royaume-Uni)</a>
-                        <a href="http://www.keymouse.eu">Keymouse (Belgique)</a>
-                        <a href="http://www.morepublishers.be">Morepublishers (Belgique)</a>
-                        <a href="http://www.themultiplestore.org">The Multiple Store (Royaume-Uni)</a>
-                        <a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery & Editions (Danemark/Allemagne)</a>
-                        <a href="http://www.oei.nu">OEI editör (Suède)</a>
-                        <a href="http://www.gallery.simsreed.com">Sims Reed Gallery (Royaume-Uni)</a>
-                    </p>
+                    <ul class="exhibitors-list">
+                        <li><a href="http://www.ahahah-editions.fr">Ah Ah Ah éditions</a></li>
+                        <li><a href="http://www.atelierboba.fr">Atelier Boba</a></li>
+                        <li><a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur</a></li>
+                        <li><a href="http://www.cneai.com">Cneai =</a></li>
+                        <li><a href="http://centpages.atheles.org">Cent pages</a></li>
+                        <li><a href="http://www.editions-dilecta.com">Editions Dilecta</a></li>
+                        <li><a href="http://www.editionsdudetail.com">Editions du détail</a></li>
+                        <li><a href="http://www.incertain-sens.org">Editions Incertain Sens</a></li>
+                        <li><a href="http://www.florenceloewy.com">Florence Loewy</a></li>
+                        <li><a href="http://www.friville-editions.org">Friville éditions</a></li>
+                        <li><a href="http://www.alaingutharc.com">Galerie Alain Gutharc</a></li>
+                        <li><a href="http://www.galerieallen.com">Galerie Allen</a></li>
+                        <li><a href="http://www.catherineputman.com">Galerie Catherine Putman</a></li>
+                        <li><a href="http://www.gabriellemaubrie.com">Galerie Gabrielle Maubrie</a></li>
+                        <li><a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff</a></li>
+                        <li><a href="http://www.loevenbruck.com">Galerie Loevenbruck</a></li>
+                        <li><a href="http://www.galeriemetropolis.com">Galerie Metropolis</a></li>
+                        <li><a href="http://www.perrotin.com">Galerie Perrotin</a></li>
+                        <li><a href="http://www.gbacency.fr">Gb agency</a></li>
+                        <li><a href="http://www.galeriedemultiples.com">Galerie des Multiples</a></li>
+                        <li><a href="http://www.greyarea.eu">Grey Area</a></li>
+                        <li><a href="http://www.handartpublisher.com">Hand Art Publisher</a></li>
+                        <li><a href="http://www.iconomoteur.fr">Iconomoteur</a></li>
+                        <li><a href="http://www.lendroit.org">Lendroit éditions</a></li>
+                        <li><a href="http://francois-righi.com">Les éditions les livres sont muets</a></li>
+                        <li><a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet</a></li>
+                        <li><a href="http://www.edition-ln.com">LN Editions</a></li>
+                        <li><a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions</a></li>
+                        <li><a href="http://www.mayrevue.com">May</a></li>
+                        <li><a href="http://www.micheledidier.com">MFC-Michèle Didier</a></li>
+                        <li><a href="http://www.michaelwoolworth.com">Michael Woolworth Publications</a></li>
+                        <li><a href="http://www.ateliermurr.com">m.u.r.r &amp; GOL records</a></li>
+                        <li><a href="http://www.onestarpress.com">Onestar Press</a></li>
+                        <li><a href="http://www.optical-sound.com">Optical Sound</a></li>
+                        <li><a href="http://www.printsthingsandbooks.com">Prints, things and books by artists</a></li>
+                        <li><a href="http://www.royalbooklodge.com">Royal Book Lodge</a></li>
+                        <li><a href="http://www.rvb-books.com">RVB Books</a></li>
+                        <li><a href="htt://www.threestarbooks.com">Three Star Books</a></li>
+                        <li><a href="http://www.tolucaeditions.com">Toluca</a></li>
+                        <li><a href="http://www.urdla.com">URDLA</a></li>
+                        <li><a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie</a></li>
+                        <li><a href="http://www.wedonotworkalone.fr">We do not work alone</a></li>
+                        <li><a href="http://www.wysiwyh.fr">What you see is what you hear</a></li>
+                        <li><a href="http://www.winkedition.com">Wink</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.bartlebybooks.eu">Bartleby & Co. (Belgique)</a></li>
+                        <li><a href="http://www.benveniste.com">Benveniste CP & P (Espagne)</a></li>
+                        <li><a href="htt://www.salon-fuer-kunstbuch.at">Bernhard Cella (Autriche)</a></li>
+                        <li><a href="http://www.bookworks.org.uk">Book Works (Royaume-Uni)</a></li>
+                        <li><a href="http://davidkrut.com">David Krut Projects (Afrique du Sud / États-Unis)</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.gagarin.be">Gagarin (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Galerie Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.harpune.at">Harpune Verlag (Autriche)</a></li>
+                        <li><a href="http://www.jacobfabricius.net">Jacob Fabricius (Danemark)</a></li>
+                        <li><a href="http://www.jap.be">JAP/ Jeunesse & Arts plastiques (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.julianpage.co.uk">Julian Page (Royaume-Uni)</a></li>
+                        <li><a href="http://www.keymouse.eu">Keymouse (Belgique)</a></li>
+                        <li><a href="http://www.morepublishers.be">Morepublishers (Belgique)</a></li>
+                        <li><a href="http://www.mottodistribution.com">Motto (Allemagne)</a></li>
+                        <li><a href="http://www.themultiplestore.org">The Multiple Store (Royaume-Uni)</a></li>
+                        <li><a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery & Editions (Danemark/Allemagne)</a></li>
+                        <li><a href="http://www.oei.nu">OEI editör (Suède)</a></li>
+                        <li><a href="http://www.gallery.simsreed.com">Sims Reed Gallery (Royaume-Uni)</a></li>
+                        <li><a href="http://www.spectorbooks.com">Spector Books (Allemagne)</a></li>
+                    </ul>
                 </div>
 
                 <div class="infos-visiteurs">
@@ -536,10 +415,10 @@
                 </div>
             </div>
             <div class="left">
-                <a id="selectFrench" class="left" href="french.html">entrez</a>
+                <a id="selectFrench" class="left" href="#francais">entrez</a>
             </div>
             <div class="right">
-                <a id="selectEnglish" class="right" href="english.html">enter</a>
+                <a id="selectEnglish" class="right" href="#english">enter</a>
             </div>
         </div>
     </body>
