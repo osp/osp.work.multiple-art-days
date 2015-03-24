@@ -87,17 +87,25 @@ h3 {
 h4 {
     font-family: "Linux Libertin Display";
 	font-size: 37px;
+	margin-top: 40px;
+	margin-bottom: 10px;
 }
 h5 {
     font-family: "Linux Libertin Display";
 	font-size: 28px;
+	margin-top: 20px;
 }
 
 p {
     font-family: "Linux Libertin Display";
     font-size: 27px;
     line-height: 30px;
-    margin-bottom: 35px;
+    margin-bottom: 7px;
+    text-indent: 40px;
+}
+.credits p {
+      /*text-indent: 0px;*/
+      margin-bottom:0px;
 }
 
 p a {
