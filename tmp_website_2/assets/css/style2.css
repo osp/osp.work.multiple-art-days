@@ -38,6 +38,7 @@
 html, body {
     height: 100%;
     text-align: center;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -168,8 +169,8 @@ p a:hover, li a:hover {
 
 #practical {
     position: fixed;
-    left: 20px;
-    top: 35px;
+    left: 25px;
+    top: 54px;
 }
 
 .introduction {
@@ -232,6 +233,7 @@ p a:hover, li a:hover {
     outline: 5px solid #FFEFB9 ;
     text-align: center !important;
     margin: 15px 30px !important;
+    padding: 5px 8px 5px 8px;
 }
 
 .menu {
