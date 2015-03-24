@@ -179,16 +179,16 @@ p a:hover, li a:hover {
 }
 
 #practical h4 {
-    font-size: 51px;
-	line-height: 1em;
+    font-size: 40px;
+	line-height: 0.9em;
 }
 
 #practical h5 {
 
-    font-size: 37px;
-    letter-spacing: 2px;
+    font-size: 26px;
     margin-top: 0;
-    margin-bottom: 20px;
+    line-height: 1em;
+    margin-bottom: 10px;
 }
 
 .dates, .address {
@@ -402,7 +402,7 @@ body.english #english {
 
 .three h4 {
     font-family: "libertin30";
-    
+
 }
 .three .practical h4 {
     font-family: "libertin30";
