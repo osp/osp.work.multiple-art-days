@@ -43,9 +43,7 @@ html, body {
 .container {
     margin: auto;
     position: relative;
-    top: 35px;
-    /*margin-top: -110px;*/
-    padding-bottom: 250px;
+    padding-bottom: 200px;
     width: 600px;
 }
 
