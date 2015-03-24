@@ -191,6 +191,7 @@ p a:hover, li a:hover {
 }
 
 .dates, .address {
+    margin-top: 40px;
     width: 190px;
 }
 
