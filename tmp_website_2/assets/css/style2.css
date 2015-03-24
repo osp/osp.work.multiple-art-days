@@ -46,6 +46,7 @@ html, body {
     position: relative;
     padding-bottom: 200px;
     width: 600px;
+    padding-top: 60px;
 }
 
 .entry-container{
@@ -133,7 +134,7 @@ h3 {
 h4 {
     font-family: "Linux Libertin Display";
 	font-size: 37px;
-	margin-top: 40px;
+	margin-top: 2   0px;
 	margin-bottom: 10px;
 }
 
@@ -183,15 +184,14 @@ p a:hover, li a:hover {
 }
 
 #practical h5 {
-
-    font-size: 26px;
+    font-size: 30px;
     margin-top: 0;
     line-height: 1em;
     margin-bottom: 10px;
 }
 
 .dates, .address {
-    width: 280px;
+    width: 190px;
 }
 
 .partners {
