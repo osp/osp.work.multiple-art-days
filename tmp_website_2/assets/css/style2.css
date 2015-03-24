@@ -132,7 +132,7 @@ p a:hover {
 
 #practical h4 {
     font-size: 51px;
-	line-height: 1.1em;
+	line-height: 1em;
 }
 
 #practical h5 {
@@ -147,42 +147,45 @@ p a:hover {
     width: 280px;
 }
 
-#partners {
+.partners {
     position: fixed;
     right: 20px;
     bottom: 20px;
 }
 
-#partners div {
+.partners-logos div {
     text-align: left;
     width: 120px;
     display: inline-block;
     margin-right: 10px;
 }
 
-#partners a {
+.partners a {
     color: black;
     font-family: "Linux Libertin Display";
     font-size: 12px;
     text-decoration: none;
 }
 
-#partners a:hover {
+.partners a:hover {
     text-decoration: underline;
 }
 
-#partners img {
+.partners img {
     display: block;
     clear: right;
     max-width: 110px;
     max-height: 30px;
     margin-bottom: 5px;
 }
-#partners h1 {
-	margin: 2px auto;
+.partners h4 {
+	margin: 2px auto !important;
     /*font-family: "Linux Libertin Display";*/
-	font-size: 29px;
+	font-size: 29px !important;
     font-style: normal;
+        outline: 5px solid #FFEFB9 ;
+    text-align: center !important;
+    margin: 15px 30px !important;
 }
 
 @media (max-width: 1200px) {
