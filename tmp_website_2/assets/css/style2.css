@@ -237,6 +237,11 @@ p a:hover, li a:hover {
     padding: 5px 8px 5px 8px;
 }
 
+.menu h4 a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .menu {
     position: fixed;
     right: 20px;
@@ -321,7 +326,7 @@ body.english #english {
 }
 
 .logo-entry {
-    position: absolute;
+    position: fixed;
     top: 35vh;
     left: 50%;
     width: 50%;
@@ -335,7 +340,7 @@ body.english #english {
 }
 
 .left, .right {
-    position: absolute;
+    position: fixed;
     bottom: 25%;
     color: black;
     width: 100px;
@@ -360,6 +365,7 @@ body.english #english {
 }
 
 .left a, .right a {
+    position: relative;
     width: 100%;
     left: -50%;
 }
