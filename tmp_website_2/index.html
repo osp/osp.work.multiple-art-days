@@ -1,74 +1,454 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
-        <title>Multiple Art Days #1</title>
+        <title>Multiple Art Days</title>
+        <link rel="stylesheet" href="assets/css/style3.css" type="text/css" media="all" />
+        <style type="text/css">
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                'use strict';
+
+                $("#selectFrench").click(function (e) {
+                    e.preventDefault();
+                    $("#entry").detach();
+                    $('body').removeClass('entry');
+                    selectFrench();
+                });
+
+                $("#selectEnglish").click(function (e) {
+                    e.preventDefault();
+                    $("#entry").detach();
+                    $('body').removeClass('entry');
+                    selectEnglish();
+                });
+
+                $("#toEnglish").click(function(e) {
+                    e.preventDefault();
+                    selectEnglish();
+                });
+
+                $("#toFrench").click(function(e) {
+                    e.preventDefault();
+                    selectFrench();
+                });
+
+                var selectEnglish = function () {
+                    $("body").removeClass('french').addClass('english');
+                }
+
+                var selectFrench = function () {
+                    $("body").removeClass('english').addClass('french');
+                }
+
+                var panelClasses = ['one', 'two', 'three', 'four'];
+
+                $(window).scroll(function (e) {
+                    if (e) {
+                        e.preventDefault();
+                    }
+
+                    var body = window.document.body;
+                    var totalHeight = body.scrollHeight;
+                    var panelHeight = totalHeight / panelClasses.length;
+                    var offset = body.scrollTop;
+
+                    var panel = Math.round(offset / panelHeight);
+                    var className = panelClasses[panel]
+
+                    $('body').removeClass(panelClasses.join(' '));
+                    $('body').addClass(className);
+                });
+            });
+        </script>
     </head>
-    <body>
-        <div class="container">
-            <div class="logo">
-                <img src="assets/logos/mad.png">
-            </div>
-            <h1>Multiple Art Days</h1>
-            <h2>Le salon des pratiques éditoriales</h2>
-            <div class="practical">
+    <body class="entry">
+        <a name="francais" />
+        <div id="french">
+            <a href="#english" id="toEnglish" class="languageSwitch">English</a>
+            <div class="head-left">
+	      <!--to uncomment
+	      <h2>Multiple Art Days</h2>-->
+	    </div>
+            <div id="practical">
+               <!-- to comment -->
+               <div class="logo">
+                    <img src="assets/logos/mad.png">
+                </div>
+                <h2>Multiple Art Days</h2>
+	       <!--end to comment -->
                 <div class="dates">
-                    <h3>22, 23, 24 mai 2015</h3>
-                    <p>12h00 à 19h00</p>
+                    <h4>22, 23, 24 <br/>mai 2015</h4>
+                    <h5>12h00 à 19h00</h5>
                 </div>
                 <div class="address">
-                    <h3>La Maison Rouge</h3>
-                    <p>10 Boulevard de la Bastille, 75012&nbsp;Paris</p>
+                    <h4>La Maison Rouge</h4>
+                    <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
                 </div>
             </div>
-            <div id="partners">
-                <div id="cneai">
-                    <a href="http://www.cneai.com">
+            <div class="container">
+                <div class="menu">
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#a-propos">About</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exposants">Exposants</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#infos-visiteur">Infos visiteurs</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Evénements</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#crédits">Crédits</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Partenaires</a></h4>
+                </div>
+                <div class="partners">
+                    <div class="partners-logos">
+                    <div id="cneai">
+                        <a href="http://www.cneai.com">
                         <img src="assets/logos/cneai.png"/>
                         Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
-                    </a>
-                </div>
-                <div id="maisonrouge">
-                    <a href="http://www.lamaisonrouge.org/">
+                        </a>
+                    </div>
+                    <div id="maisonrouge">
+                        <a href="http://www.lamaisonrouge.org/">
                         <img src="assets/logos/maisonrouge.png"/>
                         La&nbsp;Maison&nbsp;Rouge
-                        Fodation&nbsp;Antoine&nbsp;de&nbsp;Galbert
-                    </a>
+                        Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
+                        </a>
+                    </div>
+                    </div>
+                </div>
+		    <div class="logo head">
+		   <!-- to uncomment
+			<img src="assets/logos/mad.png">
+		      -->
+</div>
+		    <div class="introduction">
+ 
+                    <h4 id="a-propos">Le salon des pratiques éditoriales</h4>
+
+                    <p>Nouveau grand rendez-vous annuel centré sur la figure de l’éditeur, le MAD offre pendant 3 jours un panorama des pratiques éditoriales contemporaines, de l'édition fanzine aux œuvres rares : prints, multiples, livres, films et disques d'artistes...</p>
+                    <p>Investissant l’ensemble des espaces d’un des lieux emblématiques des collectionneurs et amateur d'art contemporain, le MAD réunira une centaine de producteurs internationaux qui ont pour point commun la qualité curatoriale de leurs propositions.</p>
+                    <p>Bien plus qu'un salon, MAD expose la figure de l’éditeur, l’acteur le plus indépendant mais aussi le plus polyvalent du monde de l’art.</p>
+                    <p>Ces journées seront accompagnées d’une série de rencontres, performances artistiques et débats sur la pratique éditoriale dans l’art contemporain avec les artistes, graphistes, responsables de collections publiques, éditeurs, collectionneurs, chercheurs et libraires venus du monde entier. </p>
+                    <p>Au plaisir de vous recevoir au MAD !</p>
+                </div>
+
+                <div class="exposants">
+                <h4 id="exposants">Exposants</h4>
+                <!-- <h5> Éditeurs (en cours)</h5>-->
+                    <ul class="exhibitors-list">
+                        <li><a href="http://www.ahahah-editions.fr">Ah Ah Ah éditions</a></li>
+                        <li><a href="http://www.atelierboba.fr">Atelier Boba</a></li>
+                        <li><a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur</a></li>
+                        <li><a href="http://www.cneai.com">Cneai =</a></li>
+                        <li><a href="http://centpages.atheles.org">Cent pages</a></li>
+                        <li><a href="http://www.editions-dilecta.com">Editions Dilecta</a></li>
+                        <li><a href="http://www.editionsdudetail.com">Editions du détail</a></li>
+                        <li><a href="http://www.incertain-sens.org">Editions Incertain Sens</a></li>
+                        <li><a href="http://www.florenceloewy.com">Florence Loewy</a></li>
+                        <li><a href="http://www.friville-editions.org">Friville éditions</a></li>
+                        <li><a href="http://www.alaingutharc.com">Galerie Alain Gutharc</a></li>
+                        <li><a href="http://www.galerieallen.com">Galerie Allen</a></li>
+                        <li><a href="http://www.catherineputman.com">Galerie Catherine Putman</a></li>
+                        <li><a href="http://www.gabriellemaubrie.com">Galerie Gabrielle Maubrie</a></li>
+                        <li><a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff</a></li>
+                        <li><a href="http://www.loevenbruck.com">Galerie Loevenbruck</a></li>
+                        <li><a href="http://www.galeriemetropolis.com">Galerie Metropolis</a></li>
+                        <li><a href="http://www.perrotin.com">Galerie Perrotin</a></li>
+                        <li><a href="http://www.gbacency.fr">Gb agency</a></li>
+                        <li><a href="http://www.galeriedemultiples.com">Galerie des Multiples</a></li>
+                        <li><a href="http://www.greyarea.eu">Grey Area</a></li>
+                        <li><a href="http://www.handartpublisher.com">Hand Art Publisher</a></li>
+                        <li><a href="http://www.iconomoteur.fr">Iconomoteur</a></li>
+                        <li><a href="http://www.lendroit.org">Lendroit éditions</a></li>
+                        <li><a href="http://francois-righi.com">Les éditions les livres sont muets</a></li>
+                        <li><a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet</a></li>
+                        <li><a href="http://www.edition-ln.com">LN Editions</a></li>
+                        <li><a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions</a></li>
+                        <li><a href="http://www.mayrevue.com">May</a></li>
+                        <li><a href="http://www.micheledidier.com">MFC-Michèle Didier</a></li>
+                        <li><a href="http://www.michaelwoolworth.com">Michael Woolworth Publications</a></li>
+                        <li><a href="http://www.ateliermurr.com">m.u.r.r &amp; GOL records</a></li>
+                        <li><a href="http://www.onestarpress.com">Onestar Press</a></li>
+                        <li><a href="http://www.optical-sound.com">Optical Sound</a></li>
+                        <li><a href="http://www.printsthingsandbooks.com">Prints, things and books by artists</a></li>
+                        <li><a href="http://www.royalbooklodge.com">Royal Book Lodge</a></li>
+                        <li><a href="http://www.rvb-books.com">RVB Books</a></li>
+                        <li><a href="htt://www.threestarbooks.com">Three Star Books</a></li>
+                        <li><a href="http://www.tolucaeditions.com">Toluca</a></li>
+                        <li><a href="http://www.urdla.com">URDLA</a></li>
+                        <li><a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie</a></li>
+                        <li><a href="http://www.wedonotworkalone.fr">We do not work alone</a></li>
+                        <li><a href="http://www.wysiwyh.fr">What you see is what you hear</a></li>
+                        <li><a href="http://www.winkedition.com">Wink</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.bartlebybooks.eu">Bartleby & Co. (Belgique)</a></li>
+                        <li><a href="http://www.benveniste.com">Benveniste CP & P (Espagne)</a></li>
+                        <li><a href="htt://www.salon-fuer-kunstbuch.at">Bernhard Cella (Autriche)</a></li>
+                        <li><a href="http://www.bookworks.org.uk">Book Works (Royaume-Uni)</a></li>
+                        <li><a href="http://davidkrut.com">David Krut Projects (Afrique du Sud / États-Unis)</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.gagarin.be">Gagarin (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Galerie Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.harpune.at">Harpune Verlag (Autriche)</a></li>
+                        <li><a href="http://www.jacobfabricius.net">Jacob Fabricius (Danemark)</a></li>
+                        <li><a href="http://www.jap.be">JAP/ Jeunesse & Arts plastiques (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.julianpage.co.uk">Julian Page (Royaume-Uni)</a></li>
+                        <li><a href="http://www.keymouse.eu">Keymouse (Belgique)</a></li>
+                        <li><a href="http://www.morepublishers.be">Morepublishers (Belgique)</a></li>
+                        <li><a href="http://www.mottodistribution.com">Motto (Allemagne)</a></li>
+                        <li><a href="http://www.themultiplestore.org">The Multiple Store (Royaume-Uni)</a></li>
+                        <li><a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery & Editions (Danemark/Allemagne)</a></li>
+                        <li><a href="http://www.oei.nu">OEI editör (Suède)</a></li>
+                        <li><a href="http://www.gallery.simsreed.com">Sims Reed Gallery (Royaume-Uni)</a></li>
+                        <li><a href="http://www.spectorbooks.com">Spector Books (Allemagne)</a></li>
+                    </ul>
+                </div>
+
+                <div class="infos-visiteurs">
+                <h4 id="infos-visiteur">Infos Visiteur</h4>
+                    <br />
+                    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
+                </div>
+
+                <div class="evenements">
+                </div>
+
+                <div class="exposants">
+                </div>
+
+                <div class="credits">
+                    <h4 id="crédits">Crédits</h4>
+
+                    <h5>Direction curatoriale</h5>
+                    <p>
+                        Sylvie&nbsp;Boulanger, directrice du <a href="http://www.cneai.com" title="(Centre National Edition Art Image)">CNEAI</a> et
+                        Michael&nbsp;Woolworth, directeur de <a href="http://www.michealwoolworth.com">l’Atelier Woolworth</a>
+                    </p>
+
+                <!-- <h4>Comité scientifique :</h4>
+                    <p>Paula Aisemberg, Daniel Bosser, Jean Max Colard, Michèle Didier, Laurie Hurwitz
+                    et Mathieu Mercier.</p>-->
+
+                    <h5>Coordination</h5>
+                    <p>Barbara&nbsp;Quintin</p>
+
+                    <h5>Mobilier</h5>
+                    <p>Stéphane&nbsp;Magnin</p>
+
+                    <h5>Graphisme</h5>
+                    <p>
+                        <a href="http://osp.kitchen">OSP</a>
+                    </p>
+
+                    <h5>Contact presse</h5>
+                    <p>
+                        <a href="http://www.claudinecolin.com">Claudine&nbsp;Colin communication</a> – 28 rue de Sévigné – 75004 Paris,
+                        <a href="mailto: penelope@claudinecolin.com">Pénélope&nbsp;Ponchelet</a>
+                        et
+                        <a href="mailto: marine@claudinecolin.com"> Marine&nbsp;le&nbsp;Bris</a>
+                    </p>
+
+                    <p>
+                        Pour toutes questions, contactez Barbara&nbsp;Quintin<br />
+                        <a href="mailto:contact@multipleartdays.com"> contact@multipleartdays.com </a>–<a href="tel:(0)7 58 35 66 96">(0)7 58 35 66 96</a>
+                    </p>
                 </div>
             </div>
-            <div class="introduction">
-                <p>Nouveau grand rendez-vous annuel centré sur la figure de l’éditeur, le MAD offre pendant 3 jours un panorama des pratiques éditoriales contemporaines, de l'édition fanzine aux œuvres rares : prints, multiples, livres, films et disques d'artistes...</p>
-                <p>Investissant l’ensemble des espaces d’un des lieux emblématiques des collectionneurs et amateur d'art contemporain, le MAD réunira une centaine de producteurs internationaux qui ont pour point commun la qualité curatoriale de leurs propositions.</p>
-                <p>Bien plus qu'un salon, MAD expose la figure de l’éditeur, l’acteur le plus indépendant mais aussi le plus polyvalent du monde de l’art.</p>
-                <p>Ces journées seront accompagnées d’une série de rencontres, performances artistiques et débats sur la pratique éditoriale dans l’art contemporain avec les artistes, graphistes, responsables de collections publiques, éditeurs, collectionneurs, chercheurs et libraires venus du monde entier. </p>
-                <p>Au plaisir de vous recevoir au MAD !</p>
+        </div>
+        <a name="english" />
+        <div id="english">
+            <a href="#francais" id="toFrench" class="languageSwitch">Fran&ccedil;ais</a>
+            <div id="practical">
+                <div class="logo">
+                    <img src="assets/logos/mad.png">
+                </div>
+                <h2>Multiple Art Days</h2>
+                <div class="dates">
+                    <h4>22, 23, 24 <br/>may 2015</h4>
+                    <h5>12h00 à 19h00</h5>
+                </div>
+                <div class="address">
+                    <h4>La Maison Rouge</h4>
+                    <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
+                </div>
             </div>
-            <div class="credits">
-                <h4>Direction curatoriale :</h4>
-                <p>Sylvie Boulanger, directrice du <a href="http://www.cneai.com" title="(Centre National Edition Art Image)">CNEAI</a>
-                <br />Michael Woolworth, directeur de <a href="http://www.michealwoolworth.com">l’Atelier Woolworth</a></p>
+            <div class="container">
+                <div class="menu">
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#about">About</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exhibitors">Exhibitors</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#visitor-info">Infos for visitors</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Events</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Credits</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Partners</a></h4>
+                </div>
+                <div class="partners">
+                    <div class="partners-logos">
+                        <div id="cneai">
+                            <a href="http://www.cneai.com">
+                                <img src="assets/logos/cneaiWhite.png"/>
+                                Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
+                            </a>
+                        </div>
+                        <div id="maisonrouge">
+                            <a href="http://www.lamaisonrouge.org/">
+                                <img src="assets/logos/maisonrouge.png"/>
+                                La&nbsp;Maison&nbsp;Rouge
+                                Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="introduction">
+                    <h4 id="about">The new fair for limited art editions</h4>
+                    <p>A new, annual fair revolving around publishing, MAD will present, for 3 days, a wide spectrum of contemporary publishing practices, from zines to rare objects: prints, multiples, artists’ books, videos, audio CDs, vinyls... </p>
+                    <p>Held at the Maison Rouge / Foundation Antoine de Galbert on May 22, 23, and 24, 2015, MAD is a new fair for anyone who wants to collect contemporary art editions in their many different forms. </p>
+                    <p>Taking over the entire space of the Maison Rouge, a Parisian institution dedicated to contemporary creation, MAD will bring together some 70 international publishers, whose common goal is quality of their offerings.</p>
+                    <p>Much more than a fair, MAD revolves around the figure of the publisher, the most independent and versatile actor in today's art world.</p>
+                    <p>There will also be 3 days of performances, concerts, signatures and discussions on editorial trends in contemporary art. 3 days with artists, writers, researchers, art and book dealers, publishers, collectors from around the world. </p>
+                    <p>We look forward to welcoming you!!</p>
+                </div>
 
-                <h4>Comité scientifique :</h4>
-                <p>Paula Aisemberg, Daniel Bosser, Jean Max Colard, Michèle Didier, Laurie Hurwitz
-                et Mathieu Mercier.</p>
+                <div class="exposants">
+                    <h4 id="exhibitors">Exhibitors</h4>
+                    <!-- <h5> Éditeurs (en cours)</h5>-->
+                    <ul class="exhibitors-list">
+                        <li><a href="http://www.ahahah-editions.fr">Ah Ah Ah éditions</a></li>
+                        <li><a href="http://www.atelierboba.fr">Atelier Boba</a></li>
+                        <li><a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur</a></li>
+                        <li><a href="http://www.cneai.com">Cneai =</a></li>
+                        <li><a href="http://centpages.atheles.org">Cent pages</a></li>
+                        <li><a href="http://www.editions-dilecta.com">Editions Dilecta</a></li>
+                        <li><a href="http://www.editionsdudetail.com">Editions du détail</a></li>
+                        <li><a href="http://www.incertain-sens.org">Editions Incertain Sens</a></li>
+                        <li><a href="http://www.florenceloewy.com">Florence Loewy</a></li>
+                        <li><a href="http://www.friville-editions.org">Friville éditions</a></li>
+                        <li><a href="http://www.alaingutharc.com">Galerie Alain Gutharc</a></li>
+                        <li><a href="http://www.galerieallen.com">Galerie Allen</a></li>
+                        <li><a href="http://www.catherineputman.com">Galerie Catherine Putman</a></li>
+                        <li><a href="http://www.gabriellemaubrie.com">Galerie Gabrielle Maubrie</a></li>
+                        <li><a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff</a></li>
+                        <li><a href="http://www.loevenbruck.com">Galerie Loevenbruck</a></li>
+                        <li><a href="http://www.galeriemetropolis.com">Galerie Metropolis</a></li>
+                        <li><a href="http://www.perrotin.com">Galerie Perrotin</a></li>
+                        <li><a href="http://www.gbacency.fr">Gb agency</a></li>
+                        <li><a href="http://www.galeriedemultiples.com">Galerie des Multiples</a></li>
+                        <li><a href="http://www.greyarea.eu">Grey Area</a></li>
+                        <li><a href="http://www.handartpublisher.com">Hand Art Publisher</a></li>
+                        <li><a href="http://www.iconomoteur.fr">Iconomoteur</a></li>
+                        <li><a href="http://www.lendroit.org">Lendroit éditions</a></li>
+                        <li><a href="http://francois-righi.com">Les éditions les livres sont muets</a></li>
+                        <li><a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet</a></li>
+                        <li><a href="http://www.edition-ln.com">LN Editions</a></li>
+                        <li><a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions</a></li>
+                        <li><a href="http://www.mayrevue.com">May</a></li>
+                        <li><a href="http://www.micheledidier.com">MFC-Michèle Didier</a></li>
+                        <li><a href="http://www.michaelwoolworth.com">Michael Woolworth Publications</a></li>
+                        <li><a href="http://www.ateliermurr.com">m.u.r.r &amp; GOL records</a></li>
+                        <li><a href="http://www.onestarpress.com">Onestar Press</a></li>
+                        <li><a href="http://www.optical-sound.com">Optical Sound</a></li>
+                        <li><a href="http://www.printsthingsandbooks.com">Prints, things and books by artists</a></li>
+                        <li><a href="http://www.royalbooklodge.com">Royal Book Lodge</a></li>
+                        <li><a href="http://www.rvb-books.com">RVB Books</a></li>
+                        <li><a href="htt://www.threestarbooks.com">Three Star Books</a></li>
+                        <li><a href="http://www.tolucaeditions.com">Toluca</a></li>
+                        <li><a href="http://www.urdla.com">URDLA</a></li>
+                        <li><a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie</a></li>
+                        <li><a href="http://www.wedonotworkalone.fr">We do not work alone</a></li>
+                        <li><a href="http://www.wysiwyh.fr">What you see is what you hear</a></li>
+                        <li><a href="http://www.winkedition.com">Wink</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.bartlebybooks.eu">Bartleby & Co. (Belgique)</a></li>
+                        <li><a href="http://www.benveniste.com">Benveniste CP & P (Espagne)</a></li>
+                        <li><a href="htt://www.salon-fuer-kunstbuch.at">Bernhard Cella (Autriche)</a></li>
+                        <li><a href="http://www.bookworks.org.uk">Book Works (Royaume-Uni)</a></li>
+                        <li><a href="http://davidkrut.com">David Krut Projects (Afrique du Sud / États-Unis)</a></li>
+                        <li><a href="mailto:info@dirkbakkerbooks.com">Dirk K. Bakker Boeken (Pays-Bas)</a></li>
+                        <li><a href="http://www.gagarin.be">Gagarin (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Galerie Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.harpune.at">Harpune Verlag (Autriche)</a></li>
+                        <li><a href="http://www.jacobfabricius.net">Jacob Fabricius (Danemark)</a></li>
+                        <li><a href="http://www.jap.be">JAP/ Jeunesse & Arts plastiques (Belgique)</a></li>
+                        <li><a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings & Prints (Allemagne)</a></li>
+                        <li><a href="http://www.julianpage.co.uk">Julian Page (Royaume-Uni)</a></li>
+                        <li><a href="http://www.keymouse.eu">Keymouse (Belgique)</a></li>
+                        <li><a href="http://www.morepublishers.be">Morepublishers (Belgique)</a></li>
+                        <li><a href="http://www.mottodistribution.com">Motto (Allemagne)</a></li>
+                        <li><a href="http://www.themultiplestore.org">The Multiple Store (Royaume-Uni)</a></li>
+                        <li><a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery & Editions (Danemark/Allemagne)</a></li>
+                        <li><a href="http://www.oei.nu">OEI editör (Suède)</a></li>
+                        <li><a href="http://www.gallery.simsreed.com">Sims Reed Gallery (Royaume-Uni)</a></li>
+                        <li><a href="http://www.spectorbooks.com">Spector Books (Allemagne)</a></li>
+                    </ul>
+                </div>
 
-                <h4>Coordination :</h4>
-                <p>Barbara Quintin</p>
+                <div class="infos-visiteurs">
+                <h4 id="visitor-info">Visitor Information</h4>
 
-                <h4>Mobilier :</h4>
-                <p>Stéphane Magnin</p>
+                    <br />
+                    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
+                </div>
 
-                <h4>Graphisme :</h4>
-                <p><a href="http://osp.kitchen">OSP</a></p>
+                <div class="evenements">
+                </div>
 
-                <h4>Contact presse :</h4>
-                <p><a href="http://www.claudinecolin.com">Claudine Colin communication</a> – 28 rue de Sévigné – 75004 Paris</br>
-                <a href="mailto: penelope@claudinecolin.com">Pénélope Ponchelet</a></br>
-                <a href="mailto: marine@claudinecolin.com"> Marine le Bris</a></br></p>
+                <div class="exposants">
+                </div>
 
-                <p>Pour toutes questions, contactez Barbara Quintin</br>
-                <a href="mailto:contact@multipleartdays.com"> contact@multipleartdays.com </a>–<a href="tel:(0)7 58 35 66 96">(0)7 58 35 66 96</a></p>
+                <div class="credits">
+                    <h4 id="credits">Credits</h4>
+
+                    <h5>Curators</h5>
+                    <p>Sylvie&nbsp;Boulanger, director of the <a href="http://www.cneai.com" title="(Centre National Edition Art Image)">CNEAI</a>
+                    <br />Michael&nbsp;Woolworth, director of the <a href="http://www.michealwoolworth.com">Atelier Woolworth</a></p>
+
+                <!-- <h4>Comité scientifique :</h4>
+                    <p>Paula Aisemberg, Daniel Bosser, Jean Max Colard, Michèle Didier, Laurie Hurwitz
+                    et Mathieu Mercier.</p>-->
+
+                    <h5>Coordination</h5>
+                    <p>Barbara Quintin</p>
+
+                    <h5>Furniture design</h5>
+                    <p>Stéphane Magnin</p>
+
+                    <h5>Graphic design</h5>
+                    <p><a href="http://osp.kitchen">OSP</a></p>
+
+                    <h5>Press contact</h5>
+                    <p><a href="http://www.claudinecolin.com">Claudine&nbsp;Colin&nbsp;communication</a> – 28 rue de Sévigné – 75004 Paris</br>
+                    <a href="mailto: penelope@claudinecolin.com">Pénélope&nbsp;Ponchelet</a></br>
+                    <a href="mailto: marine@claudinecolin.com"> Marine&nbsp;le&nbsp;Bris</a></br></p>
+
+                    <p>For any questions, please contact Barbara&nbsp;Quintin</br>
+                    <a href="mailto:contact@multipleartdays.com"> contact@multipleartdays.com </a>–<a href="tel:(0)7 58 35 66 96">(0)7 58 35 66 96</a></p>
+                </div>
             </div>
         </div>
+        <div id="entry">
+            <div class="entry-container">
+                <div class="logo-entry">
+                    <img src="assets/logos/mad.png">
+                </div>
+            </div>
+            <div class="left">
+                <a id="selectFrench" class="left" href="#francais">entrez</a>
+            </div>
+            <div class="right">
+                <a id="selectEnglish" class="right" href="#english">enter</a>
+            </div>
+        </div>
+
+
+    <script src='assets/js/smoothscroll.js'></script>
+    <script>
+        smoothScroll.init({
+            speed: 1000,
+            easing: 'easeInOutCubic',
+            offset: 0,
+            updateURL: true,
+            callbackBefore: function ( toggle, anchor ) {},
+            callbackAfter: function ( toggle, anchor ) {}
+        });
+    </script>
+
+
     </body>
 </html>

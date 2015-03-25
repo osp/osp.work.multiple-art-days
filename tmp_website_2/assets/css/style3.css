@@ -1,0 +1,523 @@
+@font-face {
+  font-family: 'Linux Libertin Display';
+  src: url("../fonts/linlibertine_drah-webfont.eot");
+  src: url("../fonts/linlibertine_drah-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/linlibertine_drah-webfont.woff2") format("woff2"), url("../fonts/linlibertine_drah-webfont.woff") format("woff"), url("../fonts/linlibertine_drah-webfont.ttf") format("truetype"), url("../fonts/linlibertine_drah-webfont.svg#linux_libertine_displayRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'libertinagefull';
+    src: url('../fonts/Libertinage-webfont.eot');
+    src: url('../fonts/Libertinage-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Libertinage-webfont.woff2') format('woff2'),
+         url('../fonts/Libertinage-webfont.woff') format('woff'),
+         url('../fonts/Libertinage-webfont.ttf') format('truetype'),
+         url('../fonts/Libertinage-webfont.svg#libertinagefull') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'libertin100';
+  src: url("../fontslibertin-100-webfont.eot");
+  src: url("../fonts/libertin-100-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/libertin-100-webfont.woff2") format("woff2"), url("../fonts/libertin-100-webfont.woff") format("woff"), url("../fonts/libertin-100-webfont.ttf") format("truetype"), url("../fonts/libertin-100-webfont.svg#libertin100") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'libertin30';
+  src: url("../fonts/libertin-30-webfont.eot");
+  src: url("../fonts/libertin-30-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/libertin-30-webfont.woff2") format("woff2"), url("../fonts/libertin-30-webfont.woff") format("woff"), url("../fonts/libertin-30-webfont.ttf") format("truetype"), url("../fonts/libertin-30-webfont.svg#libertin30") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    margin: auto;
+    position: relative;
+    padding-bottom: 200px;
+    width: 600px;
+    padding-top: 60px;
+}
+
+.entry-container{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+img.slide-img1{
+    width: 100%;
+    margin-top: 50px;
+}
+
+img.slide-img2{
+    width: 70%;
+    margin-left: 15%;
+}
+
+img.slide-img3{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo img {
+    width: 240px;
+    position: relative;
+    /*margin-bottom: 10px;*/
+}
+
+.logo-entry a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-family: "Linux Libertin Display";
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.logo-entry a.left {
+    float: left;
+    margin-top: 270px;
+    margin-left: 2%;
+}
+
+.logo-entry a.right {
+    float: right;
+    margin-right: 8%;
+    margin-top: 270px;
+}
+
+.logo-entry{
+    position: fixed;
+    z-index: 100;
+}
+
+h1, h2, h3, h4, h5, p {
+    text-align: left;
+    font-weight: normal;
+    margin: 0;
+}
+
+h1 {
+	margin: 2px auto 20px;
+    font-family: "Linux Libertin Display";
+	font-size: 29px;
+    font-style: normal;
+}
+
+h2 {
+	margin: 2px auto 20px;
+    font-family: "Linux Libertin Display";
+	font-size: 29px;
+    font-style: normal;
+}
+
+h3 {
+    font-family: "libertin100";
+    font-size: 40px;
+}
+
+h4 {
+    font-family: "Linux Libertin Display";
+	font-size: 37px;
+	margin-top: 20px;
+	margin-bottom: 2px;
+}
+
+h5 {
+    font-family: "Linux Libertin Display";
+	font-size: 28px;
+	margin-top: 20px;
+}
+
+p {
+    font-family: "Linux Libertin Display";
+    font-size: 23px;
+    line-height: 29px;
+    margin-bottom: 7px;
+    text-indent: 40px;
+}
+.credits p {
+      /*text-indent: 0px;*/
+      margin-bottom:0px;
+}
+
+p a, li a {
+    /*text-decoration: underline;*/
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 5px solid #FFEFB9;
+    line-height: 1.4em;
+}
+
+p a:hover, li a:hover {
+    text-decoration: none;
+}
+
+#practical {
+    position: fixed;
+    left: 25px;
+    top: 54px;
+}
+
+.introduction {
+    padding-right: 40px;
+    padding-top: 10px;		
+  
+}
+
+#practical h4 {
+    font-size: 40px;
+line-height: 1.1em;}
+
+#practical h5 {
+    font-size: 30px;
+    margin-top: 0;
+line-height: 1.2em;
+margin-bottom: 10px;
+}
+
+.dates, .address {
+    margin-top: 40px;
+    width: 190px;
+}
+
+.partners {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.partners-logos div {
+    text-align: left;
+    width: 120px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.partners a {
+    color: inherit;
+    font-family: "Linux Libertin Display";
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.partners a:hover {
+    text-decoration: underline;
+}
+
+.partners img {
+    display: block;
+    clear: right;
+    max-width: 110px;
+    max-height: 30px;
+    margin-bottom: 5px;
+}
+.menu h4 {
+	margin: 2px auto !important;
+    /*font-family: "Linux Libertin Display";*/
+	font-size: 25px !important;
+    font-style: normal;
+    border-bottom: 5px solid #FFEFB9 ;
+    text-align: center !important;
+    margin: 15px 30px !important;
+    padding: 5px 8px 5px 8px;
+    font-size: 25px !important;
+
+}
+
+.menu h4 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu {
+    position: fixed;
+    right: 80px;
+    bottom: 120px;
+}
+
+.exhibitors-list {
+    text-align: left;
+    list-style-type: none;
+    font-family: "Linux Libertin Display";
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    text-indent: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    color: inherit;
+    margin-top: 0px;
+}
+
+.exhibitors-list li {
+    text-align: left;
+    display: inline;
+}
+
+.exhibitors-list li a {
+    color: inherit;
+}
+body {
+    overflow-x: hidden;
+}
+
+#french {
+position: absolute;
+top: 0;
+left: -50%;
+width: 100%;
+min-height: 100%;
+}
+
+#english {
+position: absolute;
+top: 0;
+left: 50%;
+width: 100%;
+min-height: 100%;
+}
+
+body #french > *, body #english > * {
+    opacity: 1;
+    transition: opacity .8s;
+}
+
+body.entry #french > *,  body.entry #english > * {
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+body.french #french {
+    left: 0%;
+    transition: left .8s;
+}
+
+body.french #english {
+    left: 100%;
+    transition: left .8s;
+}
+
+body.english #french {
+    left: -100%;
+    transition: left .8s;
+}
+
+body.english #english {
+    left: 0%;
+    transition: left .8s;
+}
+
+.logo-entry {
+    position: fixed;
+    top: 35vh;
+    left: 50%;
+    width: 50%;
+    min-width: 425px;
+}
+
+.logo-entry img {
+    position: relative;
+    left: -45%;
+    width: 100%;
+}
+
+.left, .right {
+    position: fixed;	
+    bottom: 25%;
+    color: black;
+    width: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Linux Libertin Display";
+    font-size: 25px;
+}
+
+.left:hover, .right:hover {
+    text-decoration: underline;
+}
+
+.left {
+    left: 25%;
+}
+
+.right {
+    left: 75%;
+}
+
+.left a, .right a {
+    position: relative;
+    width: 100%;
+    left: -50%;
+}
+
+.entry-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.content {
+    display: block;
+    height: 1600px;
+}
+
+.one .practical h4  {
+    font-family: "Linux Libertin Display";
+    font-size: 54px;
+    line-height: 1.1em;
+}
+
+.one p a, .one li a {
+    border-bottom: 5px solid #FFEFB9;
+}
+.one .menu h4 {
+    border-bottom: 5px solid #FFEFB9;
+    font-size: 25px !important;
+
+}
+
+.two h4 {
+    font-family: "libertinagefull";
+}
+
+.two p a, .two li a {
+    border-bottom: 5px solid #DBFFB9;
+}
+
+.two .menu h4 {
+    border-bottom: 5px solid #DBFFB9;
+    font-size: 25px !important;
+
+}
+
+
+
+.three h4 {
+    font-family: "libertin30";
+    font-size: 45px !important;
+    line-height: 1em !important;
+
+}
+/*.three #practical h4 {
+    font-family: "libertin30";
+    font-size: 45px !important;
+    line-height: 1em;
+}*/
+
+.three p a, .three li a {
+    border-bottom: 5px solid #C7B9FF;
+}
+
+.three .menu h4 {
+    border-bottom: 5px solid #C7B9FF;
+    font-size: 30px !important;
+
+}
+
+
+
+.four h4 {
+    font-family: "libertin100";
+    font-size: 45px !important;
+    line-height: 1em !important;
+}
+
+.four p a, .four li a {
+    border-bottom: 5px solid #FFB9B9;
+}
+
+.four .menu h4 {
+    border-bottom: 5px solid #FFB9B9;
+    font-size: 30px !important;
+
+}
+
+#text {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    font-size: 72px;
+}
+
+.languageSwitch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: inherit;
+}
+.head {
+    position: fixed;
+    top: 20px;
+    color: inherit;
+    margin-right:10px;
+    width: 45%;
+    text-align:center;
+    
+}
+.head-left {
+    position: fixed;
+    top: 20px;
+    color: inherit;
+    margin-left:25px;
+    text-align:left;
+    
+}
+.head img {
+width: 100px;
+position: relative;
+
+}
+.head-left h2 {
+margin: 2px auto 20px;
+font-family: "Linux Libertin Display";
+font-size: 20px;;
+font-style: normal;
+ text-align:center;
+
+}
+
+body.french #english .partners,
+body.french #english .menu,
+body.french #english #practical,
+body.french #english .languageSwitch {
+    display: none;
+}
+
+body.french #french .partners,
+body.french #french .menu,
+body.french #french #practical,
+body.french #french .languageSwitch {
+    display: block;
+}
+
+body.english #english .partners,
+body.english #english .menu,
+body.english #english #practical,
+body.english #english .languageSwitch {
+    display: block;
+}
+
+body.english #french .partners,
+body.english #french .menu,
+body.english #french #practical,
+body.english #french .languageSwitch {
+    display: none;
+}
