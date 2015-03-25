@@ -135,7 +135,7 @@ h4 {
     font-family: "Linux Libertin Display";
 	font-size: 37px;
 	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 2px;
 }
 
 h5 {
@@ -176,18 +176,19 @@ p a:hover, li a:hover {
 
 .introduction {
     padding-right: 40px;
+    padding-top: 10px;		
+  
 }
 
 #practical h4 {
     font-size: 40px;
-	line-height: 0.9em;
-}
+line-height: 1.1em;}
 
 #practical h5 {
     font-size: 30px;
     margin-top: 0;
-    line-height: 1em;
-    margin-bottom: 10px;
+line-height: 1.2em;
+margin-bottom: 10px;
 }
 
 .dates, .address {
@@ -231,10 +232,12 @@ p a:hover, li a:hover {
     /*font-family: "Linux Libertin Display";*/
 	font-size: 29px !important;
     font-style: normal;
-    outline: 5px solid #FFEFB9 ;
+    border-bottom: 5px solid #FFEFB9 ;
     text-align: center !important;
     margin: 15px 30px !important;
     padding: 5px 8px 5px 8px;
+    font-size: 25px !important;
+
 }
 
 .menu h4 a {
@@ -244,7 +247,7 @@ p a:hover, li a:hover {
 
 .menu {
     position: fixed;
-    right: 20px;
+    right: 100px;
     bottom: 120px;
 }
 
@@ -254,11 +257,12 @@ p a:hover, li a:hover {
     font-family: "Linux Libertin Display";
     font-size: 27px;
     line-height: 30px;
-    margin-bottom: 7px;
+    margin-bottom: 40px;
     text-indent: 40px;
     margin-left: 0;
     padding-left: 0;
     color: inherit;
+    margin-top: 0px;
 }
 
 .exhibitors-list li {
@@ -392,7 +396,9 @@ body.english #english {
     border-bottom: 5px solid #FFEFB9;
 }
 .one .menu h4 {
-    outline: 5px solid #FFEFB9;
+    border-bottom: 5px solid #FFEFB9;
+    font-size: 25px !important;
+
 }
 
 .two h4 {
@@ -404,29 +410,41 @@ body.english #english {
 }
 
 .two .menu h4 {
-    outline: 5px solid #DBFFB9;
+    border-bottom: 5px solid #DBFFB9;
+    font-size: 25px !important;
+
 }
+
+
 
 .three h4 {
     font-family: "libertin30";
+    font-size: 45px !important;
+    line-height: 1em !important;
 
 }
-.three .practical h4 {
+/*.three #practical h4 {
     font-family: "libertin30";
-    font-size: 65px;
+    font-size: 45px !important;
     line-height: 1em;
-}
+}*/
 
 .three p a, .three li a {
     border-bottom: 5px solid #C7B9FF;
 }
 
 .three .menu h4 {
-    outline: 5px solid #C7B9FF;
+    border-bottom: 5px solid #C7B9FF;
+    font-size: 30px !important;
+
 }
+
+
 
 .four h4 {
     font-family: "libertin100";
+    font-size: 45px !important;
+    line-height: 1em !important;
 }
 
 .four p a, .four li a {
@@ -434,7 +452,9 @@ body.english #english {
 }
 
 .four .menu h4 {
-    outline: 5px solid #FFB9B9;
+    border-bottom: 5px solid #FFB9B9;
+    font-size: 30px !important;
+
 }
 
 #text {
@@ -449,6 +469,36 @@ body.english #english {
     top: 20px;
     right: 20px;
     color: inherit;
+}
+.head {
+    position: fixed;
+    top: 20px;
+    color: inherit;
+    margin-right:10px;
+    width: 45%;
+    text-align:center;
+    
+}
+.head-left {
+    position: fixed;
+    top: 20px;
+    color: inherit;
+    margin-left:25px;
+    text-align:left;
+    
+}
+.head img {
+width: 100px;
+position: relative;
+
+}
+.head-left h2 {
+margin: 2px auto 20px;
+font-family: "Linux Libertin Display";
+font-size: 20px;;
+font-style: normal;
+ text-align:center;
+
 }
 
 body.french #english .partners,
