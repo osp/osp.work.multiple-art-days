@@ -388,7 +388,7 @@ body.english #english {
     line-height: 1.1em;
 }
 
-.one p a {
+.one p a, .one li a {
     border-bottom: 5px solid #FFEFB9;
 }
 .one .menu h4 {
@@ -399,7 +399,7 @@ body.english #english {
     font-family: "libertinagefull";
 }
 
-.two p a {
+.two p a, .two li a {
     border-bottom: 5px solid #DBFFB9;
 }
 
@@ -417,7 +417,7 @@ body.english #english {
     line-height: 1em;
 }
 
-.three p a {
+.three p a, .three li a {
     border-bottom: 5px solid #C7B9FF;
 }
 
@@ -429,7 +429,7 @@ body.english #english {
     font-family: "libertin100";
 }
 
-.four p a {
+.four p a, .four li aa` {
     border-bottom: 5px solid #FFB9B9;
 }
 
