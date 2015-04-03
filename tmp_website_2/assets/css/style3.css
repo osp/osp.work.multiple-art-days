@@ -176,8 +176,8 @@ p a:hover, li a:hover {
 
 .introduction {
     padding-right: 40px;
-    padding-top: 10px;		
-  
+    padding-top: 10px;
+
 }
 
 #practical h4 {
@@ -338,7 +338,7 @@ body.english #english {
 }
 
 .left, .right {
-    position: fixed;	
+    position: fixed;
     bottom: 25%;
     color: black;
     width: 100px;
@@ -462,6 +462,7 @@ body.english #english {
     top: 20px;
     right: 20px;
     color: inherit;
+    font-family: "Linux Libertin Display";
 }
 .head {
     position: fixed;
@@ -470,7 +471,7 @@ body.english #english {
     margin-right:10px;
     width: 45%;
     text-align:center;
-    
+
 }
 .head-left {
     position: fixed;
@@ -478,7 +479,7 @@ body.english #english {
     color: inherit;
     margin-left:25px;
     text-align:left;
-    
+
 }
 .head img {
 width: 100px;
