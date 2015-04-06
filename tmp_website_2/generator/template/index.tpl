@@ -80,9 +80,9 @@
                     <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#a-propos">About</a></h4>
                     <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exposants">Exposants</a></h4>
                     <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#infos-visiteur">Infos visiteurs</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Evénements</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#crédits">Crédits</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Partenaires</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#evenements">Evénements</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#partenaires">Partenaires</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Crédits</a></h4>
                 </div>
                 <div class="partners">
                     <div class="partners-logos">
@@ -101,29 +101,29 @@
                         </div>
                     </div>
                 </div>
-                <div class="introduction">
+                <div id="a-propos" class="introduction">
                     {% fr/introduction %}
                 </div>
 
-                <div class="exposants">
+                <div id="exposants" class="exposants">
                     {% fr/exposants %}
                 </div>
 
-                <div class="infos-visiteurs">
-                    <h4 id="infos-visiteur">Infos Visiteur</h4>
+                <div id="infos-visiteur" class="infos-visiteurs">
+                    {% fr/info-visiteur %}
                     <br />
                     <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
                 </div>
 
-                <div class="evenements">
+                <div id="evenements" class="evenements">
                     {% fr/evenements %}
                 </div>
 
-                <div class="partenaires">
+                <div id="partenaires" class="partenaires">
                     {% fr/partenaires %}
                 </div>
-                
-                <div class="credits">
+
+                <div id="credits" class="credits">
                     {% fr/credits %}
                 </div>
             </div>
@@ -145,9 +145,9 @@
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#about">About</a></h4>
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exhibitors">Exhibitors</a></h4>
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#visitor-info">Infos for visitors</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Events</a></h4>
+                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#events">Events</a></h4>
+                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#partners">Partners</a></h4>
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Credits</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Partners</a></h4>
             </div>
             <div class="partners">
                 <div class="partners-logos">
@@ -166,26 +166,29 @@
                     </div>
                 </div>
             </div>
-            <div class="introduction">
+            <div id="about" class="introduction">
                 {% en/introduction %}
             </div>
 
-            <div class="exposants">
+            <div id="exhibitors" class="exposants">
                 {% en/exhibitors %}
             </div>
 
-            <div class="infos-visiteurs">
-            <h4 id="visitor-info">Visitor Information</h4>
-
+            <div id="visitor-info" class="infos-visiteurs">
+                {% en/visitor-info %}
                 <br />
                 <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
             </div>
 
-            <div class="evenements">
+            <div id="events" class="evenements">
                 {% en/events %}
             </div>
 
-            <div class="credits">
+            <div id="partners" class="partenaires">
+                {% en/partners %}
+            </div>
+
+            <div id="credits" class="credits">
                 {% en/credits %}
             </div>
         </div>
