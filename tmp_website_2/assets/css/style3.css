@@ -202,18 +202,22 @@ p a:hover, li a:hover {
 
 #practical h4 {
     font-size: 40px;
-line-height: 1.1em;}
+    line-height: 1.1em;
+}
 
 #practical h5 {
     font-size: 30px;
     margin-top: 0;
-line-height: 1.2em;
-margin-bottom: 10px;
+    line-height: 1.2em;
+    margin-bottom: 10px;
 }
 
-.dates, .address {
-    margin-top: 40px;
+.infos {
     width: 190px;
+}
+
+.infos h4 {
+    margin-top: 40px;
 }
 
 .partners {
@@ -271,7 +275,7 @@ margin-bottom: 10px;
     bottom: 120px;
 }
 
-.exhibitors-list {
+.exposants ul {
     text-align: left;
     list-style-type: none;
     font-family: "Linux Libertin Display";
@@ -285,12 +289,12 @@ margin-bottom: 10px;
     margin-top: 0px;
 }
 
-.exhibitors-list li {
+.exposants ul li {
     text-align: left;
     display: inline;
 }
 
-.exhibitors-list li a {
+.exposants ul li a {
     color: inherit;
 }
 body {
