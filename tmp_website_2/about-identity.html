@@ -1,0 +1,244 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Multiple Art Days</title>
+        <link rel="stylesheet" href="assets/css/style3.css" type="text/css" media="all" />
+        <style type="text/css">
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                'use strict';
+
+                $("#selectFrench").click(function (e) {
+                    e.preventDefault();
+                    $("#entry").detach();
+                    $('body').removeClass('entry');
+                    selectFrench();
+                });
+
+                $("#selectEnglish").click(function (e) {
+                    e.preventDefault();
+                    $("#entry").detach();
+                    $('body').removeClass('entry');
+                    selectEnglish();
+                });
+
+                $("#toEnglish").click(function(e) {
+                    e.preventDefault();
+                    selectEnglish();
+                });
+
+                $("#toFrench").click(function(e) {
+                    e.preventDefault();
+                    selectFrench();
+                });
+
+                var selectEnglish = function () {
+                    $("body").removeClass('french').addClass('english');
+                }
+
+                var selectFrench = function () {
+                    $("body").removeClass('english').addClass('french');
+                }
+
+                var panelClasses = ['one', 'two', 'three', 'four'];
+
+                $(window).scroll(function (e) {
+                    if (e) {
+                        e.preventDefault();
+                    }
+
+                    var body = window.document.body;
+                    var totalHeight = body.scrollHeight;
+                    var panelHeight = totalHeight / panelClasses.length;
+                    var offset = body.scrollTop;
+
+                    var panel = Math.round(offset / panelHeight);
+                    var className = panelClasses[panel]
+
+                    $('body').removeClass(panelClasses.join(' '));
+                    $('body').addClass(className);
+                });
+            });
+        </script>
+    </head>
+    <body class="entry">
+        <a name="francais" />
+        <div id="french">
+            <a href="#english" id="toEnglish" class="languageSwitch">English</a>
+            <div id="practical">
+               <div class="logo">
+                    <img src="assets/logos/mad.png">
+                </div>
+                <h2>Multiple Art Days</h2>
+                <div class="dates">
+                    <h4>22, 23, 24 <br/>mai 2015</h4>
+                    <h5>12h00 à 19h00</h5>
+                </div>
+                <div class="address">
+                    <h4>La Maison Rouge</h4>
+                    <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
+                </div>
+            </div>
+            <div class="container">
+                <div class="menu">
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#a-propos">About</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exposants">Exposants</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#infos-visiteur">Infos visiteurs</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Evénements</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#crédits">Crédits</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Partenaires</a></h4>
+                </div>
+                <div class="partners">
+                    <div class="partners-logos">
+                    <div id="cneai">
+                        <a href="http://www.cneai.com">
+                        <img src="assets/logos/cneai.png"/>
+                        Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
+                        </a>
+                    </div>
+                    <div id="maisonrouge">
+                        <a href="http://www.lamaisonrouge.org/">
+                        <img src="assets/logos/maisonrouge.png"/>
+                        La&nbsp;Maison&nbsp;Rouge
+                        Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
+                        </a>
+                    </div>
+                </div>
+            </div>
+                <div class="introduction">
+                    <h4 id="a-propos">à propos de l'identité de MAD</h4>
+                    <p>
+                        L'identitée graphique à été développée avec l'idée de multiplicité au centre de la recherche. Dans le language graphique d'OSP, cette multiciplicité fait écho de reproduction mais surtout de réinterprétation.
+                    </p>
+                    <p class="Lin-libertine">
+                        Le point de départ était une fonte serif libre, la Linux Libertine.
+                    </p>
+
+                    <p class="Libertinages">
+                        Ensuite une réinterprétation de la part d'OSP, en remixant les atouts de la Libertine pour creer la Libertinages
+                    </p>
+
+                    <img src="assets/logos/mad.png">
+
+                    <p class="Libertin30">
+                        Le point de départ était une fonte de labeur libre, la Linux Libertine.
+                    </p>
+
+                    <p class="Libertin100">
+                        Le point de départ était une fonte de labeur libre, la Linux Libertine.
+                    </p>
+
+
+                </div>
+
+                <div class="exposants">
+                </div>
+
+                <div class="infos-visiteurs">
+                </div>
+
+                <div class="evenements">
+                </div>
+
+                <div class="exposants">
+                </div>
+
+                <div class="credits">
+                </div>
+            </div>
+        </div>
+        <a name="english" />
+        <div id="english">
+            <a href="#francais" id="toFrench" class="languageSwitch">Fran&ccedil;ais</a>
+            <div id="practical">
+                <div class="logo">
+                    <img src="assets/logos/mad.png">
+                </div>
+                <h2>Multiple Art Days</h2>
+                <div class="dates">
+                    <h4>22, 23, 24 <br/>may 2015</h4>
+                    <h5>12h00 à 19h00</h5>
+                </div>
+                <div class="address">
+                    <h4>La Maison Rouge</h4>
+                    <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
+                </div>
+            </div>
+            <div class="container">
+                <div class="menu">
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#about">About</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exhibitors">Exhibitors</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#visitor-info">Infos for visitors</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Events</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Credits</a></h4>
+                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#">Partners</a></h4>
+                </div>
+                <div class="partners">
+                    <div class="partners-logos">
+                        <div id="cneai">
+                            <a href="http://www.cneai.com">
+                                <img src="assets/logos/cneai.png"/>
+                                Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
+                            </a>
+                        </div>
+                        <div id="maisonrouge">
+                            <a href="http://www.lamaisonrouge.org/">
+                                <img src="assets/logos/maisonrouge.png"/>
+                                La&nbsp;Maison&nbsp;Rouge
+                                Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="introduction">
+                <h4 id="a-propos">about the event's identity</h4>
+                </div>
+
+                <div class="exposants">
+                </div>
+
+                <div class="infos-visiteurs">
+                </div>
+
+                <div class="evenements">
+                </div>
+
+                <div class="exposants">
+                </div>
+
+                <div class="credits">
+                </div>
+            </div>
+        </div>
+        <div id="entry">
+            <div class="entry-container">
+                <div class="logo-entry">
+                    <img src="assets/logos/mad.png">
+                </div>
+            </div>
+            <div class="left">
+                <a id="selectFrench" class="left" href="#francais">entrez</a>
+            </div>
+            <div class="right">
+                <a id="selectEnglish" class="right" href="#english">enter</a>
+            </div>
+        </div>
+
+
+    <script src='assets/js/smoothscroll.js'></script>
+    <script>
+        smoothScroll.init({
+            speed: 1000,
+            easing: 'easeInOutCubic',
+            offset: 0,
+            updateURL: true,
+            callbackBefore: function ( toggle, anchor ) {},
+            callbackAfter: function ( toggle, anchor ) {}
+        });
+    </script>
+
+
+    </body>
+</html>

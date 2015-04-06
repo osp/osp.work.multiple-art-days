@@ -156,6 +156,26 @@ p {
       margin-bottom:0px;
 }
 
+p.Lin-libertine {
+    font-family: "Linux Libertin Display";
+    font-size: 40px;
+    line-height: 44px;
+}
+
+p.Libertinages{
+    font-family: "libertinagefull";
+    font-size: 40px;
+    line-height: 44px;
+}
+
+p.Libertin30{
+    font-family: "libertin30";
+}
+
+p.Libertin100{
+    font-family: "libertin100";
+}
+
 p a, li a {
     /*text-decoration: underline;*/
     color: inherit;
