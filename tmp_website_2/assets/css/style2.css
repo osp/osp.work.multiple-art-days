@@ -251,7 +251,7 @@ margin-bottom: 10px;
     bottom: 120px;
 }
 
-.exhibitors-list {
+.exposants ul {
     text-align: left;
     list-style-type: none;
     font-family: "Linux Libertin Display";
@@ -265,12 +265,12 @@ margin-bottom: 10px;
     margin-top: 0px;
 }
 
-.exhibitors-list li {
+.exposants ul li {
     text-align: left;
     display: inline;
 }
 
-.exhibitors-list li a {
+.exposants ul li a {
     color: inherit;
 }
 body {
@@ -495,7 +495,7 @@ position: relative;
 .head-left h2 {
 margin: 2px auto 20px;
 font-family: "Linux Libertin Display";
-font-size: 20px;;
+font-size: 20px;
 font-style: normal;
  text-align:center;
 
@@ -528,39 +528,3 @@ body.english #french #practical,
 body.english #french .languageSwitch {
     display: none;
 }
-
-/*@media (max-width: 1200px) {
-    #partners div {
-        display: block;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 950px) {
-    .container {
-        margin: -110px auto;
-    }
-
-    #partners {
-        position: relative;
-        bottom: inherit;
-        right: inherit;
-    }
-
-    #partners div {
-        display: inline-block;
-        width: 49%;
-        margin-right: 0;
-        margin-top: -15px;
-        margin-bottom: 25px;
-    }
-
-    #partners img {
-        max-width: 200px;
-        max-height: 40px;
-    }
-
-    #partners a {
-        font-size: 18px;
-    }
-}*/
