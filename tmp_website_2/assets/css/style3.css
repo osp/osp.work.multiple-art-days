@@ -262,39 +262,52 @@ p a:hover, li a:hover {
     font-size: 27px;
     line-height: 30px;
     margin-bottom: 40px;
-    text-indent: 40px;
+    text-indent: 0px;
     margin-left: 0;
     padding-left: 0;
     color: inherit;
     margin-top: 0px;
+    
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
 }
 
 .exposants ul li {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
     text-align: left;
-    display: inline;
 }
 
-.exposants ul li a {
+.exposants ul li a {    
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
     color: inherit;
 }
+
+sup {
+    font-size: 60%;
+    vertical-align: top;
+}
+
 body {
     overflow-x: hidden;
 }
 
 #french {
-position: absolute;
-top: 0;
-left: -50%;
-width: 100%;
-min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    min-height: 100%;
 }
 
 #english {
-position: absolute;
-top: 0;
-left: 50%;
-width: 100%;
-min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    min-height: 100%;
 }
 
 body #french > *, body #english > * {
@@ -486,17 +499,15 @@ body.english #english {
 
 }
 .head img {
-width: 100px;
-position: relative;
-
+    width: 100px;
+    position: relative;
 }
 .head-left h2 {
-margin: 2px auto 20px;
-font-family: "Linux Libertin Display";
-font-size: 20px;;
-font-style: normal;
- text-align:center;
-
+    margin: 2px auto 20px;
+    font-family: "Linux Libertin Display";
+    font-size: 20px;
+    font-style: normal;
+    text-align:center;
 }
 
 body.french #english .partners,
