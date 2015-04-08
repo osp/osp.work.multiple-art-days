@@ -1,4 +1,4 @@
-####Infos for visitors
+####Visitor info
 
 #####Opening hours
 

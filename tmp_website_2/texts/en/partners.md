@@ -2,9 +2,6 @@
 
 MAD #1 is organized in partnership with the CNEAI = (Centre National Édition Art Image) and la maison rouge / Fondation Antoine de Galbert, and benefits from the suppport of Smurfit Kappa and the Conseil Régional d’Île-de-France
 
-![Ile de France](assets/logos/iledf.gif)
-
-
 #####CNEAI = centre national édition art image
 
 www.cneai.com
@@ -44,3 +41,5 @@ www.smurfitkappa.com & www.openthefuture.fr
 One of the leading manufacturers of paperboard and paper-based packaging solutions in France and throughout Europe, Smurfit Kappa creates solutions adapted to its clients’ everyday needs and helps them promote their products. For many years, Smurfit Kappa has been developing a business strategy called “Open the future,” which emphasizes the group’s goal to increase its customers’ and partners’ growth through an innovative, forward-thinking approach.
 
 ![Smurfit Kappa](assets/logos/smurfit.jpg)
+
+![Ile de France](assets/logos/iledf.gif)

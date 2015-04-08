@@ -144,7 +144,7 @@
             <div class="menu">
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#about">About</a></h4>
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exhibitors">Exhibitors</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#visitor-info">Infos for visitors</a></h4>
+                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#visitor-info">Visitor info</a></h4>
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#events">Events</a></h4>
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#partners">Partners</a></h4>
                 <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Credits</a></h4>

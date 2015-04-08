@@ -4,8 +4,6 @@ MAD #1 est organisé en partenariat avec le CNEAI = Centre National Édition Art
 la maison rouge / Fondation Antoine de Galbert et avec le soutien de Smurfit Kappa ainsi
 que le Conseil Régional d’Île-de-France
 
-![Ile de France](assets/logos/iledf.gif)
-
 #####CNEAI = centre national edition art image
 
 www.cneai.com
@@ -51,3 +49,5 @@ d’emballages se procurant la majeure partie de leurs besoins en matières prem
 partir de nos propres papèteries.
 
 ![Smurfit Kappa](assets/logos/smurfit.jpg)
+
+![Ile de France](assets/logos/iledf.gif)
