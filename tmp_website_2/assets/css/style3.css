@@ -188,6 +188,12 @@ p a:hover, li a:hover {
     text-decoration: none;
 }
 
+p img{
+    width: 40%;
+    text-indent: -40px;
+    margin-top: 20px;
+}
+
 #practical {
     position: fixed;
     left: 25px;
@@ -287,7 +293,7 @@ p a:hover, li a:hover {
     padding-left: 0;
     color: inherit;
     margin-top: 0px;
-    
+
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
@@ -299,7 +305,7 @@ p a:hover, li a:hover {
     text-align: left;
 }
 
-.exposants ul li a {    
+.exposants ul li a {
     -webkit-column-break-inside: avoid;
     break-inside: avoid;
     color: inherit;
