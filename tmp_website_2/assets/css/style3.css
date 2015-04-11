@@ -189,8 +189,8 @@ p a:hover, li a:hover {
 }
 
 p img{
-    width: 40%;
-    text-indent: -40px;
+    width: 100%;
+    margin-left: -40px;
     margin-top: 20px;
 }
 
