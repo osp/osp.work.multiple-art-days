@@ -197,7 +197,7 @@ p img{
 #practical {
     position: fixed;
     left: 25px;
-    top: 54px;
+    top: 32px;
 }
 
 .introduction {
@@ -264,8 +264,8 @@ p img{
     font-style: normal;
     border-bottom: 5px solid #FFEFB9 ;
     text-align: center !important;
-    margin: 15px 30px !important;
-    padding: 5px 8px 5px 8px;
+    margin: 5px 30px !important;
+    padding: 0px;
     font-size: 25px !important;
 
 }
@@ -502,7 +502,7 @@ body.english #english {
 
 .languageSwitch {
     position: fixed;
-    top: 20px;
+    top: 56px;
     right: 20px;
     color: inherit;
     font-family: "Linux Libertin Display";
