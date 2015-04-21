@@ -34,12 +34,30 @@
                     selectFrench();
                 });
 
+                $("#selectEnglishSecondary").click(function(e) {
+                    e.preventDefault();
+                    selectEnglishSecondary();
+                });
+
+                $("#selectFrenchSecondary").click(function(e) {
+                    e.preventDefault();
+                    selectFrenchSecondary();
+                });
+
                 var selectEnglish = function () {
                     $("body").removeClass('french').addClass('english');
                 }
 
                 var selectFrench = function () {
                     $("body").removeClass('english').addClass('french');
+                }
+
+                var selectEnglishSecondary = function () {
+                    $("body").removeClass('english').addClass('english_secondary')
+                }
+
+                var selectFrenchSecondary = function () {
+                    $("body").removeClass('french').addClass('french_secondary')
                 }
 
                 var panelClasses = ['one', 'two', 'three', 'four'];
@@ -65,14 +83,15 @@
     </head>
     <body class="entry">
         <a name="francais" />
-        <div id="french">
-            <a href="#english" id="toEnglish" class="languageSwitch">English</a>
-            <div id="practical">
-               <div class="logo">
-                    <img src="assets/logos/mad.png">
-                </div>
-                <div class="infos">
-                    <h4>22, 23, 24 mai 2015</h4>
+        <div id="french" class="language_container">
+            <div class="container" id="french_main_content">
+                <a href="#english" id="toEnglish" class="languageSwitch">English</a>
+                <div id="practical">
+                   <div class="logo">
+                        <img src="assets/logos/mad.png">
+                    </div>
+                    <div class="infos">
+                        <h4>22, 23, 24 mai 2015</h4>
 
 <h5>12h00 à 19h00</h5>
 
@@ -80,36 +99,36 @@
 
 <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
 
-                </div>
-            </div>
-            <div class="container">
-                <div class="menu">
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#a-propos">About</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exposants">Exposants</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#infos-visiteur">Infos visiteurs</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#evenements">Evénements</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#partenaires">Partenaires</a></h4>
-                    <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Crédits</a></h4>
-                </div>
-                <div class="partners">
-                    <div class="partners-logos">
-                        <div id="cneai">
-                            <a href="http://www.cneai.com">
-                            <img src="assets/logos/cneai.png"/>
-                            Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
-                            </a>
-                        </div>
-                        <div id="maisonrouge">
-                            <a href="http://www.lamaisonrouge.org/">
-                            <img src="assets/logos/maisonrouge.png"/>
-                            La&nbsp;Maison&nbsp;Rouge
-                            Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
-                            </a>
-                        </div>
                     </div>
                 </div>
-                <div id="a-propos" class="introduction">
-                    <h4>Le salon des pratiques éditoriales</h4>
+                <div class="container">
+                    <div class="menu">
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#a-propos">About</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exposants">Exposants</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#infos-visiteur">Infos visiteurs</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#evenements">Evénements</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#partenaires">Partenaires</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Crédits</a></h4>
+                    </div>
+                    <div class="partners">
+                        <div class="partners-logos">
+                            <div id="cneai">
+                                <a href="http://www.cneai.com">
+                                <img src="assets/logos/cneai.png"/>
+                                Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
+                                </a>
+                            </div>
+                            <div id="maisonrouge">
+                                <a href="http://www.lamaisonrouge.org/">
+                                <img src="assets/logos/maisonrouge.png"/>
+                                La&nbsp;Maison&nbsp;Rouge
+                                Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="a-propos" class="introduction">
+                        <h4>Le salon des pratiques éditoriales</h4>
 
 <p>Nouveau grand rendez-vous annuel centré sur la figure de l’éditeur, le MAD offre pendant 3 jours un panorama des pratiques éditoriales contemporaines, de l'édition fanzine aux œuvres rares : prints, multiples, livres, films et disques d'artistes...</p>
 
@@ -121,10 +140,10 @@
 
 <p>Au plaisir de vous recevoir au MAD!</p>
 
-                </div>
+                    </div>
 
-                <div id="exposants" class="exposants">
-                    <h4>Exposants</h4>
+                    <div id="exposants" class="exposants">
+                        <h4>Exposants</h4>
 
 <ul>
 <li><a href="http://www.ahahah-editions.fr">AH AH AH éditions</a></li>
@@ -198,10 +217,11 @@
 <li><a href="http://www.spectorbooks.com">Spector Books <sup>DE</sup></a></li>
 </ul>
 
-                </div>
+                        <a id="selectFrenchSecondary" href="#french_secondary_content">contenu complet exposants</a>
+                    </div>
 
-                <div id="infos-visiteur" class="infos-visiteurs">
-                    <h4>Infos visiteurs</h4>
+                    <div id="infos-visiteur" class="infos-visiteurs">
+                        <h4>Infos visiteurs</h4>
 
 <h5>Horaires</h5>
 
@@ -230,25 +250,27 @@ RER : Gare de Lyon (A, D)</p>
 
 <p>Accessible aux personnes handicapées</p>
 
-                    <br />
-                    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
-                </div>
+                        <br />
+                        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
+                    </div>
 
-                <div id="evenements" class="evenements">
-                    <h4>Événement</h4>
+                    <div id="evenements" class="evenements">
+                        <h4>Événement</h4>
 
 <p>A l'occasion de MAD#1, le programme MAD IN présente 3 jours de rencontres, performances, tables rondes, concerts, signatures et débats qui auront lieu à l'auditorium de la maison rouge ainsi qu'au sein du salon.</p>
 
 <p>MAD #1 présente également 3 stands curatoriaux: Mathieu Mercier rassemble sur un « stand du multiple équitable » des éditions autoproduites par différents artistes; Pierre Ponant &amp; Christophe Jacquet invitent 10 artistes et graphistes à présenter leurs productions graphiques ; et Jean-Max Colard &amp; Antoine Dufeu exposent une sélection de livres sur “La littérature d’exposition”</p>
 
-                </div>
+                    </div>
 
-                <div id="partenaires" class="partenaires">
-                    <h4>Partenaires</h4>
+                    <div id="partenaires" class="partenaires">
+                        <h4>Partenaires</h4>
 
 <p>MAD #1 est organisé en partenariat avec le CNEAI = Centre National Édition Art Image et
 la maison rouge / Fondation Antoine de Galbert et avec le soutien de Smurfit Kappa ainsi
 que le Conseil Régional d’Île-de-France</p>
+
+<p><img src="assets/logos/logos_bande.png" alt="tout les partenaires" /></p>
 
 <h5>CNEAI = centre national edition art image</h5>
 
@@ -266,8 +288,6 @@ que le Conseil Régional d’Île-de-France</p>
 
 <p>Centre national d’art contemporain dédié à l’œuvre média, le Cneai – Centre national édition art image - développe depuis 1997 un modèle de programmation collaborative : des groupes de recherches génèrent des programmes éditoriaux (catalogue de 600 multiples et 150 publications), d’expositions et d’actions, de recherche (laboratoires et séminaires) et de médiation. Les artistes et contributeurs sont invités sur la résidence « Maison flottante » créée par les frères Bouroullec en 2007. La collection FMRA, ouverte au public, rassemble 12000 livres et éphéméras d’artistes. Le Cneai mixe les champs artistiques qui dessinent les frontières de l’expérience visuelle : performances sonores, chorégraphiques, graphiques, littéraires et scientifiques.</p>
 
-<p><img src="assets/logos/cneai.png" alt="CNEAI =" /></p>
-
 <h5>La Maison Rouge - Fondation Antoine de Galbert</h5>
 
 <p>www.maisonrouge.org</p>
@@ -282,8 +302,6 @@ que le Conseil Régional d’Île-de-France</p>
 
 <p>La maison rouge, fondation privée reconnue d’utilité publique, a ouvert ses portes en juin 2004 à Paris. Créée par Antoine de Galbert, collectionneur et amateur d’art, elle accueille, au rythme de trois par an, des expositions temporaires d’art contemporain confiées souvent à des commissaires indépendants. La fondation veut au long des expériences de l’art qu’elle propose, privilégier la multiplicité des démarches, des pratiques et des approches. En choisissant le terme 'maison', Antoine de Galbert a voulu associer l’idée de l’univers domestique et privé à celle d’un lieu ouvert au public consacré à l’art contemporain. La maison rouge se veut un complément aux lieux d’expositions existants: à la fois particulier et inédit.</p>
 
-<p><img src="assets/logos/maisonrouge.png" alt="Maison Rouge" /></p>
-
 <h5>Smurfit Kappa</h5>
 
 <p>www.smurfitkappa.com &amp; www.openthefuture.fr</p>
@@ -294,14 +312,10 @@ en 2014. Nous sommes un fabriquant intégré d’emballages, nos usines de fabri
 d’emballages se procurant la majeure partie de leurs besoins en matières premières à
 partir de nos propres papèteries.</p>
 
-<p><img src="assets/logos/smurfit.jpg" alt="Smurfit Kappa" /></p>
+                    </div>
 
-<p><img src="assets/logos/iledf.gif" alt="Ile de France" /></p>
-
-                </div>
-
-                <div id="credits" class="credits">
-                    <h4>Crédits</h4>
+                    <div id="credits" class="credits">
+                        <h4>Crédits</h4>
 
 <h5>Direction curatoriale</h5>
 
@@ -330,19 +344,75 @@ et
 <p>Pour toutes questions, contactez Barbara&nbsp;Quintin<br />
 <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x63;o&#110;&#x74;&#97;&#x63;&#116;&#x40;&#109;&#x75;&#108;&#116;&#x69;&#112;&#x6c;&#101;&#x61;&#114;&#x74;&#100;&#x61;y&#115;&#x2e;&#99;&#x6f;&#109;">contact@multipleartdays.com</a>–<a href="tel:(0)758356696">(0)7 58 35 66 96</a></p>
 
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="french_secondary_content">
+                    <div id="partenaires" class="partenaires">
+                        <h4>Partenaires</h4>
+
+<p>MAD #1 est organisé en partenariat avec le CNEAI = Centre National Édition Art Image et
+la maison rouge / Fondation Antoine de Galbert et avec le soutien de Smurfit Kappa ainsi
+que le Conseil Régional d’Île-de-France</p>
+
+<p><img src="assets/logos/logos_bande.png" alt="tout les partenaires" /></p>
+
+<h5>CNEAI = centre national edition art image</h5>
+
+<p>www.cneai.com</p>
+
+<p>Ile des impressionnistes,</p>
+
+<p>2 rue du bac</p>
+
+<p>78400 Chatou</p>
+
+<p>+33 (0)1 39 52 45 35</p>
+
+<p>cneai@cneai.com</p>
+
+<p>Centre national d’art contemporain dédié à l’œuvre média, le Cneai – Centre national édition art image - développe depuis 1997 un modèle de programmation collaborative : des groupes de recherches génèrent des programmes éditoriaux (catalogue de 600 multiples et 150 publications), d’expositions et d’actions, de recherche (laboratoires et séminaires) et de médiation. Les artistes et contributeurs sont invités sur la résidence « Maison flottante » créée par les frères Bouroullec en 2007. La collection FMRA, ouverte au public, rassemble 12000 livres et éphéméras d’artistes. Le Cneai mixe les champs artistiques qui dessinent les frontières de l’expérience visuelle : performances sonores, chorégraphiques, graphiques, littéraires et scientifiques.</p>
+
+<h5>La Maison Rouge - Fondation Antoine de Galbert</h5>
+
+<p>www.maisonrouge.org</p>
+
+<p>10 boulevard de la bastille</p>
+
+<p>75012 Paris</p>
+
+<p>+33 (0)1 40 01 08 81</p>
+
+<p>info@lamaisonrouge.org</p>
+
+<p>La maison rouge, fondation privée reconnue d’utilité publique, a ouvert ses portes en juin 2004 à Paris. Créée par Antoine de Galbert, collectionneur et amateur d’art, elle accueille, au rythme de trois par an, des expositions temporaires d’art contemporain confiées souvent à des commissaires indépendants. La fondation veut au long des expériences de l’art qu’elle propose, privilégier la multiplicité des démarches, des pratiques et des approches. En choisissant le terme 'maison', Antoine de Galbert a voulu associer l’idée de l’univers domestique et privé à celle d’un lieu ouvert au public consacré à l’art contemporain. La maison rouge se veut un complément aux lieux d’expositions existants: à la fois particulier et inédit.</p>
+
+<h5>Smurfit Kappa</h5>
+
+<p>www.smurfitkappa.com &amp; www.openthefuture.fr</p>
+
+<p>Leader mondial de l’emballage à base de papier, nous employons environ 42 000
+personnes à travers 32 pays et avons réalisé un chiffre d’affaires de 8,1 milliards d’euros
+en 2014. Nous sommes un fabriquant intégré d’emballages, nos usines de fabrication
+d’emballages se procurant la majeure partie de leurs besoins en matières premières à
+partir de nos propres papèteries.</p>
+
+                    </div>
                 </div>
             </div>
         </div>
-    <a name="english" />
-    <div id="english">
-        <a href="#francais" id="toFrench" class="languageSwitch">Fran&ccedil;ais</a>
-        <div id="practical">
-            <div class="logo">
-                <img src="assets/logos/mad.png">
-            </div>
-            <h2>Multiple Art Days</h2>
-            <div class="infos">
-                <h4>22, 23, 24 May 2015</h4>
+        <a name="english" />
+        <div id="english" class="language_container">
+            <div class="container" id="english_main_content">
+                <a href="#francais" id="toFrench" class="languageSwitch">Fran&ccedil;ais</a>
+                <div id="practical">
+                    <div class="logo">
+                        <img src="assets/logos/mad.png">
+                    </div>
+                    <h2>Multiple Art Days</h2>
+                    <div class="infos">
+                        <h4>22, 23, 24 May 2015</h4>
 
 <h5>12h00 to 19h00</h5>
 
@@ -350,36 +420,36 @@ et
 
 <h5>10 Boulevard de la Bastille, 75012&nbsp;Paris</h5>
 
-            </div>
-        </div>
-        <div class="container">
-            <div class="menu">
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#about">About</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exhibitors">Exhibitors</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#visitor-info">Visitor info</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#events">Events</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#partners">Partners</a></h4>
-                <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Credits</a></h4>
-            </div>
-            <div class="partners">
-                <div class="partners-logos">
-                    <div id="cneai">
-                        <a href="http://www.cneai.com">
-                            <img src="assets/logos/cneai.png"/>
-                            Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
-                        </a>
-                    </div>
-                    <div id="maisonrouge">
-                        <a href="http://www.lamaisonrouge.org/">
-                            <img src="assets/logos/maisonrouge.png"/>
-                            La&nbsp;Maison&nbsp;Rouge
-                            Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
-                        </a>
                     </div>
                 </div>
-            </div>
-            <div id="about" class="introduction">
-                <h4>The new fair for limited art editions</h4>
+                <div class="container">
+                    <div class="menu">
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#about">About</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exhibitors">Exhibitors</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#visitor-info">Visitor info</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#events">Events</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#partners">Partners</a></h4>
+                        <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#credits">Credits</a></h4>
+                    </div>
+                    <div class="partners">
+                        <div class="partners-logos">
+                            <div id="cneai">
+                                <a href="http://www.cneai.com">
+                                    <img src="assets/logos/cneai.png"/>
+                                    Centre&nbsp;National<br />Edition&nbsp;Art&nbsp;Image
+                                </a>
+                            </div>
+                            <div id="maisonrouge">
+                                <a href="http://www.lamaisonrouge.org/">
+                                    <img src="assets/logos/maisonrouge.png"/>
+                                    La&nbsp;Maison&nbsp;Rouge
+                                    Fondation&nbsp;Antoine&nbsp;de&nbsp;Galbert
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="about" class="introduction">
+                        <h4>The new fair for limited art editions</h4>
 
 <p>A new, annual fair revolving around publishing, MAD will present, for 3 days, a wide spectrum of contemporary publishing practices, from zines to rare objects: prints, multiples, artists’ books, videos, audio CDs, vinyls...</p>
 
@@ -393,10 +463,10 @@ et
 
 <p>We look forward to welcoming you!!</p>
 
-            </div>
+                    </div>
 
-            <div id="exhibitors" class="exposants">
-                <h4>Exhibitors</h4>
+                    <div id="exhibitors" class="exposants">
+                        <h4>Exhibitors</h4>
 
 <ul>
 <li><a href="http://www.ahahah-editions.fr">AH AH AH éditions</a></li>
@@ -470,10 +540,11 @@ et
 <li><a href="http://www.spectorbooks.com">Spector Books <sup>DE</sup></a></li>
 </ul>
 
-            </div>
+                        <a id="selectEnglishSecondary" href="#english_secondary_content">to full exhibitor content</a>
+                    </div>
 
-            <div id="visitor-info" class="infos-visiteurs">
-                <h4>Visitor info</h4>
+                    <div id="visitor-info" class="infos-visiteurs">
+                        <h4>Visitor info</h4>
 
 <h5>Opening hours</h5>
 
@@ -505,23 +576,25 @@ et
 
 <p>Accessible to individuals with disabilities</p>
 
-                <br />
-                <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
-            </div>
+                        <br />
+                        <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=2.3592281341552734%2C48.84304247480693%2C2.375664710998535%2C48.85135953006185&amp;layer=mapnik&amp;marker=48.84720117510769%2C2.3674464225769043" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/?mlat=48.8472&amp;mlon=2.3674#map=16/48.8472/2.3674">View Larger Map</a></small>
+                    </div>
 
-            <div id="events" class="evenements">
-                <h4>Events</h4>
+                    <div id="events" class="evenements">
+                        <h4>Events</h4>
 
 <p>Accompanying the 3 MAD days, MAD IN presents 3 days of conversations, performances, dialogues, concerts and signatures, taking place both in the auditorium of the maison rouge and scattered throughout the fair.</p>
 
 <p>Three special curated booths will also be on display: Mathieu Mercier brings together self-published, “equitable” multiples by selected artists; Pierre Ponant &amp; Christophe Jacquet invite 10 artists and designers to show graphic works; Jean-Max Colard &amp; Antoine Dufeu present a selection of books on literature and the art of exhibitions.</p>
 
-            </div>
+                    </div>
 
-            <div id="partners" class="partenaires">
-                <h4>Partners</h4>
+                    <div id="partners" class="partenaires">
+                        <h4>Partners</h4>
 
 <p>MAD #1 is organized in partnership with the CNEAI = (Centre National Édition Art Image) and la maison rouge / Fondation Antoine de Galbert, and benefits from the suppport of Smurfit Kappa and the Conseil Régional d’Île-de-France</p>
+
+<p><img src="assets/logos/logos_bande.png" alt="all partners" /></p>
 
 <h5>CNEAI = centre national édition art image</h5>
 
@@ -539,8 +612,6 @@ et
 
 <p>A national center for contemporary art dedicated to published works , the Cneai – Centre national édition art image – has, since 1997, developed a model for collaborative programming: organizing research groups and editorial programs (a catalogue of 600 multiples and 150 publications), exhibitions and events, including research (laboratories and seminars) and mediation. The artists and contributors are offered residencies at the “Maison flottante,” conceived by the Bouroullec brothers in 2007. The FMRA collection, which is open to the public, brings together 12,000 books and artistic ephemera. The Cneai dynamically combines the artistic fields that define the various frontiers of visual experience, merging sound art, performance, choreography, graphic design, and literature and scientific research.</p>
 
-<p><img src="assets/logos/cneai.png" alt="CNEAI =" /></p>
-
 <h5>La Maison Rouge - Fondation Antoine de Gabert</h5>
 
 <p>www.maisonrouge.org</p>
@@ -553,22 +624,16 @@ et
 
 <p>Founded by Antoine de Galbert, a private art collector and prominent figure on the French contemporary art scene, the maison rouge was inaugurated in Paris in June 2004. Its goal is to promote various facets of contemporary creation through a program of temporary exhibitions. More than 1,300 square meters of exhibition space are given over to independent curators, invited by the maison rouge to explore the diverse range of contemporary artistic experimentation, often by way of important private collections from around the world. By inciting and initiating various artistic experiences, the foundation aims to encourage the multiplicity of practices and approaches to contemporary creation.</p>
 
-<p><img src="assets/logos/maisonrouge.png" alt="Maison Rouge" /></p>
-
 <h5>Smurfit Kappa</h5>
 
 <p>www.smurfitkappa.com &amp; www.openthefuture.fr</p>
 
 <p>One of the leading manufacturers of paperboard and paper-based packaging solutions in France and throughout Europe, Smurfit Kappa creates solutions adapted to its clients’ everyday needs and helps them promote their products. For many years, Smurfit Kappa has been developing a business strategy called “Open the future,” which emphasizes the group’s goal to increase its customers’ and partners’ growth through an innovative, forward-thinking approach.</p>
 
-<p><img src="assets/logos/smurfit.jpg" alt="Smurfit Kappa" /></p>
+                    </div>
 
-<p><img src="assets/logos/iledf.gif" alt="Ile de France" /></p>
-
-            </div>
-
-            <div id="credits" class="credits">
-                <h4>Credits</h4>
+                    <div id="credits" class="credits">
+                        <h4>Credits</h4>
 
 <h5>Curators</h5>
 
@@ -597,22 +662,103 @@ et
 <p>For any questions, please contact Barbara&nbsp;Quintin<br />
 <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x63;o&#110;&#x74;&#97;&#x63;&#116;&#x40;&#109;&#x75;&#108;&#116;&#x69;&#112;&#x6c;&#101;&#x61;&#114;&#x74;&#100;&#x61;y&#115;&#x2e;&#99;&#x6f;&#109;">contact@multipleartdays.com</a>–<a href="tel:(0)758356696">(0)7 58 35 66 96</a></p>
 
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="english_secondary_content">
+                    <div id="exhibitors" class="exposants">
+                        <h4>Exhibitors</h4>
+
+<ul>
+<li><a href="http://www.ahahah-editions.fr">AH AH AH éditions</a></li>
+<li><a href="http://www.atelierboba.fr">Atelier Boba</a></li>
+<li><a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur</a></li>
+<li><a href="http://www.cneai.com">Cneai =</a></li>
+<li><a href="http://centpages.atheles.org">Cent pages</a></li>
+<li><a href="http://www.thedrawer.net">The Drawer</a></li>
+<li><a href="http://www.editions-dilecta.com">Editions Dilecta</a></li>
+<li><a href="http://www.editionsdudetail.com">Editions du détail</a></li>
+<li><a href="http://www.incertain-sens.org">Editions Incertain Sens</a></li>
+<li><a href="http://www.florenceloewy.com">Florence Loewy</a></li>
+<li><a href="http://www.friville-editions.org">Friville éditions</a></li>
+<li><a href="http://www.alaingutharc.com">Galerie Alain Gutharc</a></li>
+<li><a href="http://www.galerieallen.com">Galerie Allen</a></li>
+<li><a href="http://www.catherineputman.com">Galerie Catherine Putman</a></li>
+<li><a href="http://www.gabriellemaubrie.com">Galerie Gabrielle Maubrie</a></li>
+<li><a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff</a></li>
+<li><a href="http://www.loevenbruck.com">Galerie Loevenbruck</a></li>
+<li><a href="http://www.galeriemetropolis.com">Galerie Metropolis</a></li>
+<li><a href="http://www.perrotin.com">Galerie Perrotin</a></li>
+<li><a href="http://www.galeriedemultiples.com">Galerie des Multiples</a></li>
+<li><a href="http://www.gbacency.fr">Gb agency</a></li>
+<li><a href="http://www.greyarea.eu">Grey Area</a></li>
+<li><a href="http://www.handartpublisher.com">Hand Art Publisher</a></li>
+<li><a href="http://www.iconomoteur.fr">Iconomoteur</a></li>
+<li><a href="http://www.lendroit.org">Lendroit éditions</a></li>
+<li><a href="http://francois-righi.com">Les éditions les livres sont muets</a></li>
+<li><a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet</a></li>
+<li><a href="http://www.edition-ln.com">LN Editions</a></li>
+<li><a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions</a></li>
+<li><a href="http://www.mayrevue.com">May</a></li>
+<li><a href="http://www.micheledidier.com">MFC-Michèle Didier</a></li>
+<li><a href="http://www.michaelwoolworth.com">Michael Woolworth Publications</a></li>
+<li><a href="http://www.ateliermurr.com">m.u.r.r &amp; GOL records</a></li>
+<li><a href="http://www.onestarpress.com">Onestar Press</a></li>
+<li><a href="http://www.optical-sound.com">Optical Sound</a></li>
+<li><a href="http://www.printsthingsandbooks.com">Prints, things and books by artists</a></li>
+<li><a href="http://www.royalbooklodge.com">Royal Book Lodge</a></li>
+<li><a href="http://www.rvb-books.com">RVB Books</a></li>
+<li><a href="http://www.esae.fr">Le Salon - ESAL</a></li>
+<li><a href="http://www.threestarbooks.com">Three Star Books</a></li>
+<li><a href="http://www.tolucaeditions.com">Toluca</a></li>
+<li><a href="http://www.urdla.com">URDLA</a></li>
+<li><a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie</a></li>
+<li><a href="http://www.wedonotworkalone.fr">WE DO NOT WORK ALONE</a></li>
+<li><a href="http://www.wysiwyh.fr">What you see is what you hear</a></li>
+<li><a href="http://www.winkedition.com">Wink</a></li>
+<li><a href="http://www.artfiction.ch">art&amp;fiction, éditions d&apos;artistes <sup>CH</sup></a></li>
+<li><a href="http://www.bartlebybooks.eu">Bartleby &amp; Co. <sup>BE</sup></a></li>
+<li><a href="http://www.benveniste.com">Benveniste Contemporary <sup>ES</sup></a></li>
+<li><a href="http://www.salon-fuer-kunstbuch.at">Bernhard Cella <sup>AT</sup></a></li>
+<li><a href="http://www.bookworks.org.uk">Book Works <sup>UK</sup></a></li>
+<li><a href="http://davidkrut.com">David Krut Projects <sup>ZA/US</sup></a></li>
+<li><a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#105;&#x6e;&#102;o&#x40;&#100;&#x69;&#114;&#x6b;&#98;&#x61;&#107;&#x6b;&#101;&#114;&#x62;&#111;&#x6f;&#107;&#x73;&#46;&#x63;&#111;m">Dirk K. Bakker Boeken <sup>NL</sup></a></li>
+<li><a href="http://www.fumanart.com">Fumanart <sup>MY</sup></a></li>
+<li><a href="http://www.gagarin.be">GAGARIN <sup>BE</sup></a></li>
+<li><a href="http://www.jordan-seydoux.com">Galerie Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="http://www.harpune.at">Harpune Verlag <sup>AT</sup></a></li>
+<li><a href="http://www.jap.be">JAP/ Jeunesse &amp; Arts plastiques <sup>BE</sup></a></li>
+<li><a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="http://www.julianpage.co.uk">Julian Page <sup>UK</sup></a></li>
+<li><a href="http://www.keymouse.eu">Keymouse <sup>BE</sup></a></li>
+<li><a href="http://www.morepublishers.be">MOREpublishers <sup>BE</sup></a></li>
+<li><a href="http://www.mottodistribution.com">Motto <sup>DE</sup></a></li>
+<li><a href="http://www.themultiplestore.org">The Multiple Store <sup>UK</sup></a></li>
+<li><a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery &amp; Editions <sup>DE/DK</sup></a></li>
+<li><a href="http://www.oei.nu">OEI editör <sup>SE</sup></a></li>
+<li><a href="http://www.porksaladpress.org">Pork Salad Press <sup>DK</sup></a></li>
+<li><a href="http://www.gallery.simsreed.com">Sims Reed Gallery <sup>UK</sup></a></li>
+<li><a href="http://www.spectorbooks.com">Spector Books <sup>DE</sup></a></li>
+</ul>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="entry">
-        <div class="entry-container">
-            <div class="logo-entry">
-                <img src="assets/logos/mad.png">
+        <div id="entry">
+            <div class="entry-container">
+                <div class="logo-entry">
+                    <img src="assets/logos/mad.png">
+                </div>
+            </div>
+            <div class="left">
+                <a id="selectFrench" class="left" href="#francais">entrez</a>
+            </div>
+            <div class="right">
+                <a id="selectEnglish" class="right" href="#english">enter</a>
             </div>
         </div>
-        <div class="left">
-            <a id="selectFrench" class="left" href="#francais">entrez</a>
-        </div>
-        <div class="right">
-            <a id="selectEnglish" class="right" href="#english">enter</a>
-        </div>
-    </div>
     <script src='assets/js/smoothscroll.js'></script>
     <script>
         smoothScroll.init({
