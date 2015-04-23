@@ -7,6 +7,59 @@
         </style>
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript">
+            $(document).ready(function() {
+                'use strict';
+
+                var cache = [];
+                var addressRegex = new RegExp('([^/]+).html');
+
+                function getName (address) {
+                    if (addressRegex.test(address)) {
+                        return addressRegex.exec(address)[1];
+                    } else {
+                        throw(new Error("getName requires a valid address. Was given: "  + address));
+                    }
+                }
+
+                function loadExhibitor (address) {
+                    var name = getName(address);
+
+                    if (name in cache) {
+                        showExhibitor(cache[name])
+                    } else {
+                        $.ajax({
+                            url:address,
+                            method: 'get',
+                        }).done(function (data) {
+                            handleExhibitor(name, data);
+                        });
+                    }
+                }
+
+                function handleExhibitor (name, data) {
+                    cache[name] = data;
+                    showExhibitor(data);
+                }
+
+                function showExhibitor(result) {
+                    if ($('body').hasClass('french')) {
+                        var container = $('#french .secondary_content');
+                    } else {
+                        var container = $('"english .secondary_content');
+                    }
+
+                    container.empty();
+                    container.append(result);
+                }
+
+                $('.exposants li a').click(function (e) {
+                    e.preventDefault;
+                    var address = $(this).attr('href');
+                    loadExhibitor(address);
+                });
+            });
+        </script>
+        <script type="text/javascript">
             $(document).ready(function () {
                 'use strict';
 
@@ -50,10 +103,10 @@
                     selectFrench();
                 });
 
-                $(".exposants li a").click(function (e) {
-                    e.preventDefault();
-                    showExhibitors();
-                });
+                // $(".exposants li a").click(function (e) {
+                //     e.preventDefault();
+                //     showExhibitors();
+                // });
 
 /*
                 $("#selectEnglishSecondary").click(function(e) {
