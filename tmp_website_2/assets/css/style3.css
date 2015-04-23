@@ -41,7 +41,7 @@ html, body {
     text-rendering: optimizeLegibility;
 }
 
-.container {
+.content_wrapper {
     margin: auto;
     position: relative;
     padding-bottom: 200px;
@@ -327,7 +327,16 @@ body {
 .container {
     width: 50%;
     min-height: 100%;
-    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+#french .secondary_content {
+    left: 0;
+}
+
+#french .main_content {
+    left: 50%;
 }
 
 #french {
@@ -339,6 +348,14 @@ body {
 #english {
     position: absolute;
     top: 0;
+    left: 50%;
+}
+
+#english .main_content {
+    left: 0;
+}
+
+#english .secondary_content {
     left: 50%;
 }
 
@@ -392,7 +409,7 @@ body.french #english {
 }
 
 body.english #french {
-    left: -100%;
+    left: -200%;
     transition: left .8s;
 }
 
@@ -401,12 +418,12 @@ body.english #english {
     transition: left .8s;
 }
 
-body.english_secondary{
-    left: 0%;
+body.english.secondary #english{
+    left: -100%;
     transition: left .8s;
 }
 
-body.french_secondary{
+body.french.secondary #french {
     left: 0%;
     transition: left .8s;
 }
@@ -546,6 +563,7 @@ body.french_secondary{
 }
 
 .languageSwitch {
+    z-index: 1;
     position: fixed;
     top: 20px;
     right: 20px;

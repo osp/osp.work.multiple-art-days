@@ -5,10 +5,26 @@
         <link rel="stylesheet" href="assets/css/style3.css" type="text/css" media="all" />
         <style type="text/css">
         </style>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 'use strict';
+
+                var selectEnglish = function () {
+                    $("body").removeClass('french').removeClass('secondary').addClass('english');
+                };
+
+                var selectFrench = function () {
+                    $("body").removeClass('english').removeClass('secondary').addClass('french');
+                };
+
+                var showExhibitors = function () {
+                    $("body").addClass("secondary");
+                }
+
+                var hideExhibitors = function () {
+                    $("body").removeClass("secondary");
+                }
 
                 $("#selectFrench").click(function (e) {
                     e.preventDefault();
@@ -34,6 +50,12 @@
                     selectFrench();
                 });
 
+                $(".exposants li a").click(function (e) {
+                    e.preventDefault();
+                    showExhibitors();
+                });
+
+/*
                 $("#selectEnglishSecondary").click(function(e) {
                     e.preventDefault();
                     selectEnglishSecondary();
@@ -44,21 +66,16 @@
                     selectFrenchSecondary();
                 });
 
-                var selectEnglish = function () {
-                    $("body").removeClass('french').addClass('english');
-                }
+*/
 
-                var selectFrench = function () {
-                    $("body").removeClass('english').addClass('french');
-                }
 
-                var selectEnglishSecondary = function () {
-                    $("body").removeClass('english').addClass('english_secondary')
-                }
+                // var selectEnglishSecondary = function () {
+                //     $("body").removeClass('english').addClass('english_secondary')
+                // }
 
-                var selectFrenchSecondary = function () {
-                    $("body").removeClass('french').addClass('french_secondary')
-                }
+                // var selectFrenchSecondary = function () {
+                //     $("body").removeClass('french').addClass('french_secondary')
+                // }
 
                 var panelClasses = ['one', 'two', 'three', 'four'];
 
@@ -84,17 +101,17 @@
     <body class="entry">
         <a name="francais" />
         <div id="french" class="language_container">
-            <div class="container" id="french_main_content">
-                <a href="#english" id="toEnglish" class="languageSwitch">English</a>
-                <div id="practical">
-                   <div class="logo">
-                        <img src="assets/logos/mad.png">
+            <a href="#english" id="toEnglish" class="languageSwitch">English</a>
+            <div class="container main_content">
+                <div class="content_wrapper">
+                    <div id="practical">
+                       <div class="logo">
+                            <img src="assets/logos/mad.png">
+                        </div>
+                        <div class="infos">
+                            {% fr/sidebar %}
+                        </div>
                     </div>
-                    <div class="infos">
-                        {% fr/sidebar %}
-                    </div>
-                </div>
-                <div class="container">
                     <div class="menu">
                         <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#a-propos">About</a></h4>
                         <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exposants">Exposants</a></h4>
@@ -148,8 +165,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div id="french_secondary_content">
+            <div class="container secondary_content" id="">
+                <div class="content_wrapper">
                     <div id="partenaires" class="partenaires">
                         {% fr/partenaires %}
                     </div>
@@ -158,18 +175,18 @@
         </div>
         <a name="english" />
         <div id="english" class="language_container">
-            <div class="container" id="english_main_content">
-                <a href="#francais" id="toFrench" class="languageSwitch">Fran&ccedil;ais</a>
-                <div id="practical">
-                    <div class="logo">
-                        <img src="assets/logos/mad.png">
+            <a href="#francais" id="toFrench" class="languageSwitch">Fran&ccedil;ais</a>
+            <div class="container main_content">
+                <div class="content_wrapper">
+                    <div id="practical">
+                        <div class="logo">
+                            <img src="assets/logos/mad.png">
+                        </div>
+                        <h2>Multiple Art Days</h2>
+                        <div class="infos">
+                            {% en/sidebar %}
+                        </div>
                     </div>
-                    <h2>Multiple Art Days</h2>
-                    <div class="infos">
-                        {% en/sidebar %}
-                    </div>
-                </div>
-                <div class="container">
                     <div class="menu">
                         <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#about">About</a></h4>
                         <h4><a data-scroll data-options='{ "easing": "easeOutQuad" }' href="#exhibitors">Exhibitors</a></h4>
@@ -223,8 +240,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div id="english_secondary_content">
+            <div class="container secondary_content">
+                <div class="content_wrapper">
                     <div id="exhibitors" class="exposants">
                         {% en/exhibitors %}
                     </div>
