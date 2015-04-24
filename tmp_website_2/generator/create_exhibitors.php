@@ -41,6 +41,7 @@
     
     $exposants_base_folder = "../texts/exposants";
     $exposants_file = '../texts/exposants.md';
+    $exposants_export_file = '../texts/%1$s/exposants.md';
     $link_template = '/exposants/%1$s/%2$s.html';
     $exposants_source = file_get_contents($exposants_file);
     // Shoulf match all exhibitors
@@ -52,8 +53,10 @@
     
     preg_match_all($exposants_regex, $exposants_source, $matches, PREG_SET_ORDER);
     
-    $output_fr = '';
-    $output_en = '';
+    $output_fr = '####Exposants';
+    $output_fr .= "\n";
+    $output_en = '####Exhibitors';
+    $output_en .= "\n";
     
     foreach($matches as $match) {
         $system_name = slugify($match[1]);
@@ -66,11 +69,11 @@
         $exposant_folder = sprintf('%1$s/%2$s', $exposants_base_folder, $system_name);
         
         ensure_dir($exposant_folder);
-        file_put_contents(sprintf('%1$s/en.md', $exposant_folder), sprintf($exposant_template, $label, $url));
         file_put_contents(sprintf('%1$s/fr.md', $exposant_folder), sprintf($exposant_template, $label, $url));
+        file_put_contents(sprintf('%1$s/en.md', $exposant_folder), sprintf($exposant_template, $label, $url));
     }
 
-    file_put_contents(sprintf('%1$s.bak', $exposants_file), $output_fr);
-    file_put_contents(sprintf('%1$s.bak', $exposants_file), $output_en);
+    file_put_contents(sprintf($exposants_export_file, 'fr'), $output_fr);
+    file_put_contents(sprintf($exposants_export_file, 'en'), $output_en);
     
 ?>

@@ -271,7 +271,12 @@
                     </div>
 
                     <div id="exhibitors" class="exposants">
+<<<<<<< HEAD
                         {% en/exhibitors %}
+=======
+                        {% en/exposants %}
+                        <a id="selectEnglishSecondary" href="#english_secondary_content">to full exhibitor content</a>
+>>>>>>> 0406526f81eabf99f3ac04b0f590712fc1c4f306
                     </div>
 
                     <div id="visitor-info" class="infos-visiteurs">
