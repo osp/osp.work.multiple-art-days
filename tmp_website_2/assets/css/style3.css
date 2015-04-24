@@ -359,34 +359,51 @@ body {
     left: 50%;
 }
 
-/*#french_main_content{
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 100%;
+div.exhibitor_details{
+    border: 5px solid #DBFFB9;
+    padding: 20px;
 }
 
-#french_secondary_content{
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
+div.exhibitor_details h5{
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-#english_main_content{
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 100%;
+div.exhibitor_details h5 a{
+    text-decoration: none;
+    border-bottom: 5px solid #DBFFB9;
+    color: black;
 }
 
-#english_secondary_content{
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 100%;
+div.exhibitor_details a.back{
+    border-bottom: none;
+    border-bottom: 5px solid #DBFFB9;
 }
-*/
+
+div.exhibitor_details ul{
+    list-style: none;
+    margin-left: -40px;
+}
+
+div.exhibitor_details ul li{
+    text-align: left;
+    font-family: "Linux Libertin Display";
+    font-size: 18px;
+}
+
+div.exhibitor_details p {
+    text-indent: 0px;
+}
+
+div.exhibitor_details p img{
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+div.exhibitor_details small{
+    display: block;
+    margin-bottom: 20px;
+}
 
 body #french > *, body #english > * {
     opacity: 1;
