@@ -41,7 +41,7 @@ html, body {
     text-rendering: optimizeLegibility;
 }
 
-.container {
+.content_wrapper {
     margin: auto;
     position: relative;
     padding-bottom: 200px;
@@ -320,21 +320,73 @@ body {
     overflow-x: hidden;
 }
 
+.language_container {
+    width: 200%;
+}
+
+.container {
+    width: 50%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#french .secondary_content {
+    left: 0;
+}
+
+#french .main_content {
+    left: 50%;
+}
+
 #french {
     position: absolute;
     top: 0;
     left: -50%;
-    width: 100%;
-    min-height: 100%;
 }
 
 #english {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 100%;
-    min-height: 100%;
 }
+
+#english .main_content {
+    left: 0;
+}
+
+#english .secondary_content {
+    left: 50%;
+}
+
+/*#french_main_content{
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+}
+
+#french_secondary_content{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+}
+
+#english_main_content{
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+}
+
+#english_secondary_content{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+}
+*/
 
 body #french > *, body #english > * {
     opacity: 1;
@@ -347,7 +399,7 @@ body.entry #french > *,  body.entry #english > * {
 }
 
 body.french #french {
-    left: 0%;
+    left: -100%;
     transition: left .8s;
 }
 
@@ -357,11 +409,21 @@ body.french #english {
 }
 
 body.english #french {
-    left: -100%;
+    left: -200%;
     transition: left .8s;
 }
 
 body.english #english {
+    left: 0%;
+    transition: left .8s;
+}
+
+body.english.secondary #english{
+    left: -100%;
+    transition: left .8s;
+}
+
+body.french.secondary #french {
     left: 0%;
     transition: left .8s;
 }
@@ -501,6 +563,7 @@ body.english #english {
 }
 
 .languageSwitch {
+    z-index: 1;
     position: fixed;
     top: 30px;
     right: 25px;
