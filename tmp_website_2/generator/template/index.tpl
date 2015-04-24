@@ -204,7 +204,6 @@
 
                     <div id="exposants" class="exposants">
                         {% fr/exposants %}
-                        <a id="selectFrenchSecondary" href="#french_secondary_content">contenu complet exposants</a>
                     </div>
 
                     <div id="infos-visiteur" class="infos-visiteurs">
@@ -279,7 +278,6 @@
 
                     <div id="exhibitors" class="exposants">
                         {% en/exposants %}
-                        <a id="selectEnglishSecondary" href="#english_secondary_content">to full exhibitor content</a>
                     </div>
 
                     <div id="visitor-info" class="infos-visiteurs">
