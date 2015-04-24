@@ -1,2 +1,0 @@
-#### Exhibitors
-{% exposants %}

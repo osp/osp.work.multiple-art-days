@@ -11,7 +11,7 @@
                 'use strict';
 
                 var cache = [];
-                var addressRegex = new RegExp('([^/]+).html');
+                var addressRegex = new RegExp('([^/]+)/(en|fr).html');
 
                 function getName (address) {
                     if (addressRegex.test(address)) {
@@ -42,18 +42,34 @@
                 }
 
                 function showExhibitor(result) {
-                    if ($('body').hasClass('french')) {
-                        var container = $('#french .secondary_content');
-                    } else {
-                        var container = $('"english .secondary_content');
-                    }
+                    var exhibitorContainerSelector = '#exhibitorsExtended';
 
+                    if ($('body').hasClass('french')) {
+                        var container = $('#french .secondary_content .content_wrapper');
+                    } else {
+                        var container = $('#english .secondary_content .content_wrapper');
+                    }
+                    
+                    var child = $('<div class="exhibitor_details"></div').append(result);
+                    child.find('.back').click(function (e) { e.preventDefault(); hideExhibitors(); });
+                    child.css('top', $(window).scrollTop());
+                    
                     container.empty();
-                    container.append(result);
+                    container.append(child);
+                    
+                    showExhibitors();
+                }
+                
+                var showExhibitors = function () {
+                    $("body").addClass("secondary");
+                }
+                
+                var hideExhibitors = function () {
+                    $("body").removeClass("secondary");
                 }
 
                 $('.exposants li a').click(function (e) {
-                    e.preventDefault;
+                    e.preventDefault();
                     var address = $(this).attr('href');
                     loadExhibitor(address);
                 });
@@ -70,14 +86,6 @@
                 var selectFrench = function () {
                     $("body").removeClass('english').removeClass('secondary').addClass('french');
                 };
-
-                var showExhibitors = function () {
-                    $("body").addClass("secondary");
-                }
-
-                var hideExhibitors = function () {
-                    $("body").removeClass("secondary");
-                }
 
                 $("#selectFrench").click(function (e) {
                     e.preventDefault();
@@ -215,8 +223,78 @@
                     <div id="exposants" class="exposants">
                         <h4>Exposants</h4>
 
-<p>Could not find ../texts/exposants.md</p>
+<ul>
+<li><a href="/exposants/ah-ah-ah-editions/fr.html">AH AH AH éditions <sup>FR</sup></a></li>
+<li><a href="/exposants/atelier-boba/fr.html">Atelier Boba <sup>FR</sup></a></li>
+<li><a href="/exposants/bernard-chauveau-editeur/fr.html">Bernard Chauveau éditeur <sup>FR</sup></a></li>
+<li><a href="/exposants/cneai/fr.html">Cneai = <sup>FR</sup></a></li>
+<li><a href="/exposants/cent-pages/fr.html">Cent pages <sup>FR</sup></a></li>
+<li><a href="/exposants/the-drawer/fr.html">The Drawer <sup>FR</sup></a></li>
+<li><a href="/exposants/editions-dilecta/fr.html">Editions Dilecta <sup>FR</sup></a></li>
+<li><a href="/exposants/editions-du-detail/fr.html">Editions du détail <sup>FR</sup></a></li>
+<li><a href="/exposants/editions-incertain-sens/fr.html">Editions Incertain Sens <sup>FR</sup></a></li>
+<li><a href="/exposants/florence-loewy/fr.html">Florence Loewy <sup>FR</sup></a></li>
+<li><a href="/exposants/friville-editions/fr.html">Friville éditions <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-alain-gutharc/fr.html">Galerie Alain Gutharc <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-allen/fr.html">Galerie Allen <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-catherine-putman/fr.html">Galerie Catherine Putman <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-gabrielle-maubrie/fr.html">Galerie Gabrielle Maubrie <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-jocelyn-wolff/fr.html">Galerie Jocelyn Wolff <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-loevenbruck/fr.html">Galerie Loevenbruck <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-metropolis/fr.html">Galerie Metropolis <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-perrotin/fr.html">Galerie Perrotin <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-des-multiples/fr.html">Galerie des Multiples <sup>FR</sup></a></li>
+<li><a href="/exposants/gb-agency/fr.html">Gb agency <sup>FR</sup></a></li>
+<li><a href="/exposants/grey-area/fr.html">Grey Area <sup>FR</sup></a></li>
+<li><a href="/exposants/hand-art-publisher/fr.html">Hand Art Publisher <sup>FR</sup></a></li>
+<li><a href="/exposants/iconomoteur/fr.html">Iconomoteur <sup>FR</sup></a></li>
+<li><a href="/exposants/lendroit-editions/fr.html">Lendroit éditions <sup>FR</sup></a></li>
+<li><a href="/exposants/les-editions-les-livres-sont-muets/fr.html">Les éditions les livres sont muets <sup>FR</sup></a></li>
+<li><a href="/exposants/librairie-didier-lecointre-dominique-drouet/fr.html">Librairie Didier Lecointre - Dominique Drouet <sup>FR</sup></a></li>
+<li><a href="/exposants/ln-editions/fr.html">LN Editions <sup>FR</sup></a></li>
+<li><a href="/exposants/macumba-night-club-editions/fr.html">Macumba night club editions <sup>FR</sup></a></li>
+<li><a href="/exposants/may/fr.html">May <sup>FR</sup></a></li>
+<li><a href="/exposants/mfc-michele-didier/fr.html">MFC-Michèle Didier <sup>FR</sup></a></li>
+<li><a href="/exposants/michael-woolworth-publications/fr.html">Michael Woolworth Publications <sup>FR</sup></a></li>
+<li><a href="/exposants/m-u-r-r-amp-gol-records/fr.html">m.u.r.r &amp; GOL records <sup>FR</sup></a></li>
+<li><a href="/exposants/onestar-press/fr.html">Onestar Press <sup>FR</sup></a></li>
+<li><a href="/exposants/optical-sound/fr.html">Optical Sound <sup>FR</sup></a></li>
+<li><a href="/exposants/prints-things-and-books-by-artists/fr.html">Prints, things and books by artists <sup>FR</sup></a></li>
+<li><a href="/exposants/royal-book-lodge/fr.html">Royal Book Lodge <sup>FR</sup></a></li>
+<li><a href="/exposants/rvb-books/fr.html">RVB Books <sup>FR</sup></a></li>
+<li><a href="/exposants/le-salon-esal/fr.html">Le Salon - ESAL <sup>FR</sup></a></li>
+<li><a href="/exposants/three-star-books/fr.html">Three Star Books <sup>FR</sup></a></li>
+<li><a href="/exposants/toluca-editions/fr.html">Toluca Editions <sup>FR</sup></a></li>
+<li><a href="/exposants/urdla/fr.html">URDLA <sup>FR</sup></a></li>
+<li><a href="/exposants/ville-ouverte-les-douches-la-galerie/fr.html">Ville ouverte / Les Douches la Galerie <sup>FR</sup></a></li>
+<li><a href="/exposants/we-do-not-work-alone/fr.html">WE DO NOT WORK ALONE <sup>FR</sup></a></li>
+<li><a href="/exposants/what-you-see-is-what-you-hear/fr.html">What you see is what you hear <sup>FR</sup></a></li>
+<li><a href="/exposants/wink/fr.html">Wink <sup>FR</sup></a></li>
+<li><a href="/exposants/art-amp-fiction-editions-d-apos-artistes/fr.html">art&amp;fiction, éditions d&apos;artistes <sup>CH</sup></a></li>
+<li><a href="/exposants/bartleby-co/fr.html">Bartleby &amp; Co. <sup>BE</sup></a></li>
+<li><a href="/exposants/benveniste-contemporary/fr.html">Benveniste Contemporary <sup>ES</sup></a></li>
+<li><a href="/exposants/bernhard-cella/fr.html">Bernhard Cella <sup>AT</sup></a></li>
+<li><a href="/exposants/book-works/fr.html">Book Works <sup>UK</sup></a></li>
+<li><a href="/exposants/david-krut-projects/fr.html">David Krut Projects <sup>ZA/US</sup></a></li>
+<li><a href="/exposants/dirk-k-bakker-boeken/fr.html">Dirk K. Bakker Boeken <sup>NL</sup></a></li>
+<li><a href="/exposants/gagarin/fr.html">GAGARIN <sup>BE</sup></a></li>
+<li><a href="/exposants/galerie-jordan-seydoux-drawings-prints/fr.html">Galerie Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="/exposants/harpune-verlag/fr.html">Harpune Verlag <sup>AT</sup></a></li>
+<li><a href="/exposants/jap-jeunesse-arts-plastiques/fr.html">JAP/ Jeunesse &amp; Arts plastiques <sup>BE</sup></a></li>
+<li><a href="/exposants/jordan-seydoux-drawings-prints/fr.html">Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="/exposants/julian-page/fr.html">Julian Page <sup>UK</sup></a></li>
+<li><a href="/exposants/keymouse/fr.html">Keymouse <sup>BE</sup></a></li>
+<li><a href="/exposants/morepublishers/fr.html">MOREpublishers <sup>BE</sup></a></li>
+<li><a href="/exposants/motto/fr.html">Motto <sup>DE</sup></a></li>
+<li><a href="/exposants/the-multiple-store/fr.html">The Multiple Store <sup>UK</sup></a></li>
+<li><a href="/exposants/niels-borch-jensen-gallery-editions/fr.html">Niels Borch Jensen Gallery &amp; Editions <sup>DE/DK</sup></a></li>
+<li><a href="/exposants/oei-editor/fr.html">OEI editör <sup>SE</sup></a></li>
+<li><a href="/exposants/pork-salad-press/fr.html">Pork Salad Press <sup>DK</sup></a></li>
+<li><a href="/exposants/sims-reed-gallery/fr.html">Sims Reed Gallery <sup>UK</sup></a></li>
+<li><a href="/exposants/spector-books/fr.html">Spector Books <sup>DE</sup></a></li>
+</ul>
 
+                        <a id="selectFrenchSecondary" href="#french_secondary_content">contenu complet exposants</a>
                     </div>
 
                     <div id="infos-visiteur" class="infos-visiteurs">
@@ -466,7 +544,76 @@ partir de nos propres papèteries.</p>
                     <div id="exhibitors" class="exposants">
                         <h4>Exhibitors</h4>
 
-<p>Could not find ../texts/exposants.md</p>
+<ul>
+<li><a href="/exposants/ah-ah-ah-editions/en.html">AH AH AH éditions <sup>FR</sup></a></li>
+<li><a href="/exposants/atelier-boba/en.html">Atelier Boba <sup>FR</sup></a></li>
+<li><a href="/exposants/bernard-chauveau-editeur/en.html">Bernard Chauveau éditeur <sup>FR</sup></a></li>
+<li><a href="/exposants/cneai/en.html">Cneai = <sup>FR</sup></a></li>
+<li><a href="/exposants/cent-pages/en.html">Cent pages <sup>FR</sup></a></li>
+<li><a href="/exposants/the-drawer/en.html">The Drawer <sup>FR</sup></a></li>
+<li><a href="/exposants/editions-dilecta/en.html">Editions Dilecta <sup>FR</sup></a></li>
+<li><a href="/exposants/editions-du-detail/en.html">Editions du détail <sup>FR</sup></a></li>
+<li><a href="/exposants/editions-incertain-sens/en.html">Editions Incertain Sens <sup>FR</sup></a></li>
+<li><a href="/exposants/florence-loewy/en.html">Florence Loewy <sup>FR</sup></a></li>
+<li><a href="/exposants/friville-editions/en.html">Friville éditions <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-alain-gutharc/en.html">Galerie Alain Gutharc <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-allen/en.html">Galerie Allen <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-catherine-putman/en.html">Galerie Catherine Putman <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-gabrielle-maubrie/en.html">Galerie Gabrielle Maubrie <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-jocelyn-wolff/en.html">Galerie Jocelyn Wolff <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-loevenbruck/en.html">Galerie Loevenbruck <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-metropolis/en.html">Galerie Metropolis <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-perrotin/en.html">Galerie Perrotin <sup>FR</sup></a></li>
+<li><a href="/exposants/galerie-des-multiples/en.html">Galerie des Multiples <sup>FR</sup></a></li>
+<li><a href="/exposants/gb-agency/en.html">Gb agency <sup>FR</sup></a></li>
+<li><a href="/exposants/grey-area/en.html">Grey Area <sup>FR</sup></a></li>
+<li><a href="/exposants/hand-art-publisher/en.html">Hand Art Publisher <sup>FR</sup></a></li>
+<li><a href="/exposants/iconomoteur/en.html">Iconomoteur <sup>FR</sup></a></li>
+<li><a href="/exposants/lendroit-editions/en.html">Lendroit éditions <sup>FR</sup></a></li>
+<li><a href="/exposants/les-editions-les-livres-sont-muets/en.html">Les éditions les livres sont muets <sup>FR</sup></a></li>
+<li><a href="/exposants/librairie-didier-lecointre-dominique-drouet/en.html">Librairie Didier Lecointre - Dominique Drouet <sup>FR</sup></a></li>
+<li><a href="/exposants/ln-editions/en.html">LN Editions <sup>FR</sup></a></li>
+<li><a href="/exposants/macumba-night-club-editions/en.html">Macumba night club editions <sup>FR</sup></a></li>
+<li><a href="/exposants/may/en.html">May <sup>FR</sup></a></li>
+<li><a href="/exposants/mfc-michele-didier/en.html">MFC-Michèle Didier <sup>FR</sup></a></li>
+<li><a href="/exposants/michael-woolworth-publications/en.html">Michael Woolworth Publications <sup>FR</sup></a></li>
+<li><a href="/exposants/m-u-r-r-amp-gol-records/en.html">m.u.r.r &amp; GOL records <sup>FR</sup></a></li>
+<li><a href="/exposants/onestar-press/en.html">Onestar Press <sup>FR</sup></a></li>
+<li><a href="/exposants/optical-sound/en.html">Optical Sound <sup>FR</sup></a></li>
+<li><a href="/exposants/prints-things-and-books-by-artists/en.html">Prints, things and books by artists <sup>FR</sup></a></li>
+<li><a href="/exposants/royal-book-lodge/en.html">Royal Book Lodge <sup>FR</sup></a></li>
+<li><a href="/exposants/rvb-books/en.html">RVB Books <sup>FR</sup></a></li>
+<li><a href="/exposants/le-salon-esal/en.html">Le Salon - ESAL <sup>FR</sup></a></li>
+<li><a href="/exposants/three-star-books/en.html">Three Star Books <sup>FR</sup></a></li>
+<li><a href="/exposants/toluca-editions/en.html">Toluca Editions <sup>FR</sup></a></li>
+<li><a href="/exposants/urdla/en.html">URDLA <sup>FR</sup></a></li>
+<li><a href="/exposants/ville-ouverte-les-douches-la-galerie/en.html">Ville ouverte / Les Douches la Galerie <sup>FR</sup></a></li>
+<li><a href="/exposants/we-do-not-work-alone/en.html">WE DO NOT WORK ALONE <sup>FR</sup></a></li>
+<li><a href="/exposants/what-you-see-is-what-you-hear/en.html">What you see is what you hear <sup>FR</sup></a></li>
+<li><a href="/exposants/wink/en.html">Wink <sup>FR</sup></a></li>
+<li><a href="/exposants/art-amp-fiction-editions-d-apos-artistes/en.html">art&amp;fiction, éditions d&apos;artistes <sup>CH</sup></a></li>
+<li><a href="/exposants/bartleby-co/en.html">Bartleby &amp; Co. <sup>BE</sup></a></li>
+<li><a href="/exposants/benveniste-contemporary/en.html">Benveniste Contemporary <sup>ES</sup></a></li>
+<li><a href="/exposants/bernhard-cella/en.html">Bernhard Cella <sup>AT</sup></a></li>
+<li><a href="/exposants/book-works/en.html">Book Works <sup>UK</sup></a></li>
+<li><a href="/exposants/david-krut-projects/en.html">David Krut Projects <sup>ZA/US</sup></a></li>
+<li><a href="/exposants/dirk-k-bakker-boeken/en.html">Dirk K. Bakker Boeken <sup>NL</sup></a></li>
+<li><a href="/exposants/gagarin/en.html">GAGARIN <sup>BE</sup></a></li>
+<li><a href="/exposants/galerie-jordan-seydoux-drawings-prints/en.html">Galerie Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="/exposants/harpune-verlag/en.html">Harpune Verlag <sup>AT</sup></a></li>
+<li><a href="/exposants/jap-jeunesse-arts-plastiques/en.html">JAP/ Jeunesse &amp; Arts plastiques <sup>BE</sup></a></li>
+<li><a href="/exposants/jordan-seydoux-drawings-prints/en.html">Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="/exposants/julian-page/en.html">Julian Page <sup>UK</sup></a></li>
+<li><a href="/exposants/keymouse/en.html">Keymouse <sup>BE</sup></a></li>
+<li><a href="/exposants/morepublishers/en.html">MOREpublishers <sup>BE</sup></a></li>
+<li><a href="/exposants/motto/en.html">Motto <sup>DE</sup></a></li>
+<li><a href="/exposants/the-multiple-store/en.html">The Multiple Store <sup>UK</sup></a></li>
+<li><a href="/exposants/niels-borch-jensen-gallery-editions/en.html">Niels Borch Jensen Gallery &amp; Editions <sup>DE/DK</sup></a></li>
+<li><a href="/exposants/oei-editor/en.html">OEI editör <sup>SE</sup></a></li>
+<li><a href="/exposants/pork-salad-press/en.html">Pork Salad Press <sup>DK</sup></a></li>
+<li><a href="/exposants/sims-reed-gallery/en.html">Sims Reed Gallery <sup>UK</sup></a></li>
+<li><a href="/exposants/spector-books/en.html">Spector Books <sup>DE</sup></a></li>
+</ul>
 
                         <a id="selectEnglishSecondary" href="#english_secondary_content">to full exhibitor content</a>
                     </div>
@@ -598,7 +745,78 @@ et
                     <div id="exhibitors" class="exposants">
                         <h4>Exhibitors</h4>
 
-<p>Could not find ../texts/exposants.md</p>
+<p><ul>
+<li><a href="http://www.ahahah-editions.fr">AH AH AH éditions <sup>FR</sup></a></li>
+<li><a href="http://www.atelierboba.fr">Atelier Boba <sup>FR</sup></a></li>
+<li><a href="http://www.bernardchauveau-editeur.com">Bernard Chauveau éditeur <sup>FR</sup></a></li>
+<li><a href="http://www.cneai.com">Cneai = <sup>FR</sup></a></li>
+<li><a href="http://centpages.atheles.org">Cent pages <sup>FR</sup></a></li>
+<li><a href="http://www.thedrawer.net">The Drawer <sup>FR</sup></a></li>
+<li><a href="http://www.editions-dilecta.com">Editions Dilecta <sup>FR</sup></a></li>
+<li><a href="http://www.editionsdudetail.com">Editions du détail <sup>FR</sup></a></li>
+<li><a href="http://www.incertain-sens.org">Editions Incertain Sens <sup>FR</sup></a></li>
+<li><a href="http://www.florenceloewy.com">Florence Loewy <sup>FR</sup></a></li>
+<li><a href="http://www.friville-editions.org">Friville éditions <sup>FR</sup></a></li>
+<li><a href="http://www.alaingutharc.com">Galerie Alain Gutharc <sup>FR</sup></a></li>
+<li><a href="http://www.galerieallen.com">Galerie Allen <sup>FR</sup></a></li>
+<li><a href="http://www.catherineputman.com">Galerie Catherine Putman <sup>FR</sup></a></li>
+<li><a href="http://www.gabriellemaubrie.com">Galerie Gabrielle Maubrie <sup>FR</sup></a></li>
+<li><a href="http://www.galeriewolff.com">Galerie Jocelyn Wolff <sup>FR</sup></a></li>
+<li><a href="http://www.loevenbruck.com">Galerie Loevenbruck <sup>FR</sup></a></li>
+<li><a href="http://www.galeriemetropolis.com">Galerie Metropolis <sup>FR</sup></a></li>
+<li><a href="http://www.perrotin.com">Galerie Perrotin <sup>FR</sup></a></li>
+<li><a href="http://www.galeriedemultiples.com">Galerie des Multiples <sup>FR</sup></a></li>
+<li><a href="http://www.gbacency.fr">Gb agency <sup>FR</sup></a></li>
+<li><a href="http://www.greyarea.eu">Grey Area <sup>FR</sup></a></li>
+<li><a href="http://www.handartpublisher.com">Hand Art Publisher <sup>FR</sup></a></li>
+<li><a href="http://www.iconomoteur.fr">Iconomoteur <sup>FR</sup></a></li>
+<li><a href="http://www.lendroit.org">Lendroit éditions <sup>FR</sup></a></li>
+<li><a href="http://francois-righi.com">Les éditions les livres sont muets <sup>FR</sup></a></li>
+<li><a href="http://www.lecointredrouet.com">Librairie Didier Lecointre - Dominique Drouet <sup>FR</sup></a></li>
+<li><a href="http://www.edition-ln.com">LN Editions <sup>FR</sup></a></li>
+<li><a href="http://davidancelin.free.fr/macumba.html">Macumba night club editions <sup>FR</sup></a></li>
+<li><a href="http://www.mayrevue.com">May <sup>FR</sup></a></li>
+<li><a href="http://www.micheledidier.com">MFC-Michèle Didier <sup>FR</sup></a></li>
+<li><a href="http://www.michaelwoolworth.com">Michael Woolworth Publications <sup>FR</sup></a></li>
+<li><a href="http://www.ateliermurr.com">m.u.r.r &amp; GOL records <sup>FR</sup></a></li>
+<li><a href="http://www.onestarpress.com">Onestar Press <sup>FR</sup></a></li>
+<li><a href="http://www.optical-sound.com">Optical Sound <sup>FR</sup></a></li>
+<li><a href="http://www.printsthingsandbooks.com">Prints, things and books by artists <sup>FR</sup></a></li>
+<li><a href="http://www.royalbooklodge.com">Royal Book Lodge <sup>FR</sup></a></li>
+<li><a href="http://www.rvb-books.com">RVB Books <sup>FR</sup></a></li>
+<li><a href="http://www.esalorraine.fr/metz/actualite/">Le Salon - ESAL <sup>FR</sup></a></li>
+<li><a href="http://www.threestarbooks.com">Three Star Books <sup>FR</sup></a></li>
+<li><a href="http://www.tolucaeditions.com">Toluca Editions <sup>FR</sup></a></li>
+<li><a href="http://www.urdla.com">URDLA <sup>FR</sup></a></li>
+<li><a href="http://www.lesdoucheslagalerie.com">Ville ouverte / Les Douches la Galerie <sup>FR</sup></a></li>
+<li><a href="http://www.wedonotworkalone.fr">WE DO NOT WORK ALONE <sup>FR</sup></a></li>
+<li><a href="http://www.wysiwyh.fr">What you see is what you hear <sup>FR</sup></a></li>
+<li><a href="http://www.winkedition.com">Wink <sup>FR</sup></a></li>
+<li><a href="http://www.artfiction.ch">art&amp;fiction, éditions d&apos;artistes <sup>CH</sup></a></li>
+<li><a href="http://www.bartlebybooks.eu">Bartleby &amp; Co. <sup>BE</sup></a></li>
+<li><a href="http://www.benveniste.com">Benveniste Contemporary <sup>ES</sup></a></li>
+<li><a href="http://www.salon-fuer-kunstbuch.at">Bernhard Cella <sup>AT</sup></a></li>
+<li><a href="http://www.bookworks.org.uk">Book Works <sup>UK</sup></a></li>
+<li><a href="http://davidkrut.com">David Krut Projects <sup>ZA/US</sup></a></li>
+<li><a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#105;&#x6e;&#102;o&#x40;&#100;&#x69;&#114;&#x6b;&#98;&#x61;&#107;&#x6b;&#101;&#114;&#x62;&#111;&#x6f;&#107;&#x73;&#46;&#x63;&#111;m">Dirk K. Bakker Boeken <sup>NL</sup></a></li>
+<li><a href="http://www.fumanart.com">Fumanart <sup>MY</sup></a></li>
+<li><a href="http://www.gagarin.be">GAGARIN <sup>BE</sup></a></li>
+<li><a href="http://www.jordan-seydoux.com">Galerie Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="http://www.harpune.at">Harpune Verlag <sup>AT</sup></a></li>
+<li><a href="http://www.jap.be">JAP/ Jeunesse &amp; Arts plastiques <sup>BE</sup></a></li>
+<li><a href="http://www.jordan-seydoux.com">Jordan/Seydoux — Drawings &amp; Prints <sup>DE</sup></a></li>
+<li><a href="http://www.julianpage.co.uk">Julian Page <sup>UK</sup></a></li>
+<li><a href="http://www.keymouse.eu">Keymouse <sup>BE</sup></a></li>
+<li><a href="http://www.morepublishers.be">MOREpublishers <sup>BE</sup></a></li>
+<li><a href="http://www.mottodistribution.com">Motto <sup>DE</sup></a></li>
+<li><a href="http://www.themultiplestore.org">The Multiple Store <sup>UK</sup></a></li>
+<li><a href="http://www.nielsborchjensen.com">Niels Borch Jensen Gallery &amp; Editions <sup>DE/DK</sup></a></li>
+<li><a href="http://www.oei.nu">OEI editör <sup>SE</sup></a></li>
+<li><a href="http://www.porksaladpress.org">Pork Salad Press <sup>DK</sup></a></li>
+<li><a href="http://www.gallery.simsreed.com">Sims Reed Gallery <sup>UK</sup></a></li>
+<li><a href="http://www.spectorbooks.com">Spector Books <sup>DE</sup></a></li>
+</ul>
+</p>
 
                     </div>
                 </div>
