@@ -47,7 +47,7 @@
     // Shoulf match all exhibitors
     $exposants_regex = "/\[(.[^\<]+)(\s\<.*)\]\((.*)\)/i";
     // Template for an exhibitor detail file
-    $exposant_template = '#(%1$s)[%2$s]';
+    $exposant_template = '####[%1$s](%2$s)' . "\n<br />\n" . '<a href="" class="back">back</a>';
 
     $matches = [];
     
@@ -62,9 +62,9 @@
         $system_name = slugify($match[1]);
         $label = $match[1] . $match[2];
         $url = $match[3];
-        $output_fr .= sprintf('* (%1$s)[%2$s]', $label, sprintf($link_template, $system_name, 'fr'));
+        $output_fr .= sprintf('* [%1$s](%2$s)', $label, sprintf($link_template, $system_name, 'fr'));
         $output_fr .= "\n";
-        $output_en .= sprintf('* (%1$s)[%2$s]', $label, sprintf($link_template, $system_name, 'en'));
+        $output_en .= sprintf('* [%1$s](%2$s)', $label, sprintf($link_template, $system_name, 'en'));
         $output_en .= "\n";
         $exposant_folder = sprintf('%1$s/%2$s', $exposants_base_folder, $system_name);
         

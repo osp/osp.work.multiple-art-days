@@ -626,3 +626,8 @@ body.english #french #practical,
 body.english #french .languageSwitch {
     display: none;
 }
+
+
+.exhibitor_details {
+    position: relative;
+}

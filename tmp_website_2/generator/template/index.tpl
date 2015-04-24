@@ -11,7 +11,7 @@
                 'use strict';
 
                 var cache = [];
-                var addressRegex = new RegExp('([^/]+).html');
+                var addressRegex = new RegExp('([^/]+)/(en|fr).html');
 
                 function getName (address) {
                     if (addressRegex.test(address)) {
@@ -45,19 +45,33 @@
                     var exhibitorContainerSelector = '#exhibitorsExtended';
 
                     if ($('body').hasClass('french')) {
-                        var container = $('#french .secondary_content');
+                        var container = $('#french .secondary_content .content_wrapper');
                     } else {
-                        var container = $('"english .secondary_content');
+                        var container = $('#english .secondary_content .content_wrapper');
                     }
-
+                    
+                    var child = $('<div class="exhibitor_details"></div').append(result);
+                    child.find('.back').click(function (e) { e.preventDefault(); hideExhibitors(); });
+                    child.css('top', $(window).scrollTop());
+                    
                     container.empty();
-                    container.append(result);
+                    container.append(child);
+                    
+                    showExhibitors();
+                }
+                
+                var showExhibitors = function () {
+                    $("body").addClass("secondary");
+                }
+                
+                var hideExhibitors = function () {
+                    $("body").removeClass("secondary");
                 }
 
                 $('.exposants li a').click(function (e) {
-                    e.preventDefault;
+                    e.preventDefault();
                     var address = $(this).attr('href');
-                    lExhibitor(address);
+                    loadExhibitor(address);
                 });
             });
         </script>
@@ -72,14 +86,6 @@
                 var selectFrench = function () {
                     $("body").removeClass('english').removeClass('secondary').addClass('french');
                 };
-
-                var showExhibitors = function () {
-                    $("body").addClass("secondary");
-                }
-
-                var hideExhibitors = function () {
-                    $("body").removeClass("secondary");
-                }
 
                 $("#selectFrench").click(function (e) {
                     e.preventDefault();
@@ -271,12 +277,7 @@
                     </div>
 
                     <div id="exhibitors" class="exposants">
-<<<<<<< HEAD
-                        {% en/exhibitors %}
-=======
                         {% en/exposants %}
-                        <a id="selectEnglishSecondary" href="#english_secondary_content">to full exhibitor content</a>
->>>>>>> 0406526f81eabf99f3ac04b0f590712fc1c4f306
                     </div>
 
                     <div id="visitor-info" class="infos-visiteurs">
