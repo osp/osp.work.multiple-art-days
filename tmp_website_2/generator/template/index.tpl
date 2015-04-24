@@ -272,7 +272,7 @@
                     </div>
 
                     <div id="exhibitors" class="exposants">
-                        {% en/exhibitors %}
+                        {% en/exposants %}
                         <a id="selectEnglishSecondary" href="#english_secondary_content">to full exhibitor content</a>
                     </div>
 
