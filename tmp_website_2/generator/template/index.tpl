@@ -42,6 +42,8 @@
                 }
 
                 function showExhibitor(result) {
+                    var exhibitorContainerSelector = '#exhibitorsExtended';
+
                     if ($('body').hasClass('french')) {
                         var container = $('#french .secondary_content');
                     } else {
@@ -55,7 +57,7 @@
                 $('.exposants li a').click(function (e) {
                     e.preventDefault;
                     var address = $(this).attr('href');
-                    loadExhibitor(address);
+                    lExhibitor(address);
                 });
             });
         </script>
