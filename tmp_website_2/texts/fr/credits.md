@@ -14,10 +14,11 @@ Stéphane Magnin
 [OSP](http://osp.kitchen)
 
 #####Contact presse
-[Claudine&nbsp;Colin communication](http://www.claudinecolin.com) – 28 rue de Sévigné – 75004 Paris,
-[Pénélope&nbsp;Ponchelet](mailto:penelope@claudinecolin.com)</a>
+[Claudine&nbsp;Colin communication](http://www.claudinecolin.com)
+[Pénélope&nbsp;Ponchelet](mailto:penelope@claudinecolin.com)
 et
 [Marine&nbsp;le&nbsp;Bris](mailto:marine@claudinecolin.com)
+
 
 Pour toutes questions, contactez Barbara&nbsp;Quintin<br />
 [contact@multipleartdays.com](mailto:contact@multipleartdays.com)–[(0)7 58 35 66 96](tel:(0)758356696)

@@ -7,8 +7,8 @@ au 18h
 
 #####Tarifs
 
-Plein tarif: 5€
-Gratuité: Moins de 18 ans, étudiants, membres d'associations de collectionneurs et amis
+Plein tarif : 5€ </br>
+Gratuité : Moins de 18 ans, étudiants, membres d'associations de collectionneurs et amis
 des musées
 
 #####Adresse
@@ -17,8 +17,7 @@ La maison rouge
 10 Boulevard de la Bastille
 75012 Paris
 
-Téléphone : +33(0) 1 40 01 08 81
-Fax : +33(0) 1 40 01 08 83
+Téléphone : [(0) 1 40 01 08 81](tel:(0)140010881)
 
 #####Accès
 
