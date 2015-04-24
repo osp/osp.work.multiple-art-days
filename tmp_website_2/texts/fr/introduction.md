@@ -8,4 +8,4 @@ Bien plus qu'un salon, MAD expose la figure de l’éditeur, l’acteur le plus 
 
 Ces journées seront accompagnées d’une série de rencontres, performances artistiques et débats sur la pratique éditoriale dans l’art contemporain avec les artistes, graphistes, responsables de collections publiques, éditeurs, collectionneurs, chercheurs et libraires venus du monde entier.
 
-Au plaisir de vous recevoir au MAD!
+Au plaisir de vous recevoir au MAD !
